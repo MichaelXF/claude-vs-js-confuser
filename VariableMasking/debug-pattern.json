@@ -1,0 +1,11 @@
+{
+  "technique": "VariableMasking",
+  "matchedShape": "Function has exactly one RestElement parameter; references are member reads/writes on that rest binding using numeric indexes or valid identifier string properties.",
+  "rewrite": [
+    "Replace rest[index] with positional parameters.",
+    "Replace rest[\"name\"] scratch properties with local let bindings.",
+    "Remove standalone rest.length assignment statements.",
+    "Normalize safe computed string members and object keys after the masking pass."
+  ],
+  "safety": "Functions with direct rest-array references or non-standalone rest.length reads are left unchanged."
+}

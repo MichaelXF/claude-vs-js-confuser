@@ -21,6 +21,8 @@ Note: The Claude tests were run from my personal Claude account with the CVP sta
 | `String Concealing`       | Yes           | Opus 4.8 High deobfuscated one-shot                                                                       |
 | `String Compression`      | Yes           | GPT 5.5 deobfuscated one-shot                                                                             |
 | `Shuffle`                 | Yes           | Sonnet 4.6 and GPT 5.5 deobfuscated one-shot                                                              |
+| `Dispatcher`              | Yes           | GPT 5.5 deobfuscated with 2 prompts                                                                       |
+| `Variable Masking`        | Yes           | GPT 5.5 deobfuscated one-shot. Function lengths remained ambiguous                                        |
 
 ## License
 
