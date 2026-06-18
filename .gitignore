@@ -1,7 +1,7 @@
-# /*
-# !ControlFlowFlattening/
-# !package.json
-# !README.MD
+/*
+!VM-1/
+!package.json
+!README.MD
 
 node_modules
 package-lock.json
