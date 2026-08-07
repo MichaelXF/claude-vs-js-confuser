@@ -24,6 +24,8 @@ Note: The Claude tests were run from my personal Claude account with the CVP sta
 | `Dispatcher` (2.1.2) [/](./Dispatcher)                                                              | Yes           | GPT 5.5 deobfuscated with 2 prompts                                                                       |
 | `Variable Masking` (2.1.2) [/](./VariableMasking)                                                       | Yes           | GPT 5.5 deobfuscated one-shot. Function lengths remained ambiguous                                        |
 | `JS-Confuser-VM` (0.1.2) with `Randomize Opcodes`, `Encode Bytecode` and `Minify` [/](./VM-1) | Yes           | Claude Opus 4.8 Extra High deobfuscated one-shot, including CFG recontruction and expression folding      |
+| `JS-Confuser-VM` (0.1.5) and `JS-Confuser` (2.1.3) [/](./VM-2) <br> JS-Confuser-VM options: `{randomizeOpcodes:true, shuffleOpcodes:true, encodeBytecode:true, concealConstants:true, controlFlowFlattening:true, specializedOpcodes:true, classObfuscation:true, handlerTable:true}` <br> JS-Confuser Options: `{target:'node', controlFlowFlattening:true, identifierGenerator:'mangled', renameVariables:true, stringConcealing:true}` | Yes | Claude Opus 5 Extra High deobfuscated the CFF one-shot, and reached full devirtualization with a 2nd prompt. |
+
 
 ## License
 
