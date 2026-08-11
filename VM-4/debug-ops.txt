@@ -1,0 +1,165 @@
+  196  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":4},"kind":"BIN","operator":"^","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":5}]}
+  270  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":42},"kind":"BIN","operator":">>>","srcs":[{"k":"reg","fixed":4},{"k":"reg","fixed":8}]}
+  657  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1}]}
+  977  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"DEBUGGER"}
+ 1012  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+ 1229  {"nops":null,"varLen":true,"group":1,"countSlot":2,"fixed":3,"spread":2408084585,"dst":{"slot":0},"kind":"NEW","callee":{"k":"reg","slot":1}}
+ 1783  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"TRY_POP"}
+ 2104  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+ 2701  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+ 2858  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"GET_PROP","obj":{"k":"reg","slot":1},"key":{"k":"reg","slot":2}}
+ 2982  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"GET_PROP","obj":{"k":"reg","fixed":13},"key":{"k":"reg","fixed":11}}
+ 3239  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+ 3602  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+ 3770  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":5},"kind":"BIN","operator":"<<","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":4}]}
+ 3974  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":2},"kind":"GET_GLOBAL","name":{"k":"const","index":0,"key":2145282205},"throws":true}
+ 4017  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"LOAD_IMM","src":{"k":"lit","v":17537}}
+ 4061  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":42},"kind":"GET_UPVAL","index":{"fixed":0}}
+ 4617  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"FORIN_INIT","src":{"k":"reg","slot":1}}
+ 4797  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"==","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+ 5603  {"nops":1,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"LOAD_THIS"}
+ 6154  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+ 6332  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"BIN","operator":"-","srcs":[{"k":"reg","fixed":39},{"k":"reg","fixed":34}]}
+ 6459  {"nops":null,"varLen":true,"group":1,"countSlot":1,"fixed":2,"spread":null,"dst":{"slot":0},"kind":"ARRAY","elements":[{"k":"reg","slot":2},{"k":"reg","slot":3}]}
+ 6882  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+ 7785  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+ 8262  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"BIN","operator":"+","srcs":[{"k":"reg","fixed":11},{"k":"reg","fixed":3}]}
+ 8658  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"UN","operator":"~","srcs":[{"k":"reg","slot":1}]}
+ 9313  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":4},"kind":"BIN","operator":"^","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":1}]}
+ 9343  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"GET_PROP","obj":{"k":"reg","fixed":2},"key":{"k":"reg","fixed":11}}
+ 9650  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"!","srcs":[{"k":"reg","fixed":20}]}
+10089  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"BIN","operator":"&","srcs":[{"k":"reg","fixed":39},{"k":"reg","fixed":38}]}
+10633  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"!","srcs":[{"k":"reg","fixed":17}]}
+11135  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":">>","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+12233  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":11},"kind":"BIN","operator":"+","srcs":[{"k":"reg","fixed":12},{"k":"reg","fixed":13}]}
+12387  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"LOAD_IMM","src":{"k":"lit","v":622906073}}
+12706  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":5},"kind":"BIN","operator":"^","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":4}]}
+12859  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+13324  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+13375  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":3},"kind":"LOAD_CONST","src":{"k":"const","index":1,"key":2805231536}}
+14121  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":">>>","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+14531  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":1},"kind":"LOAD_THIS"}
+15948  {"nops":4,"varLen":false,"group":0,"countSlot":null,"kind":"DECRYPT"}
+16252  {"nops":2,"varLen":false,"group":0,"countSlot":null,"kind":"JMP_TRUE","src":{"k":"reg","slot":0},"target":{"k":"imm","slot":1}}
+16899  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":2},"kind":"GET_GLOBAL","name":{"k":"const","index":2,"key":2759597571},"throws":true}
+17866  {"nops":null,"varLen":true,"group":1,"countSlot":2,"fixed":3,"spread":2408084585,"dst":{"slot":0},"kind":"CALL","callee":{"k":"reg","slot":1}}
+19232  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":6},"kind":"BIN","operator":">>>","srcs":[{"k":"reg","fixed":4},{"k":"reg","fixed":5}]}
+19530  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":34},"kind":"BIN","operator":"+","srcs":[{"k":"reg","fixed":34},{"k":"reg","fixed":39}]}
+19646  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+19861  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"UN","operator":"!","srcs":[{"k":"reg","slot":1}]}
+20213  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1}]}
+20317  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":">","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+20321  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"<<","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+20371  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+20590  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":11},"kind":"BIN","operator":"+","srcs":[{"k":"reg","fixed":4},{"k":"reg","fixed":5}]}
+20988  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"%","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+21384  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+21774  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"LOAD_IMM","src":{"k":"lit"}}
+22357  {"nops":3,"varLen":false,"group":0,"countSlot":null,"kind":"SET_PROP","obj":{"k":"reg","slot":0},"key":{"k":"reg","slot":1},"value":{"k":"reg","slot":2}}
+22679  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"UN","operator":"-","srcs":[{"k":"reg","slot":1}]}
+22974  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":5},"kind":"BIN","operator":"-","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":4}]}
+23106  {"nops":3,"varLen":false,"group":0,"countSlot":null,"kind":"DEF_GETTER","obj":{"k":"reg","slot":0},"key":{"k":"reg","slot":1},"value":{"k":"reg","slot":2}}
+25176  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":6},"kind":"BIN","operator":">>>","srcs":[{"k":"reg","fixed":5},{"k":"reg","fixed":4}]}
+25403  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+26528  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"BIN","operator":"%","srcs":[{"k":"reg","fixed":12},{"k":"reg","fixed":11}]}
+26550  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+26638  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+27146  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"BIN","operator":"%","srcs":[{"k":"reg","fixed":11},{"k":"reg","fixed":12}]}
+27496  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"+","srcs":[{"k":"reg","fixed":38}]}
+28141  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":34},"kind":"LOAD_IMM","src":{"k":"lit","v":1681529156}}
+28584  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":15},"kind":"LOAD_IMM","src":{"k":"lit","v":0}}
+28718  {"nops":2,"varLen":false,"group":0,"countSlot":null,"kind":"SET_UPVAL","index":{"slot":0},"value":{"k":"reg","slot":1}}
+28738  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+28778  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"GET_UPVAL","index":{"slot":1}}
+29745  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":11},"kind":"GET_GLOBAL","name":{"k":"const","index":4,"key":4136326414},"throws":true}
+30306  {"nops":2,"varLen":false,"group":0,"countSlot":null,"kind":"TRY_CATCH","target":{"k":"imm","slot":0},"reg":{"k":"imm","slot":1}}
+30802  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":3},"kind":"MOV","src":{"k":"reg","fixed":12}}
+31031  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":11},"kind":"GET_GLOBAL","name":{"k":"const","index":4,"key":4136326414},"throws":true}
+31117  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":6},"kind":"BIN","operator":">>>","srcs":[{"k":"reg","fixed":0},{"k":"reg","fixed":4}]}
+31629  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"BIN","operator":"-","srcs":[{"k":"reg","fixed":4},{"k":"reg","fixed":11}]}
+31740  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+32113  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"!=","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+32322  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"/","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+32323  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"LOAD_CONST","src":{"k":"const","index":6,"key":1834899045}}
+32719  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+33006  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":3},"kind":"LOAD_THIS"}
+33689  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":4},"kind":"MOV","src":{"k":"reg","fixed":12}}
+34756  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"&","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+35364  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"JMP","target":{"k":"lit","v":1244}}
+35415  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+35747  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"BIN","operator":"&","srcs":[{"k":"reg","fixed":39},{"k":"reg","fixed":38}]}
+35944  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":10},"kind":"MOV","src":{"k":"reg","fixed":11}}
+36883  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"instanceof","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+38088  {"nops":4,"varLen":false,"group":0,"countSlot":null,"kind":"TRY_FINALLY","target":{"k":"imm","slot":0},"flagReg":{"k":"imm","slot":1},"excReg":{"k":"imm","slot":2},"flagVal":{"k":"imm","slot":3}}
+38155  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":2},"kind":"LOAD_CONST","src":{"k":"const","index":3,"key":0}}
+38483  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+39270  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+39371  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2},{"k":"reg","slot":3}]}
+39585  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"RET","src":{"k":"reg","fixed":2}}
+40275  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+40650  {"nops":3,"varLen":false,"group":0,"countSlot":null,"kind":"FORIN_NEXT","dst":{"slot":0},"src":{"k":"reg","slot":1},"target":{"k":"imm","slot":2}}
+41046  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+41193  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"BIN","operator":"*","srcs":[{"k":"reg","fixed":39},{"k":"reg","fixed":38}]}
+41515  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+41640  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"-","srcs":[{"k":"reg","fixed":38}]}
+41785  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"===","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+41904  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"RET","src":{"k":"reg","fixed":11}}
+42326  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":15},"kind":"BIN","operator":"*","srcs":[{"k":"reg","fixed":14},{"k":"reg","fixed":12}]}
+42416  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"DEL_PROP","obj":{"k":"reg","slot":1},"key":{"k":"reg","slot":2}}
+43154  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"!","srcs":[{"k":"reg","fixed":19}]}
+43162  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+43319  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":38},"kind":"UN","operator":"!","srcs":[{"k":"reg","fixed":18}]}
+43607  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+44169  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"<=","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+44553  {"nops":null,"varLen":true,"group":2,"countSlot":4,"fixed":6,"spread":null,"dst":{"slot":0},"kind":"MAKE_FN","spec":{"m":2,"o":3,"D":1,"d":5}}
+44893  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":39},"kind":"BIN","operator":"*","srcs":[{"k":"reg","fixed":39},{"k":"reg","fixed":38}]}
+45891  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"TYPEOF_GLOBAL","name":{"k":"const","indexSlot":1,"keySlot":2}}
+46211  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"UN","operator":"+","srcs":[{"k":"reg","slot":1}]}
+46509  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"**","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+46844  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"BIN","operator":"*","srcs":[{"k":"reg","fixed":5},{"k":"reg","fixed":11}]}
+48326  {"nops":3,"varLen":false,"group":0,"countSlot":null,"kind":"DEF_GETTER","obj":{"k":"reg","slot":0},"key":{"k":"reg","slot":1},"value":null}
+48353  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+48848  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"^","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+48882  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+49809  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"*","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+50060  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":4},"kind":"BIN","operator":"|","srcs":[{"k":"reg","fixed":5},{"k":"reg","fixed":6}]}
+50343  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"in","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+51290  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+51404  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2},{"k":"reg","slot":3}]}
+52268  {"nops":3,"varLen":false,"group":0,"countSlot":null,"kind":"SET_GLOBAL","name":{"k":"const","indexSlot":0,"keySlot":1},"value":{"k":"reg","slot":2}}
+52676  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"LOAD_CONST","src":{"k":"const","indexSlot":1,"keySlot":2}}
+52716  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"GET_PROP","obj":{"k":"reg","fixed":11},"key":{"k":"reg","fixed":12}}
+53050  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+53189  {"nops":1,"varLen":false,"group":0,"countSlot":null,"kind":"THROW","src":{"k":"reg","slot":0}}
+53236  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"LOAD_CONST","src":{"k":"const","index":5,"key":2843980791}}
+53528  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"GET_GLOBAL","name":{"k":"const","indexSlot":1,"keySlot":2},"throws":true}
+53675  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"LOAD_IMM","src":{"k":"imm","slot":1}}
+54391  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+54514  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"UN","operator":"typeof","srcs":[{"k":"reg","slot":1}]}
+54669  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"BIN","operator":"%","srcs":[{"k":"reg","fixed":12},{"k":"reg","fixed":11}]}
+54870  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"RET","src":{"k":"reg","fixed":42}}
+55292  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":2},"kind":"MOV","src":{"k":"reg","fixed":14}}
+55336  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+55507  {"nops":1,"varLen":false,"group":0,"countSlot":null,"kind":"RET","src":{"k":"reg","slot":0}}
+55823  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"SET_PROP","obj":{"k":"reg","fixed":2},"key":{"k":"reg","fixed":3},"value":{"k":"reg","fixed":4}}
+56476  {"nops":2,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"MOV","src":{"k":"reg","slot":1}}
+57103  {"nops":2,"varLen":false,"group":0,"countSlot":null,"kind":"JMP_FALSE","src":{"k":"reg","slot":0},"target":{"k":"imm","slot":1}}
+57353  {"nops":null,"varLen":true,"group":2,"countSlot":1,"fixed":2,"spread":null,"dst":{"slot":0},"kind":"OBJECT","pairs":[[{"k":"reg","slot":2},{"k":"reg","slot":3}],[{"k":"reg","slot":4},{"k":"reg","slot":5}]]}
+58252  {"nops":1,"varLen":false,"group":0,"countSlot":null,"kind":"JMP_REG","target":{"k":"reg","slot":0}}
+58279  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":13},"kind":"GET_PROP","obj":{"k":"reg","fixed":11},"key":{"k":"reg","fixed":12}}
+58622  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"<","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+59082  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"|","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+59164  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"+","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+59504  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"imm","slot":2}]}
+59824  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":">=","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+60932  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+61580  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"-","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+63039  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"SET_PROP","obj":{"k":"reg","fixed":12},"key":{"k":"reg","fixed":11},"value":{"k":"reg","fixed":13}}
+63372  {"nops":3,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"BIN","operator":"!==","srcs":[{"k":"reg","slot":1},{"k":"reg","slot":2}]}
+63662  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":1},"kind":"LOAD_THIS"}
+63714  {"nops":1,"varLen":false,"group":0,"countSlot":null,"kind":"JMP","target":{"k":"imm","slot":0}}
+63766  {"nops":null,"varLen":true,"group":1,"countSlot":3,"fixed":4,"spread":2408084585,"dst":{"slot":0},"kind":"METHOD_CALL","callee":{"k":"reg","slot":2},"thisArg":{"k":"reg","slot":1}}
+64348  {"nops":4,"varLen":false,"group":0,"countSlot":null,"dst":{"slot":0},"kind":"ARITH","inputs":[{"k":"reg","slot":1},{"k":"reg","slot":2},{"k":"imm","slot":3}]}
+64404  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"JMP_REG","target":{"k":"reg","fixed":34}}
+65005  {"nops":0,"varLen":false,"group":0,"countSlot":null,"kind":"RET","src":{"k":"reg","fixed":42}}
+65530  {"nops":0,"varLen":false,"group":0,"countSlot":null,"dst":{"fixed":12},"kind":"LOAD_THIS"}

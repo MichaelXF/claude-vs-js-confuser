@@ -1,0 +1,1594 @@
+// ===== opcode 196 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 4] = a[b + 0] ^ a[b + 5];
+}
+
+// ===== opcode 270 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 42] = a[b + 4] >>> a[b + 8];
+}
+
+// ===== opcode 657 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  c &= -1;
+  a[b + f] = -(-((-(((c & ~c ^ c & c | (c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534)) - (~((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1)) & c) | (c ^ c ^ c) & ~(c & ~c | c & c) | (c | c) - (~c & c) & (c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534)) - (~c & (c | 0) * (c & 1) + (c | (0 | c) - (-1 & c)) * ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) & 65535 & (1 & ~c ^ 1 & c) ^ (c & 65535 | 1) - (c & 65534)))) - ((1 & ~c) + (1 & c + c - c) ^ (c ^ c ^ c) & ~((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1)) ^ (c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) & (c & ~c ^ c & c) ^ (c | 0) * (c & (65535 & ~c ^ 65535 & c) & (c & 1) + (c & 1 ^ 1)) + (c | 0 * (c & 1) + 0 * (c & 1 ^ 1)) * ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) & (65535 ^ c ^ c) & (1 ^ c ^ c) ^ (c & 1) + (c & 1 ^ 1))) ^ 0 * (c & 1) + 0 * (c & 1 ^ 1)) + ((1 & ~c ^ 1 & c | (0 & ~c) + (0 & c)) * ((c & ~c | c & c) & 1) + (c & 65535 + c - c & 1 ^ (c & 65535 | 1) - (c & 65534)))) ^ (0 | c) - (-1 & c)) - (1 + c - c) + ((1 | ~c) - (1 ^ ~c) ^ 1 + c - (1 | c)) | 0;
+}
+
+// ===== opcode 977 =====
+function () {
+  debugger;
+}
+
+// ===== opcode 1012 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  var d = b[f + x(this)] >> 0,
+    e = x(this);
+  c = Math.imul(c, -1110155595) ^ 1458964474 | 1;
+  b[f + a] = ((d | ~Math.imul(e, Math.imul(c, -1845031805))) & ~((d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534) ^ ~e)) - ~(~~Math.imul(Math.imul(Math.imul(d, c), -1845031805), Math.imul(c, -1845031805)) | ~Math.imul(e, Math.imul(c, -1845031805))) | 0;
+}
+
+// ===== opcode 1229 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  if (d === 2408084585) var e = a[b + x(this)];else {
+    e = Array(d);
+    for (var h = 0; h < d; h++) e[h] = a[b + x(this)];
+  }
+  (d = c && t.get(c)) ? y(this, f << 1 | 1, "x", e, Object.create(d.prototype || null), d, "z", []) : a[b + f] = Reflect.construct(c, e);
+}
+
+// ===== opcode 1783 =====
+function () {
+  this.c[this.g + 5].pop();
+}
+
+// ===== opcode 2104 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  var d = b[f + x(this)],
+    e = b[f + x(this)];
+  c = Math.imul(c, -1555491619) ^ 1187020937 | 1;
+  var h = x(this);
+  h = Math.imul(h ^ 220031805, 775776669) >>> 6 & 1;
+  b[f + a] = !!~~(!(d ^ Math.imul(Math.imul(Math.imul(e, c), -311337295), Math.imul(c, -311337295)) | 0) + (h & 1) * (!!~~((d | e & ~h ^ e & h) - (d & Math.imul(Math.imul(e, -311337295), c))) - !((d | d) - (~d & d) + ~e + 1 | 0 | -((d | d) - (~d & d) + ~e + 1 | 0))));
+}
+
+// ===== opcode 2701 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = ~~a[b + x(this)],
+    d = x(this);
+  a[b + f] = ((c | d) - (~c & d) ^ (d & ~d | d & d)) + (((c | c) - (~c & c) & d) << 1) ^ 0;
+}
+
+// ===== opcode 2858 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  a[b + f] = c[d];
+}
+
+// ===== opcode 2982 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 12] = a[b + 13][a[b + 11]];
+}
+
+// ===== opcode 3239 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  c ^= 0;
+  a[b + f] = ~~((c ^ ~d) + ((2 | c) - (-3 & c)) * ((c | c) - (~c & c) & ~d) + 1);
+}
+
+// ===== opcode 3602 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  c >>= 0;
+  d = ~~d;
+  var e = x(this),
+    h = Math.imul(e ^ 1452933939, -1873714493) >>> 5 & 1;
+  a[b + f] = ~~~(-(c + c - c) - (1 & ~e ^ 1 & e) & ~(d ^ h ^ h)) + (h & 1) * (~~((c ^ c ^ c | (d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1)) - ~(~((c | 0) * (e & 65535 | 1) - (c | 0) * (e & 65534)) | ~((d | 0) * (e & 65535 | 1) - (d | 0) * (e & 65534)))) - ~~(~(~c ^ ~((d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) | ~c & ~(d ^ e ^ e)) + (c + (d + c - c) - (c + d - d & (d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) & -((c & ~c) + (c & c) & d) - 1))) | 0;
+}
+
+// ===== opcode 3770 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 5] = a[b + 0] << a[b + 4];
+}
+
+// ===== opcode 3974 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = z(this, null, 0, 2145282205);
+  if (!(f in this.h)) throw new ReferenceError(`${f} is not defined`);
+  a[b + 2] = this.h[f];
+}
+
+// ===== opcode 4017 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 13] = 17537;
+}
+
+// ===== opcode 4061 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[b[a + 6] + 42] = b[a + 4].l[0].Q("k");
+}
+
+// ===== opcode 4617 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = [];
+  if (c !== null && c !== void 0) {
+    var e = Object.create(null);
+    for (c = Object(c); c !== null;) {
+      for (var h = Object.getOwnPropertyNames(c), p = 0; p < h.length; p++) {
+        var n = h[p];
+        if (!(n in e)) {
+          e[n] = !0;
+          var l = Object.getOwnPropertyDescriptor(c, n);
+          l && l.enumerable && d.push(n);
+        }
+      }
+      c = Object.getPrototypeOf(c);
+    }
+  }
+  a[b + f] = {
+    F: d,
+    B: 0
+  };
+}
+
+// ===== opcode 4797 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c == a[b + x(this)];
+}
+
+// ===== opcode 5603 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this);
+  b[f + c] = b[a + 3];
+}
+
+// ===== opcode 6154 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)];
+  a = Math.imul(b[a + 1] - 13, -442021251) ^ 1483530091 | 1;
+  var e = b[f + x(this)];
+  d >>= 0;
+  e |= 0;
+  b[f + c] = ~(~((d & ~e) + (d & e)) | ~(-(Math.imul(2124360502, a) * (Math.imul(Math.imul((e | 0) * (d & 65535 | 1) - (e | 0) * (d & 65534), Math.imul(Math.imul(Math.imul(-1085303397, a), -1085303397), Math.imul(a, -1085303397))), a) | (1 | Math.imul(0, a)) * (d & 65535 * (e & 65535 | 1) - 65535 * (e & 65534) & Math.imul(-1085303397, a)) + (1 | Math.imul(Math.imul(0, a), -1085303397)) * ((d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1) & 65535 & (1 & ~d ^ 1 & d) ^ 1)) - ((e & ~d | e & d) ^ 1)) ^ 0)) ^ 0;
+}
+
+// ===== opcode 6332 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 39] -= a[b + 34];
+}
+
+// ===== opcode 6459 =====
+function () {
+  for (var a = this.c, b = a[this.g + 6], f = x(this), c = x(this), d = Array(c), e = 0; e < c; e++) d[e] = a[b + x(this)];
+  a[b + f] = d;
+}
+
+// ===== opcode 6882 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[a + 1] - 13;
+  a = b[f + x(this)];
+  var e = b[f + x(this)];
+  d = Math.imul(d, -1469824059) ^ 1436671507 | 1;
+  b[f + c] = !(((Math.imul(Math.imul(Math.imul(a, d), -1544990853), Math.imul(d, -1544990853)) | e) - (a & e) | 0 | -((Math.imul(Math.imul(Math.imul(a, d), -1544990853), Math.imul(d, -1544990853)) | e) - (a & e) | 0)) >>> 31);
+}
+
+// ===== opcode 7785 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  c = ~~c;
+  d >>= 0;
+  var e = x(this),
+    h = Math.imul(e ^ 51548320, -2015052123) >>> 12 & 1;
+  a[b + f] = (h & 1) * ((c | h) - (~c & h) + (d & ~e ^ d & e) - 2 * ((c | 0) * (h & 1) + (c | 0) * (h & 1 ^ 1) & d + h - h) + (2 * (e & 1) + 2 * (e & 1 ^ 1)) * (c & d + e - e) - (2 * (e & 1) + 2 * (e & 1 ^ 1)) * ((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) + ((d | c) - (~d & c)) - ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) | d)) | 0) + (h & 1 ^ 1) * (~~((~~(c + c - c) | ~~((d & ~c) + (d & c))) & ~(~~((c | 0) * (e & 65535 | 1) - (c | 0) * (e & 65534)) ^ ~~((d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1)))) ^ 0) | 0;
+}
+
+// ===== opcode 8262 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 12] = a[b + 11] + a[b + 3];
+}
+
+// ===== opcode 8658 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = ~a[b + x(this)];
+}
+
+// ===== opcode 9313 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 4] = a[b + 0] ^ a[b + 1];
+}
+
+// ===== opcode 9343 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 12] = a[b + 2][a[b + 11]];
+}
+
+// ===== opcode 9650 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = !a[b + 20];
+}
+
+// ===== opcode 10089 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 39] &= a[b + 38];
+}
+
+// ===== opcode 10633 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = !a[b + 17];
+}
+
+// ===== opcode 11135 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c >> a[b + x(this)];
+}
+
+// ===== opcode 12233 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 11] = a[b + 12] + a[b + 13];
+}
+
+// ===== opcode 12387 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 39] = 622906073;
+}
+
+// ===== opcode 12706 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 5] = a[b + 0] ^ a[b + 4];
+}
+
+// ===== opcode 12859 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6];
+  a = b[a + 1] - 13;
+  var c = x(this),
+    d = ~~b[f + x(this)],
+    e = x(this);
+  b[f + c] = ~~((d ^ (e | d) - (~e & d)) + (d & (e & ~e ^ e & e)) + (Math.imul(Math.imul(d, 390412259), Math.imul(a, 1502086821) ^ 1216409290 | 1) & e));
+}
+
+// ===== opcode 13324 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  var d = b[f + x(this)] | 0,
+    e = b[f + x(this)] >> 0,
+    h = x(this);
+  c = Math.imul(c, 898191269) ^ 98181864 | 1;
+  b[f + a] = ~(d & ((e | h) & ~(Math.imul(e, Math.imul(c, -599796391)) & h) ^ 0) | ~(d | (e | Math.imul(Math.imul(h, -599796391), c)) & ~(e & Math.imul(Math.imul(Math.imul(h, c), -599796391), Math.imul(c, -599796391))) ^ (0 & ~e) + (0 & e))) ^ 0;
+}
+
+// ===== opcode 13375 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 3] = z(this, "x", 1, 2805231536);
+}
+
+// ===== opcode 14121 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c >>> a[b + x(this)];
+}
+
+// ===== opcode 14531 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[b[a + 6] + 1] = b[a + 3];
+}
+
+// ===== opcode 15948 =====
+function () {
+  for (var a = x(this), b = x(this), f = x(this), c = x(this) ^ a | 0, d = b; d < f; d++) c = c + 2654435769 | 0, this.j[a + (d - b)] = (this.j[d] ^ c ^ c >>> 13) >>> 0;
+}
+
+// ===== opcode 16252 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = x(this);
+  b[f + c] && (b[a + 11] = d);
+}
+
+// ===== opcode 16899 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = z(this, [], 2, 2759597571);
+  if (!(f in this.h)) throw new ReferenceError(`${f} is not defined`);
+  a[b + 2] = this.h[f];
+}
+
+// ===== opcode 17866 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  if (d === 2408084585) var e = a[b + x(this)];else {
+    e = Array(d);
+    for (var h = 0; h < d; h++) e[h] = a[b + x(this)];
+  }
+  (d = c && t.get(c)) ? y(this, f << 1, null, e, this.h, d, null, {}) : a[b + f] = c.apply(null, e);
+}
+
+// ===== opcode 19232 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 6] = a[b + 4] >>> a[b + 5];
+}
+
+// ===== opcode 19530 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 34] += a[b + 39];
+}
+
+// ===== opcode 19646 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)] & -1,
+    d = a[b + x(this)] & -1,
+    e = x(this),
+    h = Math.imul(e ^ 37196356, 188082151) >>> 11 & 1;
+  a[b + f] = ~~(((c ^ (d | 0) * (c & 65535 | 1) - (d | 0) * (c & 65534)) + ((2 | c) - (-3 & c)) * (c + d - d & (d | 0) * (h & 1) + (d | 0) * (h & 1 ^ 1)) - (((c | 0) * (h & 65535 | 1) - (c | 0) * (h & 65534) & (d | 0) * (h & 65535 | 1) - (d | 0) * (h & 65534)) + ((c | 0) * (h & 65535 | 1) - (c | 0) * (h & 65534) ^ d)) + ~((c | 0) * (h & 1) + (c | 0) * (h & 1 ^ 1) & (d & ~c) + (d & c) | ~((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) | d)) | 0) + (h & 1) * ((~(((c | 0) * (e & 1) + (c | 0) * (e & 1 ^ 1) & d | ~((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) | (d | 0) * (c & 65535 | 1) - (d | 0) * (c & 65534))) & ~((c & ~d | c & d) & d & ~(c | (d | e) - (~d & e))) | ((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) & d | ~((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) | d + h - h)) & ~((c & ~e | c & e) & (d | 0) * (c & 65535 | 1) - (d | 0) * (c & 65534) ^ ~((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) | (d | 0) * (h & 1) + (d | 0) * (h & 1 ^ 1)))) ^ 0) - (((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) ^ (d | 0) * (e & 65535 | 1) - (d | 0) * (e & 65534) ^ (c | 0) * (h & 1) + (c | 0) * (h & 1 ^ 1) & (d ^ d ^ d)) + (2 * (h & 65535 | 1) - 2 * (h & 65534)) * (((c & ~d) + (c & d) ^ (d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1)) & (c | 0) * (d & 1) + (c | 0) * (d & 1 ^ 1) & d) + ((c & ~h) + (c & h) + ((d | 0) * (e & 65535 | 1) - (d | 0) * (e & 65534)) - ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) | d + h - h)) - (c & d) | 0)));
+}
+
+// ===== opcode 19861 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = !a[b + x(this)];
+}
+
+// ===== opcode 20213 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)];
+  a = Math.imul(b[a + 1] - 13, 717250759) ^ 817339392 | 1;
+  d &= -1;
+  b[f + c] = ~(~~(-~~-((Math.imul(Math.imul((d | 0) * (d & 1) + (d | 0) * (d & 1 ^ 1), Math.imul(Math.imul(Math.imul(a, a), 269138995), Math.imul(a, 269138995)) ^ d ^ Math.imul(Math.imul(d, 269138995), a)), (269138995 | Math.imul(0, a)) * (d & Math.imul(65535, Math.imul(a, 269138995)) & (d & 1) + (d & 1 ^ 1)) + (269138995 ^ d ^ d | 0) * ((d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534) & 1 ^ (d & 1) + (d & 1 ^ 1))) ^ (1 & ~d | 1 & d | 0) * (d & Math.imul(Math.imul(Math.imul(65535, a), 269138995), Math.imul(a, 269138995)) | Math.imul(Math.imul(1, a), 269138995)) - (Math.imul(d, Math.imul(a, 269138995)) & Math.imul(Math.imul(Math.imul(65535, a), 269138995), Math.imul(a, 269138995)) & -2)) + ((d & ~d ^ d & d) & Math.imul(Math.imul(Math.imul(Math.imul(1, a), 269138995 ^ d ^ d), Math.imul(Math.imul(Math.imul(a, 269138995), a), Math.imul(Math.imul(Math.imul(269138995, a), 269138995), Math.imul(a, 269138995)))), Math.imul(Math.imul(Math.imul(a, 269138995), a + d - d), 269138995 * (d & 1) + 269138995 * (d & 1 ^ 1)))) + (Math.imul(Math.imul(Math.imul(d + Math.imul(Math.imul(d, a), 269138995) - Math.imul(d, Math.imul(a, 269138995)), (a | 0) * (Math.imul(Math.imul(d, 269138995), a) & 65535 & 1 + d - d) + (a ^ d ^ d | 0) * (Math.imul(Math.imul(d, 269138995), a) & 1 ^ Math.imul(Math.imul(1, a), 269138995))), Math.imul(Math.imul(269138995, a), Math.imul(Math.imul(Math.imul(269138995, a), 269138995), Math.imul(a, 269138995)))), Math.imul(a, (269138995 & ~d ^ 269138995 & d | Math.imul(0, Math.imul(a, 269138995))) * (d & 1) + (269138995 + d - d | 0) * (d & 65535 * (d & 1) + 65535 * (d & 1 ^ 1) & (1 ^ d ^ d) ^ 1))) & Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(269138995, a), Math.imul(Math.imul(a, a), 269138995)), 269138995), Math.imul(Math.imul(Math.imul(a, 269138995), a), Math.imul(Math.imul(269138995, a), 269138995))), Math.imul(Math.imul(a, a), Math.imul(-1638469079, a))), 269138995), Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(a, a), 269138995), Math.imul(a, 269138995)), Math.imul(a, Math.imul(269138995, Math.imul(a, 269138995)))), Math.imul(Math.imul(Math.imul(269138995, a), 269138995), Math.imul(a, 269138995)))))) - ((1 | d) - (~Math.imul(Math.imul(Math.imul(1, a), 269138995), Math.imul(a, 269138995)) & d))) + ~Math.imul(269138995, a) + 1) ^ 0;
+}
+
+// ===== opcode 20317 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c > a[b + x(this)];
+}
+
+// ===== opcode 20321 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c << a[b + x(this)];
+}
+
+// ===== opcode 20371 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  var d = ~~b[f + x(this)];
+  c = Math.imul(c, -1779708461) ^ 1154499888 | 1;
+  var e = x(this);
+  b[f + a] = !!(((Math.imul(d, Math.imul(c, 30758039)) & ~e | ~Math.imul(Math.imul(d, 30758039), c) & e) ^ 0 | -((Math.imul(d, Math.imul(c, 30758039)) & ~e | ~Math.imul(Math.imul(d, 30758039), c) & e) ^ 0)) >>> 31);
+}
+
+// ===== opcode 20590 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 11] = a[b + 4] + a[b + 5];
+}
+
+// ===== opcode 20988 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c % a[b + x(this)];
+}
+
+// ===== opcode 21384 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  c |= 0;
+  a[b + f] = (c ^ (d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) - 2 * (~c & d + d - d) | 0;
+}
+
+// ===== opcode 21774 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  x(this);
+  a[b + f] = void 0;
+}
+
+// ===== opcode 22357 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = a[b + x(this)],
+    c = a[b + x(this)];
+  a = a[b + x(this)];
+  Reflect.set(f, c, a);
+}
+
+// ===== opcode 22679 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = -a[b + x(this)];
+}
+
+// ===== opcode 22974 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 5] = a[b + 0] - a[b + 4];
+}
+
+// ===== opcode 23106 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = a[b + x(this)],
+    c = a[b + x(this)];
+  b = a[b + x(this)];
+  a = Object.getOwnPropertyDescriptor(f, c);
+  b = {
+    get: b,
+    configurable: !0,
+    enumerable: !0
+  };
+  a && typeof a.set === "function" && (b.set = a.set);
+  Object.defineProperty(f, c, b);
+}
+
+// ===== opcode 25176 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 6] = a[b + 5] >>> a[b + 4];
+}
+
+// ===== opcode 25403 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)] & -1,
+    d = x(this);
+  a[b + f] = ~~((2 + c - c) * (c | d & ~d | d & d) - (((c | c) - (~c & c) | d) - ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) & (d ^ c ^ c))));
+}
+
+// ===== opcode 26528 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 12] % a[b + 11];
+}
+
+// ===== opcode 26550 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[a + 1] - 13;
+  a = b[f + x(this)];
+  e = Math.imul(e, -1989745925) ^ 744292476 | 1;
+  b[f + c] = !!(((~((d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534) & ~((a | 0) * (d & 65535 | 1) - (a | 0) * (d & 65534)) | ~(Math.imul(Math.imul(Math.imul(d, e), -109262005), Math.imul(e, -109262005)) | ~((a | 0) * (d & 65535 | 1) - (a | 0) * (d & 65534)))) | (d + a - a | ~(a ^ d ^ d)) - ((d | d) - (~d & d) ^ ~Math.imul(Math.imul(Math.imul(a, e), -109262005), Math.imul(e, -109262005)))) & ~((d | 0) * (a & 65535 | 1) - (d | 0) * (a & 65534) + ~(a & ~d ^ a & d) - Math.imul(Math.imul(Math.imul(2, e), -109262005), Math.imul(e, -109262005)) * ((d & ~d ^ d & d) & ~a)) ^ 0 | ~~(-((d | 0) * (a & 65535 | 1) - (d | 0) * (a & 65534) ^ Math.imul(Math.imul(a, e), -109262005)) - ((d & 65535 | 1) - ((d & 65535 | -2) & ~(d & 65535 ^ -2)))) & (((Math.imul(d, Math.imul(e, -109262005)) | ~a) & ~(Math.imul(d, Math.imul(e, -109262005)) & ~a)) + Math.imul(Math.imul(2, e), -109262005) * (d & ~(a & ~a ^ a & a)) + Math.imul(Math.imul(1, e), -109262005) ^ 0)) >>> 31);
+}
+
+// ===== opcode 26638 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  c &= -1;
+  d &= -1;
+  var e = x(this),
+    h = Math.imul(e ^ 345853757, 2110205995) >>> 2 & 1;
+  a[b + f] = ~~(~~(c | (d | 0) * ((e & 65535 | 1) - (e & 65535 ^ 1)) + (d | 0) * (e & 0 | ~(e & 1) & 1)) + (h & 1) * (~~(((c | e) - (~c & e) ^ d) + (((c & ~d | c & d) & d) << (h & 1) + (h & 1 ^ 1)) - ((c | d) - ((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) ^ d)) & ~(((c & ~e) + (c & e) | (d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534)) & ~((c & ~h) + (c & h) ^ d + d - d))) - (((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) + ((d | 0) * (h & 65535 | 1) - (d | 0) * (h & 65534)) - ((c | 0) * (e & 1) + (c | 0) * (e & 1 ^ 1) & (d | 0) * (h & 65535 | 1) - (d | 0) * (h & 65534)) & -((c | d) - (~c & d) ^ (d | c) - (~d & c)) - (1 ^ c ^ c)) + ((c & d + h - h) + ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) ^ (d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) & -(((c | 0) * (d & 65535 | 1) - (c | 0) * (d & 65534) & d) + (1 + h - h))) | 0)));
+}
+
+// ===== opcode 27146 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 11] % a[b + 12];
+}
+
+// ===== opcode 27496 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = +a[b + 38];
+}
+
+// ===== opcode 28141 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 34] = 1681529156;
+}
+
+// ===== opcode 28584 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 15] = 0;
+}
+
+// ===== opcode 28718 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this);
+  a = b[a + 4].l[c];
+  b = b[f + x(this)];
+  a.A ? a.u = b : a.c[a.v] = b;
+}
+
+// ===== opcode 28738 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  c ^= 0;
+  d |= 0;
+  var e = x(this),
+    h = Math.imul(e ^ 830654343, -1792770723) >>> 9 & 1;
+  a[b + f] = ~~((((c | ~h) & ~(c ^ ~h) | c + h - (c | h)) + d - ((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) | (d | 0) * (c & 65535 | 1) - (d | 0) * (c & 65534)) ^ 0) + (h & 1) * (~~(c ^ (d & -(d + 1) | d & d)) - ((c | d) - (c + c - c & (d | e) - (~d & e)) + ((2 & ~c) + (2 & c)) * ((c | 0) * (d & 1) + (c | 0) * (d & 1 ^ 1) & (d & ~h ^ d & h)) - (~(~(c + h - h) | ~((d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1))) + ((c & ~e | c & e | d) - ((c | d) - (~c & d) & (d ^ c ^ c)))) ^ 0)));
+}
+
+// ===== opcode 28778 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this);
+  b[f + c] = b[a + 4].l[x(this)].Q(void 0);
+}
+
+// ===== opcode 29745 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = z(this, {}, 4, 4136326414);
+  if (!(f in this.h)) throw new ReferenceError(`${f} is not defined`);
+  a[b + 11] = this.h[f];
+}
+
+// ===== opcode 30306 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 5];
+  f || (b[a + 5] = f = []);
+  f.push({
+    p: x(this),
+    s: x(this)
+  });
+}
+
+// ===== opcode 30802 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 3] = a[b + 12];
+}
+
+// ===== opcode 31031 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = z(this, [], 4, 4136326414);
+  if (!(f in this.h)) throw new ReferenceError(`${f} is not defined`);
+  a[b + 11] = this.h[f];
+}
+
+// ===== opcode 31117 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 6] = a[b + 0] >>> a[b + 4];
+}
+
+// ===== opcode 31629 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 12] = a[b + 4] - a[b + 11];
+}
+
+// ===== opcode 31740 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[f + x(this)];
+  a = Math.imul(b[a + 1] - 13, 2146913549) ^ 183964052 | 1;
+  b[f + c] = ~~((Math.imul(Math.imul(d, a), -2097869451) ^ Math.imul(e, Math.imul(a, -2097869451))) + (((d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1) | e + e - e) - (Math.imul(Math.imul(Math.imul(d, a), -2097869451), Math.imul(a, -2097869451)) ^ Math.imul(Math.imul(Math.imul(e, a), -2097869451), Math.imul(a, -2097869451))) << (d & 65535 | 1) - (d & 65534)));
+}
+
+// ===== opcode 32113 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c != a[b + x(this)];
+}
+
+// ===== opcode 32322 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c / a[b + x(this)];
+}
+
+// ===== opcode 32323 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 12] = z(this, "z", 6, 1834899045);
+}
+
+// ===== opcode 32719 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)] >> 0,
+    e = b[a + 1] - 13;
+  a = b[f + x(this)] | 0;
+  e = Math.imul(e, -2043000299) ^ 1403860607 | 1;
+  b[f + c] = ~((~d | ~~~(~((Math.imul(Math.imul(a, e), 387314479) & ~a) + (a & a) - ((1 | 0 + a - a) * ((d & ~d ^ d & d) & Math.imul(65535, Math.imul(e, 387314479)) & Math.imul(1, Math.imul(e, 387314479))) + (1 | Math.imul(0, e)) * (d & 65535 & Math.imul(Math.imul(Math.imul(1, e), 387314479), Math.imul(e, 387314479)) ^ 1))) - 1)) - (~d ^ ~~~(~((Math.imul(Math.imul(a, e), 387314479) & ~Math.imul(Math.imul(a, e), 387314479)) + (a + d - d & a) - ((d & 65535 & Math.imul(Math.imul(Math.imul(1, e), 387314479), Math.imul(e, 387314479))) + (Math.imul(1, Math.imul(e, 387314479)) | 0) * (d & Math.imul(Math.imul(Math.imul(65535, e), 387314479), Math.imul(e, 387314479)) & Math.imul(387314479, e) ^ 1))) - 1))) ^ 0;
+}
+
+// ===== opcode 33006 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[b[a + 6] + 3] = b[a + 3];
+}
+
+// ===== opcode 33689 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 4] = a[b + 12];
+}
+
+// ===== opcode 34756 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c & a[b + x(this)];
+}
+
+// ===== opcode 35364 =====
+function () {
+  this.c[this.g + 11] = 1244;
+}
+
+// ===== opcode 35415 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = ~~b[f + x(this)];
+  a = Math.imul(b[a + 1] - 13, -1194967253) ^ 99317668 | 1;
+  var e = x(this);
+  b[f + c] = ((Math.imul(d, Math.imul(a, -1132271229)) | (e | e) - (~e & e)) & ~(Math.imul(Math.imul(d, a), -1132271229) & e)) - (2 * (e & 1) + 2 * (e & 1 ^ 1)) * (~d & (e & ~d) + (e & d)) ^ 0;
+}
+
+// ===== opcode 35747 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 39] &= a[b + 38];
+}
+
+// ===== opcode 35944 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 10] = a[b + 11];
+}
+
+// ===== opcode 36883 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c instanceof a[b + x(this)];
+}
+
+// ===== opcode 38088 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 5];
+  f || (b[a + 5] = f = []);
+  f.push({
+    H: x(this),
+    I: x(this),
+    K: x(this),
+    x: x(this)
+  });
+}
+
+// ===== opcode 38155 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 2] = z(this, null, 3, 0);
+}
+
+// ===== opcode 38483 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[a + 1] - 13;
+  a = b[f + x(this)] | 0;
+  var e = x(this);
+  d = Math.imul(d, -954168373) ^ 30399898 | 1;
+  b[f + c] = (a ^ ~Math.imul(Math.imul(e, -1214657763), d)) + 2 * ((a & ~e | a & e) & ~Math.imul(Math.imul(e, -1214657763), d)) + 1 ^ 0;
+}
+
+// ===== opcode 39270 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this);
+  a = Math.imul(b[a + 1] - 13, -1794824195) ^ 844266906 | 1;
+  var d = b[f + x(this)] ^ 0,
+    e = x(this);
+  b[f + c] = ((d | Math.imul(e, Math.imul(a, -1338205493))) & ~(d & e)) + (((d & ~e) + (d & e) & (e | 0) * (e & 1) + (e | 0) * (e & 1 ^ 1)) << Math.imul(1, Math.imul(a, -1338205493))) | 0;
+}
+
+// ===== opcode 39371 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[a + 1] - 13;
+  a = b[f + x(this)] & -1;
+  d = Math.imul(d, -1801361967) ^ 1419697902 | 1;
+  var e = x(this),
+    h = b[f + x(this)] >> 0;
+  b[f + c] = ~~(((~(~Math.imul(a, Math.imul(d, 768983259 + h - h)) & ~e) + ((a & ~h | a & h) + Math.imul(Math.imul(a, d), 768983259) - (a & ~a ^ a & a) & Math.imul(Math.imul(Math.imul(e, 768983259), d), Math.imul((d | 0) * (a & 65535 | 1) - (d | 0) * (a & 65534), Math.imul(Math.imul(Math.imul(768983259, d), 768983259), Math.imul(d, 768983259))))) | 0) ^ h | (~(~Math.imul(a, Math.imul(d, 768983259 ^ h ^ h)) & ~(e + a - a)) + (Math.imul(Math.imul(a, 768983259), d) + a - a & Math.imul(e, Math.imul(d, Math.imul(2075605849, d)))) | 0) & (h & ~a) + (h & a)) + (((~(~Math.imul(Math.imul(a, Math.imul(d, 768983259)), Math.imul(d, 768983259 & ~e | 768983259 & e)) & ~Math.imul(Math.imul(Math.imul(e, d), 768983259), Math.imul(d, 768983259))) + (a + a - Math.imul(Math.imul(a, 768983259), d) & Math.imul(e, Math.imul((d | 0) * (e & 1) + (d | 0) * (e & 1 ^ 1), 768983259 * (h & 1) + 768983259 * (h & 1 ^ 1)))) | 0) ^ (h | 0) * (h & 1) + (h | 0) * (h & 1 ^ 1)) & (~(~Math.imul(Math.imul(Math.imul(a, 768983259), d), Math.imul(d, 768983259)) & ~(e + e - e)) + (a + a - a & Math.imul(Math.imul(Math.imul(e, 768983259), d), Math.imul((d | 0) * (h & 65535 | 1) - (d | 0) * (h & 65534), 768983259 ^ h ^ h))) | 0) & h) + ((~(~Math.imul(a, Math.imul(Math.imul(Math.imul(d, 768983259), d), 768983259)) & ~Math.imul(Math.imul(e, 768983259), d)) + (a + Math.imul(Math.imul(Math.imul(a, d), 768983259), Math.imul(d, 768983259)) - Math.imul(a, Math.imul(d, 768983259)) & Math.imul(e, Math.imul(d, 768983259))) | 0 * (e & 65535 | 1) - 0 * (e & 65534) | h & ~h ^ h & h) - ((~(~Math.imul(Math.imul(a, Math.imul(d, 768983259)), Math.imul(d, Math.imul(Math.imul(Math.imul(768983259, d), 768983259), Math.imul(d, 768983259)))) & ~((e | 0) * (e & 1) + (e | 0) * (e & 1 ^ 1))) + (Math.imul(Math.imul(Math.imul(a, d), 768983259), Math.imul(d, 768983259)) + (a + e - e) - a & Math.imul(e, Math.imul(d ^ e ^ e, Math.imul(2075605849, d)))) | Math.imul(Math.imul(0, d), 768983259)) ^ (h & ~e | h & e))));
+}
+
+// ===== opcode 39585 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[b[a + 6] + 2];
+  this.b(void 0, 21, null, a);
+  var c = b[a + 7],
+    d = b[a + 10];
+  d & 1 && (typeof f !== "object" || f === null) && (f = b[a + 3]);
+  for (var e = a + b[a + 1], h = a; h < e; h++) b[h] = void 0;
+  this.i = a;
+  this.g = c;
+  b[c ? b[c + 6] + (d >> 1) : 0] = f;
+}
+
+// ===== opcode 40275 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[f + x(this)];
+  d ^= 0;
+  e >>= 0;
+  a = Math.imul(b[a + 1] - 13, -159564137) ^ 2054807249 | 1;
+  b[f + c] = ~~((Math.imul(Math.imul(Math.imul(d, a), -1320672813), Math.imul(a, -1320672813)) & ~Math.imul(e, Math.imul(a, -1320672813)) | ~(d ^ e ^ e) & Math.imul(Math.imul(e, a), -1320672813) | ~(~((d | 0) * (d & 1) + (d | 0) * (d & 1 ^ 1)) | ~(e ^ e ^ e))) - ((Math.imul(Math.imul(d, -1320672813), a) | e) & -(Math.imul(Math.imul(d, a), -1320672813) & Math.imul(e, Math.imul(a, -1320672813))) - ((e & 1) + (e & 1 ^ 1))));
+}
+
+// ===== opcode 40650 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = x(this);
+  d.B >= d.F.length ? b[a + 11] = e : b[f + c] = d.F[d.B++];
+}
+
+// ===== opcode 41046 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  c = ~~c;
+  a[b + f] = (c ^ ~d ^ 2 * (c & ~(d + d - d))) + ((c ^ ~(d & ~c | d & c)) & (2 & ~c | 2 & c) * (c & ~d)) + ((c ^ ~d) & 2 * ((c ^ c ^ c) & ~d)) + 1 ^ 0;
+}
+
+// ===== opcode 41193 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 39] *= a[b + 38];
+}
+
+// ===== opcode 41515 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)] ^ 0,
+    d = x(this);
+  a[b + f] = (c + d - d ^ d) + (((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) & (d ^ c ^ c)) << 1) - ((c | 0) * (d & 1) + (c | 0) * (d & 1 ^ 1) | d) ^ 0;
+}
+
+// ===== opcode 41640 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = -a[b + 38];
+}
+
+// ===== opcode 41785 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c === a[b + x(this)];
+}
+
+// ===== opcode 41904 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[b[a + 6] + 11];
+  this.b(null, 18, [], a);
+  var c = b[a + 7],
+    d = b[a + 10];
+  d & 1 && (typeof f !== "object" || f === null) && (f = b[a + 3]);
+  for (var e = a + b[a + 1], h = a; h < e; h++) b[h] = void 0;
+  this.i = a;
+  this.g = c;
+  b[c ? b[c + 6] + (d >> 1) : 0] = f;
+}
+
+// ===== opcode 42326 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 15] = a[b + 14] * a[b + 12];
+}
+
+// ===== opcode 42416 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  a[b + f] = delete c[d];
+}
+
+// ===== opcode 43154 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = !a[b + 19];
+}
+
+// ===== opcode 43162 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)];
+  c &= -1;
+  d >>= 0;
+  var e = x(this),
+    h = Math.imul(e ^ 1512231676, -526401353) >>> 30 & 1;
+  a[b + f] = (~~((~~((c | h) - (~c & h)) | ~~(d + c - c)) & ~(~~(c & ~h ^ c & h) ^ ~~((d | e) - (~d & e)))) ^ 0) + (h & 1) * (~~(((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) ^ (d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534)) + ((c | 0) * (h & 65535 | 1) - (c | 0) * (h & 65534) & (d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534)) + (c & (d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) - (((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) | d ^ c ^ c) - (c ^ d ^ d ^ d)) & -((c & (d | 0) * (h & 65535 | 1) - (d | 0) * (h & 65534) ^ (h & 65535 | 1) - (h & 65534)) + (2 * (h & 65535 | 1) - 2 * (h & 65534)) * ((c | 0) * (h & 1) + (c | 0) * (h & 1 ^ 1) & (d & ~e ^ d & e) & (d & 65535 | 1) - (d & 65534)))) - (((c | c) - (~c & c) ^ d ^ d ^ d) + (2 ^ e ^ e) * ((c & ~c ^ c & c) & d) - ((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) & (d | 0) * (h & 1) + (d | 0) * (h & 1 ^ 1)) & ~~((c | 0) * (c & 1) + (c | 0) * (c & 1 ^ 1) & d | ~((c | 0) * (e & 1) + (c | 0) * (e & 1 ^ 1) | d)) | 0)) ^ 0;
+}
+
+// ===== opcode 43319 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 38] = !a[b + 18];
+}
+
+// ===== opcode 43607 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  c = Math.imul(c, -827226059) ^ 953247525 | 1;
+  var d = b[f + x(this)] & -1,
+    e = x(this);
+  b[f + a] = ~~((d ^ e ^ (d | 0) * (e & 65535 | 1) - (d | 0) * (e & 65534) & Math.imul(e, Math.imul(c, 571935197))) + 2 * ((d ^ Math.imul(Math.imul(Math.imul(e, c), 571935197), Math.imul(c, 571935197))) & d & e) + ((Math.imul(Math.imul(Math.imul(d, c), 571935197), Math.imul(c, 571935197)) | e) - (d ^ e)));
+}
+
+// ===== opcode 44169 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c <= a[b + x(this)];
+}
+
+// ===== opcode 44553 =====
+function () {
+  for (var a = this.g, b = this.c, f = b[a + 6], c = x(this), d = x(this), e = x(this), h = x(this), p = x(this), n = x(this), l = Array(p), m = 0; m < p; m++) {
+    var A = x(this),
+      u = x(this);
+    l[m] = {
+      J: A,
+      C: u
+    };
+  }
+  d = new k({
+    m: e,
+    o: h,
+    D: d,
+    d: n
+  });
+  for (m = 0; m < l.length; m++) e = l[m], e.J ? d.l.push(w(this, a, e.C)) : d.l.push(b[a + 4].l[e.C]);
+  var q = this;
+  a = function (H) {
+    return function () {
+      return B(new r(q.j, q.G, q.h), this == null ? q.h : this, Array.prototype.slice.call(arguments), H);
+    };
+  }(d);
+  t.set(a, d);
+  a.prototype = d.prototype;
+  b[f + c] = a;
+}
+
+// ===== opcode 44893 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 39] *= a[b + 38];
+}
+
+// ===== opcode 45891 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = z(this);
+  c = Object.prototype.hasOwnProperty.call(this.h, c) ? this.h[c] : void 0;
+  a[b + f] = typeof c;
+}
+
+// ===== opcode 46211 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = +a[b + x(this)];
+}
+
+// ===== opcode 46509 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = Math.pow(c, a[b + x(this)]);
+}
+
+// ===== opcode 46844 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 5] * a[b + 11];
+}
+
+// ===== opcode 48326 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = a[b + x(this)],
+    c = a[b + x(this)];
+  b = a[b + x(this)];
+  a = Object.getOwnPropertyDescriptor(f, c);
+  b = {
+    set: b,
+    configurable: !0,
+    enumerable: !0
+  };
+  a && typeof a.get === "function" && (b.get = a.get);
+  Object.defineProperty(f, c, b);
+}
+
+// ===== opcode 48353 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = ~~b[f + x(this)],
+    e = x(this);
+  b[f + c] = Math.imul(Math.imul(d, 2061106067), Math.imul(b[a + 1] - 13, 199442163) ^ 385042988 | 1) - e | 0;
+}
+
+// ===== opcode 48848 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c ^ a[b + x(this)];
+}
+
+// ===== opcode 48882 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[f + x(this)];
+  d ^= 0;
+  e ^= 0;
+  a = Math.imul(b[a + 1] - 13, -1702809837) ^ 662072945 | 1;
+  b[f + c] = ~~((Math.imul(Math.imul(d, 1242285975), a) | -((Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(e, a), 1242285975), Math.imul(a, 1242285975)), (a & ~e) + (a & e)), 1242285975 * (e & 65535 | 1) - 1242285975 * (e & 65534)), Math.imul(a ^ d ^ d, (1242285975 | d) - (-1242285976 & d))) ^ (e & 1) + (e & 1 ^ 1) & ~((e | 0) * (e & 1) + (e | 0) * (e & 1 ^ 1)) ^ 1 & (e | 0) * (e & 1) + (e | 0) * (e & 1 ^ 1)) + (((Math.imul(Math.imul(e, 1242285975), a) & ~Math.imul(Math.imul(e, 1242285975), a) | e & e) & (e & 1) + (e & 1 ^ 1)) << (Math.imul(Math.imul(Math.imul(1, a), 1242285975), Math.imul(a, 1242285975)) & ~(e + e - e) ^ Math.imul(1, Math.imul(a, 1242285975)) & e))) ^ 0 & ~d ^ 0 & d) & -(Math.imul(d, Math.imul(a, 1242285975)) ^ -((Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(Math.imul(e, a), 1242285975), Math.imul(a, 1242285975)), (a | 0) * (e & 65535 | 1) - (a | 0) * (e & 65534)), 1242285975), Math.imul(a, 1242285975)) ^ Math.imul(Math.imul(1, a), 1242285975) & ~(e & ~d ^ e & d) ^ 1 & Math.imul(Math.imul(e, a), 1242285975)) + (((Math.imul(e, Math.imul(a, 1242285975)) & ~e | Math.imul(e, Math.imul(a, 1242285975)) & Math.imul(Math.imul(e, 1242285975), a)) & 1) << (1 + d - d & ~(e & ~d | e & d) ^ (1 | e) - (-2 & e) & Math.imul(Math.imul(Math.imul(e, a), 1242285975), Math.imul(a, 1242285975))))) ^ Math.imul(0, Math.imul(a, 1242285975))) - 1);
+}
+
+// ===== opcode 49809 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c * a[b + x(this)];
+}
+
+// ===== opcode 50060 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 4] = a[b + 5] | a[b + 6];
+}
+
+// ===== opcode 50343 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c in a[b + x(this)];
+}
+
+// ===== opcode 51290 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)] >> 0,
+    d = x(this);
+  a[b + f] = (c ^ d) + 2 * ((c & ~d) + (c & d) & (d | d) - (~d & d)) | 0;
+}
+
+// ===== opcode 51404 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)] | 0,
+    e = x(this);
+  a = Math.imul(b[a + 1] - 13, -931144415) ^ 287841505 | 1;
+  var h = ~~b[f + x(this)];
+  b[f + c] = ~~((Math.imul(Math.imul(Math.imul(d, a), 1065475493), Math.imul(a, 1065475493)) | Math.imul(Math.imul(Math.imul(Math.imul(e, a), 1065475493), 1065475493 * (d & 65535 | 1) - 1065475493 * (d & 65534)), a)) - (Math.imul(Math.imul(Math.imul(Math.imul(d, a), 1065475493), a), 1065475493) & e) + Math.imul(Math.imul(Math.imul(2 * (h & 1) + 2 * (h & 1 ^ 1), a ^ e ^ e), (1065475493 | e) - (-1065475494 & e)), Math.imul(a, Math.imul(Math.imul(Math.imul(1065475493, a), 1065475493), Math.imul(a, 1065475493)))) * (Math.imul(Math.imul(Math.imul(d, a), 1065475493), Math.imul(a, 1065475493)) & (e & ~e ^ (e | 0) * (d & 1) + (e | 0) * (d & 1 ^ 1) & (e | 0) * (e & 65535 | 1) - (e | 0) * (e & 65534)))) - h ^ 0;
+}
+
+// ===== opcode 52268 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  this.h[z(this)] = a[b + x(this)];
+}
+
+// ===== opcode 52676 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = z(this);
+}
+
+// ===== opcode 52716 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 11][a[b + 12]];
+}
+
+// ===== opcode 53050 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[a + 1] - 13;
+  a = b[f + x(this)];
+  var h = x(this);
+  e = Math.imul(e, -292240057) ^ 1122190916 | 1;
+  h = Math.imul(h ^ 944012906, -705782613) >>> 12 & 1;
+  b[f + c] = !!~~(!(~~((d | h) - (~d & h) + -Math.imul(Math.imul(a, -642284353), e)) | -~~((d | h) - (~d & h) + -Math.imul(Math.imul(a, -642284353), e))) + (h & 1) * (!!((~(~Math.imul(Math.imul(Math.imul(a, e), -642284353), Math.imul(e, -642284353)) | ~~d) ^ 0 | (-((a | 0) * (d & 1) + (a | 0) * (d & 1 ^ 1) ^ Math.imul(Math.imul(d, -642284353), e)) - 1 ^ 0) & ~~(a - Math.imul(d, Math.imul(e, -642284353)))) >>> 31) - !(d + ~a + 1 | 0)));
+}
+
+// ===== opcode 53189 =====
+function () {
+  var a = this.c;
+  throw a[a[this.g + 6] + x(this)];
+}
+
+// ===== opcode 53236 =====
+function () {
+  var a = this.c;
+  a[a[this.g + 6] + 12] = z(this, {}, 5, 2843980791);
+}
+
+// ===== opcode 53528 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = z(this);
+  if (!(c in this.h)) throw new ReferenceError(`${c} is not defined`);
+  a[b + f] = this.h[c];
+}
+
+// ===== opcode 53675 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = x(this);
+}
+
+// ===== opcode 54391 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6];
+  a = Math.imul(b[a + 1] - 13, -1788454627) ^ 254147529 | 1;
+  var c = x(this),
+    d = b[f + x(this)],
+    e = b[f + x(this)],
+    h = x(this);
+  b[f + c] = !!~~(!(d + e - 2 * (d & Math.imul(Math.imul(Math.imul(e, a), 1978246961), Math.imul(a, 1978246961))) ^ 0 | -(d + e - 2 * (d & Math.imul(Math.imul(Math.imul(e, a), 1978246961), Math.imul(a, 1978246961))) ^ 0)) + (Math.imul(h ^ 97867371, -1253410251) >>> 5 & 1) * (!((e & ~(d & ~h ^ d & h) ^ 0 | (-((e ^ d) + 1) | 0) & (e + -d ^ 0)) >>> 31) - !!((~~(d + ~e + 1) | -~~(d + ~e + 1)) >>> 31 ^ 1)));
+}
+
+// ===== opcode 54514 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = typeof a[b + x(this)];
+}
+
+// ===== opcode 54669 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 12] % a[b + 11];
+}
+
+// ===== opcode 54870 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[b[a + 6] + 42];
+  this.b("x", "q", null, a);
+  var c = b[a + 7],
+    d = b[a + 10];
+  d & 1 && (typeof f !== "object" || f === null) && (f = b[a + 3]);
+  for (var e = a + b[a + 1], h = a; h < e; h++) b[h] = void 0;
+  this.i = a;
+  this.g = c;
+  b[c ? b[c + 6] + (d >> 1) : 0] = f;
+}
+
+// ===== opcode 55292 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 2] = a[b + 14];
+}
+
+// ===== opcode 55336 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = b[a + 1] - 13;
+  a = x(this);
+  var d = b[f + x(this)],
+    e = x(this);
+  d >>= 0;
+  c = Math.imul(c, -1768678495) ^ 533551435 | 1;
+  b[f + a] = (d ^ e) + (Math.imul(Math.imul(d, c), -678933577) & Math.imul(Math.imul(e, -678933577), c)) + ((d & ~d | d & d) & e) | 0;
+}
+
+// ===== opcode 55507 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[b[a + 6] + x(this)];
+  this.b(void 0, void 0, void 0, a);
+  var c = b[a + 7],
+    d = b[a + 10];
+  d & 1 && (typeof f !== "object" || f === null) && (f = b[a + 3]);
+  for (var e = a + b[a + 1], h = a; h < e; h++) b[h] = void 0;
+  this.i = a;
+  this.g = c;
+  b[c ? b[c + 6] + (d >> 1) : 0] = f;
+}
+
+// ===== opcode 55823 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  Reflect.set(a[b + 2], a[b + 3], a[b + 4]);
+}
+
+// ===== opcode 56476 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this);
+  a[b + f] = a[b + x(this)];
+}
+
+// ===== opcode 57103 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = x(this);
+  b[f + c] || (b[a + 11] = d);
+}
+
+// ===== opcode 57353 =====
+function () {
+  for (var a = this.c, b = a[this.g + 6], f = x(this), c = x(this), d = {}, e = 0; e < c; e++) {
+    var h = a[b + x(this)],
+      p = a[b + x(this)];
+    d[h] = p;
+  }
+  a[b + f] = d;
+}
+
+// ===== opcode 58252 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[a + 11] = b[b[a + 6] + x(this)];
+}
+
+// ===== opcode 58279 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  a[b + 13] = a[b + 11][a[b + 12]];
+}
+
+// ===== opcode 58622 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c < a[b + x(this)];
+}
+
+// ===== opcode 59082 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c | a[b + x(this)];
+}
+
+// ===== opcode 59164 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c + a[b + x(this)];
+}
+
+// ===== opcode 59504 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = x(this);
+  c &= -1;
+  a[b + f] = ~~(2 * (c | (d | 0) * (c & 65535 | 1) - (d | 0) * (c & 65534)) - ((c | 0) * (c & 65535 | 1) - (c | 0) * (c & 65534) ^ (d | 0) * (c & 1) + (d | 0) * (c & 1 ^ 1)) - (c + ((d | 0) * (d & 1) + (d | 0) * (d & 1 ^ 1)) - (c & (d | 0) * (d & 65535 | 1) - (d | 0) * (d & 65534))));
+}
+
+// ===== opcode 59824 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c >= a[b + x(this)];
+}
+
+// ===== opcode 60932 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[a + 1] - 13;
+  a = b[f + x(this)];
+  var h = x(this);
+  h = Math.imul(h ^ 212624743, -1853654679) >>> 9 & 1;
+  e = Math.imul(e, 1599921201) ^ 2108547547 | 1;
+  b[f + c] = !!~~((h & 1) * !((~~~(~Math.imul(Math.imul(Math.imul(d, e), 1280558199), Math.imul(e, 1280558199)) | ~~a) | (-((d | h) - (~d & h) ^ a) - 1 ^ 0) & (Math.imul(Math.imul(d, 1280558199), e) + -a ^ 0)) >>> 31) + (h & 1 ^ 1) * !!(((d | (a | 0) * (a & 65535 | 1) - (a | 0) * (a & 65534)) & ~(Math.imul(Math.imul(d, e), 1280558199) & a) | 0 | -((d | (a | 0) * (a & 65535 | 1) - (a | 0) * (a & 65534)) & ~(Math.imul(Math.imul(d, e), 1280558199) & a) | 0)) >>> 31 ^ 1));
+}
+
+// ===== opcode 61580 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c - a[b + x(this)];
+}
+
+// ===== opcode 63039 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6];
+  Reflect.set(a[b + 12], a[b + 11], a[b + 13]);
+}
+
+// ===== opcode 63372 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)];
+  a[b + f] = c !== a[b + x(this)];
+}
+
+// ===== opcode 63662 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[b[a + 6] + 1] = b[a + 3];
+}
+
+// ===== opcode 63714 =====
+function () {
+  this.c[this.g + 11] = x(this);
+}
+
+// ===== opcode 63766 =====
+function () {
+  var a = this.c,
+    b = a[this.g + 6],
+    f = x(this),
+    c = a[b + x(this)],
+    d = a[b + x(this)],
+    e = x(this);
+  if (e === 2408084585) var h = a[b + x(this)];else {
+    h = Array(e);
+    for (var p = 0; p < e; p++) h[p] = a[b + x(this)];
+  }
+  (e = d && t.get(d)) ? y(this, f << 1, "x", h, c, e, {}, "x") : a[b + f] = d.apply(c, h);
+}
+
+// ===== opcode 64348 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[a + 6],
+    c = x(this),
+    d = b[f + x(this)],
+    e = b[f + x(this)],
+    h = x(this);
+  h = Math.imul(h ^ 1780612145, 508176851) >>> 16 & 1;
+  a = Math.imul(b[a + 1] - 13, -1872938423) ^ 4247171 | 1;
+  b[f + c] = !!~~(!((Math.imul(Math.imul(d, -282854553), a) | e) - (Math.imul(Math.imul(d, -282854553), a) & e) ^ 0) + (h & 1) * (!!((d + ~e - (d | ~e) ^ 0 | (-((d ^ e) + Math.imul(1, Math.imul(a, -282854553))) ^ 0) & (d + ~Math.imul(Math.imul(e, -282854553), a) + 1 ^ 0)) >>> 31) - !((d + h - h & ~e) - (~d & Math.imul(Math.imul(e, a), -282854553)) | 0 | -((d + h - h & ~e) - (~d & Math.imul(Math.imul(e, a), -282854553)) | 0))));
+}
+
+// ===== opcode 64404 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[a + 11] = b[b[a + 6] + 34];
+}
+
+// ===== opcode 65005 =====
+function () {
+  var a = this.g,
+    b = this.c,
+    f = b[b[a + 6] + 42];
+  this.b(null, {}, [], a);
+  var c = b[a + 7],
+    d = b[a + 10];
+  d & 1 && (typeof f !== "object" || f === null) && (f = b[a + 3]);
+  for (var e = a + b[a + 1], h = a; h < e; h++) b[h] = void 0;
+  this.i = a;
+  this.g = c;
+  b[c ? b[c + 6] + (d >> 1) : 0] = f;
+}
+
+// ===== opcode 65530 =====
+function () {
+  var a = this.g,
+    b = this.c;
+  b[b[a + 6] + 12] = b[a + 3];
+}

@@ -1,0 +1,289 @@
+# unified shapes: 72
+
+### R[$]=!R[$];
+    op 3861  slots=c120 c119
+    op 46463  slots=c333 c332
+    op 27271  slots=c21 c21
+    op 35551  slots=c225 c224
+    op 7660  slots=s0 s1
+
+### R[$]=R[$][R[$]];
+    op 46333  slots=c13 c11 c12
+    op 63170  slots=c12 c2 c11
+    op 33300  slots=c12 c13 c11
+    op 41954  slots=c13 c11 c12
+    op 28577  slots=s0 s1 s2
+
+### R[$]||(PC=$);
+    op 18613  slots=c120 c636
+    op 53326  slots=c81 c41463
+    op 64586  slots=s0 s1
+    op 37308  slots=c225 c1048
+    op 15437  slots=c333 c1474
+
+### R[$]=R[$];
+    op 24782  slots=c2 c14
+    op 58944  slots=c10 c11
+    op 8833  slots=c31 c10456
+    op 5100  slots=c3 c12
+    op 30808  slots=s0 s1
+
+### R[$]=STR($,$);
+    op 59584  slots=c12 c6 c353450771
+    op 7375  slots=c2 c3 c0
+    op 60271  slots=c12 c5 c4267757210
+    op 22894  slots=s0 s1 s2
+    op 23703  slots=c3 c1 c2036349876
+
+### R[$]=R[$]>>>R[$];
+    op 48321  slots=c542 c540 c541
+    op 64147  slots=c224 c222 c223
+    op 54890  slots=c430 c428 c429
+    op 59407  slots=s0 s1 s2
+    op 37314  slots=c119 c117 c118
+
+### R[$]=-R[$];
+    op 32209  slots=s0 s1
+    op 59775  slots=c331 c330
+    op 36753  slots=c427 c426
+    op 30829  slots=c116 c115
+    op 58965  slots=c221 c220
+
+### PC=$;
+    op 16888  slots=s0
+    op 32020  slots=c302
+    op 4442  slots=c48381
+    op 27002  slots=c50633
+    op 38551  slots=c47623
+
+### var v0=STR($,$);if(!(v0 in GLOBAL))throw new ReferenceError(`${v0} is not defined`);R[$]=GLOBAL[v0];
+    op 41600  slots=c4 c1644698516 c11
+    op 39996  slots=s1 s2 s0
+    op 14592  slots=c0 c476977390 c2
+    op 47427  slots=c4 c1644698516 c11
+    op 4655  slots=c2 c3514547561 c2
+
+### R[$]=$;
+    op 33216  slots=c10460 c1
+    op 7370  slots=c10457 c0
+    op 20161  slots=s0 s1
+    op 38636  slots=c10460 c65535
+    op 40507  slots=c10459 c0
+
+### R[$]=~R[$];
+    op 13809  slots=c10456 c10456
+    op 1964  slots=s0 s1
+    op 43102  slots=c10458 c10458
+    op 26346  slots=c10457 c10457
+    op 21241  slots=c10458 c31
+
+### R[$]*=R[$];
+    op 15213  slots=c10457 c10458
+    op 15092  slots=c10459 c10460
+    op 42349  slots=c10458 c10459
+    op 52513  slots=c10456 c10457
+
+### R[$]^=R[$];
+    op 31821  slots=c10457 c10458
+    op 52489  slots=c10459 c10460
+    op 9515  slots=c10456 c10457
+    op 37985  slots=c10458 c10459
+
+### R[$]=R[$]%R[$];
+    op 54791  slots=c13 c12 c11
+    op 5592  slots=s0 s1 s2
+    op 29062  slots=c13 c12 c11
+    op 57232  slots=c13 c11 c12
+
+### R[$]|=R[$];
+    op 32231  slots=c10457 c10458
+    op 39525  slots=c10458 c10459
+    op 48713  slots=c10459 c10460
+    op 40904  slots=c10456 c10457
+
+### R[$]-=R[$];
+    op 54947  slots=c10457 c10458
+    op 61055  slots=c10459 c10460
+    op 52555  slots=c10456 c10457
+    op 55899  slots=c10458 c10459
+
+### R[$]=TH;
+    op 30939  slots=c1
+    op 15026  slots=c29
+    op 40707  slots=c1
+    op 39367  slots=s0
+
+### var v0=R[$];CLOSE(this,_,_,FP);var v1=PFP,v2=RDST;v2&$&&(typeof v0!=="object"||v0===null)&&(v0=TH);for(var v3=FP+FSZ,v4=FP;v4<v3;v4++)STACK[v4]=void $;SP=FP;FP=v1;STACK[v1?STACK[v1+$]+(v2>>$):$]=v0;
+    op 26830  slots=c11 c1 c0 c3 c1 c0
+    op 8162  slots=s0 c1 c0 c3 c1 c0
+    op 43596  slots=c2 c1 c0 c3 c1 c0
+
+### R[$]+=R[$];
+    op 55507  slots=c10458 c10459
+    op 9028  slots=c10456 c10457
+    op 7008  slots=c10457 c10458
+
+### R[$]=R[$]&R[$];
+    op 14497  slots=c10459 c31 c10460
+    op 13916  slots=s0 s1 s2
+    op 37632  slots=c10458 c31 c10459
+
+### Reflect.set(R[$],R[$],R[$]);
+    op 27026  slots=c12 c11 c13
+    op 4284  slots=c2 c3 c4
+
+### R[$]&=R[$];
+    op 54022  slots=c10459 c10460
+    op 65278  slots=c10458 c10459
+
+### R[$]=R[$]+R[$];
+    op 52438  slots=s0 s1 s2
+    op 45809  slots=c10456 c31 c10457
+
+### R[$]=R[$]<<R[$];
+    op 47133  slots=c229 c227 c228
+    op 22908  slots=s0 s1 s2
+
+### var v0=R[$],v1=[];if(v0!==null&&v0!==void $){var v2=Object.create(null);for(v0=Object(v0);v0!==null;){for(var v3=Object.getOwnPropertyNames(v0),v4=$;v4<v3.length;v4++){var v5=v3[v4];if(!(v5 in v2)){v2[v5]=!$;var v6=Object.getOwnPropertyDescriptor(v0,v5);v6&&v6.enumerable&&v1.push(v5);}}v0=Object.getPrototypeOf(v0);}}R[$]={b:v1,u:$};
+    op 19781  slots=s1 c0 c0 c0 s0 c0
+
+### R[$]=+R[$];
+    op 52744  slots=s0 s1
+
+### for(var v0=$,v1=$,v2=$,v3=Array(v2),v4=$;v4<v2;v4++){var v5=$,v6=$;v3[v4]={C:v5,A:v6};}v0=new TPLCTOR({p:v1,e:$,v:v0,a:$});for(v4=$;v4<v3.length;v4++)v1=v3[v4],v1.C?v0.caps.push(MKCELL(FP,_,v1.A,_,_,$)):v0.caps.push(TPL.caps[v1.A]);var v7=this;FP=function(H){return function(){return RUN(new VMCTOR(_,v7.n,v7.i,_,v7.E),_,Array.prototype.slice.call(arguments),H,this==null?v7.E:this);};}(v0);TPLMAP.set(FP,v0);FP.prototype=v0.prototype;R[$]=FP;
+    op 33166  slots=s1 s2 s4 c0 s6 s7 s3 s5 c0 c96 s0
+
+### R[$]=R[$]instanceof R[$];
+    op 36539  slots=s0 s1 s2
+
+### R[$]=Math.pow(R[$],R[$]);
+    op 19874  slots=s0 s1 s2
+
+### R[$]=R[$]<R[$];
+    op 24610  slots=s0 s1 s2
+
+### HND.pop();
+    op 45425  slots=
+
+### R[$]&&(PC=$);
+    op 38199  slots=s0 s1
+
+### FP=TPL.caps[$];R[$]=FP.mat?FP.val:FP.arr[FP.idx];
+    op 16654  slots=s1 s0
+
+### var v0=HND;v0||(HND=v0=[]);v0.push({H:$,F:$,k:$,D:$});
+    op 50327  slots=s0 s1 s2 s3
+
+### debugger;
+    op 64678  slots=
+
+### PC=R[$];
+    op 37820  slots=s0
+
+### R[$]=R[$]-R[$];
+    op 31656  slots=s0 s1 s2
+
+### var v0=$,v1=R[$],v2=$;if(v2===$)var v3=R[$];else{v3=Array(v2);for(var v4=$;v4<v2;v4++)v3[v4]=R[$];}(v2=v1&&TPLMAP.get(v1))?PUSHFRAME(this,v2,v0<<$,_,_,v3,GLOBAL):R[v0]=v1.apply(null,v3);
+    op 1971  slots=s0 s1 s2 c185599912 s3 c0 s4 c1
+
+### R[$]=R[$]|R[$];
+    op 32985  slots=s0 s1 s2
+
+### R[$]=delete R[$][R[$]];
+    op 6688  slots=s0 s1 s2
+
+### R[$]=R[$]!==R[$];
+    op 61122  slots=s0 s1 s2
+
+### R[$]=R[$]>R[$];
+    op 45559  slots=s0 s1 s2
+
+### var v0=R[$],v1=R[$];v0=~~v0;v1=~~v1;R[$]=~~(~~((v0&~v0^v0&v0|($&~v1)+($&v1))*(v1+v0-v0&($&~v1^$&v1)&$)+((v0|$)*(v1&$|$)-(v0|$)*(v1&$)|$*(v1&$)+$*(v1&$^$))*(v1&$*(v0&$)+$*(v0&$^$)&($|v1)-(-$&v1)^$+v0-v0))|~~(((v1|v1)-(~v1&v1)|$*(v0&$|$)-$*(v0&$))*((v1&~v0|v1&v0)&$*(v1&$|$)-$*(v1&$)|(v1&$)+(v1&$^$))-(v1&~v0|v1&v0|$)*((v1&~v0^v1&v0)&($&~v1^$&v1)&~($&~v1^$&v1))))&~(((v0|$)*(v1&$|$)-(v0|$)*(v1&$)|$&~v1|$&v1)*((v0|$)*(v1&$)+(v0|$)*(v1&$^$)&($&~v0)+($&v0)|(v0&$)+(v0&$^$))-((v0|$)*(v1&$|$)-(v0|$)*(v1&$)|$&~v0^$&v0)*((v0|$)*(v1&$|$)-(v0|$)*(v1&$)&$*(v0&$|$)-$*(v0&$)&~($+v1-v1))&v1)+(($+v0-v0|($&~v1)+($&v1))*((v0|v1)-(~v0&v1)&$|($&~v0)+($&v0))-($+v1-v1|$)*((v0&~v1|v0&v1)&($^v1^v1)&~((v0&$|$)-(v0&$))))-$^$;
+    op 46426  slots=s1 s2 s0 c0 c0 c65535 c65535 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c65535 c1 c65535 c1 c1 c1 c2 c1 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c65535 c65534 c1 c1 c1 c0 c65535 c65535 c1 c1 c0 c65535 c1 c0 c65534 c0 c0 c0 c1 c0 c1 c1 c65535 c65535 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c65535 c65534 c1 c1 c0 c0 c65535 c1 c1 c1 c0 c65535 c65535 c1 c65534 c1 c0
+
+### FP=TPL.caps[$];STACK=R[$];FP.mat?FP.val=STACK:FP.arr[FP.idx]=STACK;FP.f={};
+    op 62987  slots=s0 s1
+
+### for(var v0=$,v1={},v2=$;v2<v0;v2++){var v3=R[$],v4=R[$];v1[v3]=v4;}R[$]=v1;
+    op 49735  slots=s1 c0 s2 s3 s0
+
+### $;R[$]=void $;
+    op 63024  slots=s1 s0 c0
+
+### var v0=R[$],v1=R[$];RBS=R[$];STACK=Object.getOwnPropertyDescriptor(v0,v1);RBS={set:RBS,configurable:!$,enumerable:!$};STACK&&typeof STACK.get==="function"&&(RBS.get=STACK.get);Object.defineProperty(v0,v1,RBS);
+    op 10045  slots=s0 s1 s2 c0 c0
+
+### R[$]=R[$]^R[$];
+    op 28883  slots=s0 s1 s2
+
+### R[$]=R[$]<=R[$];
+    op 19567  slots=s0 s1 s2
+
+### R[$]=R[$]===R[$];
+    op 54465  slots=s0 s1 s2
+
+### R[$]=R[$]/R[$];
+    op 51468  slots=s0 s1 s2
+
+### var v0=R[$],v1=R[$];v0=~~v0;v1=~~v1;R[$]=((v0|$)*(v0&$|$)-(v0|$)*(v0&$)|($&~v1)+($&v1))*(((v0|$)*(v0&$|$)-(v0|$)*(v0&$)&$|$&~v1^$&v1)-((v0&~v1)+(v0&v1)&$+v0-v0^$^v0^v0))+(v0|$*(v1&$)+$*(v1&$^$))*(((v0|$)*(v0&$|$)-(v0|$)*(v0&$)&($|v0)-(-$&v0)&$|$)&~(v0&$+v1-v1&($&~v1|$&v1)&($|v1)-(-$&v1)))^~(~(v1+v0-v0)|~~((v1&~v0)+(v1&v0)))^~((~((v1|v0)-(~v1&v0))&~v1)+(~((v1|v1)-(~v1&v1))^~(v1&~v1|v1&v1)))^$;
+    op 44135  slots=s1 s2 s0 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c1 c1 c65535 c1 c0 c1 c0 c1 c1 c0 c65535 c1 c0 c65534 c65535 c65536 c1 c1 c65535 c1 c1 c1 c2 c0
+
+### for(var v0=$,v1=$,v2=$,v3=$^v0|$,v4=v1;v4<v2;v4++)v3=v3+$|$,BC[v0+(v4-v1)]=(BC[v4]^v3^v3>>>$)>>>$;
+    op 34490  slots=s0 s1 s2 s3 c0 c2654435769 c0 c13 c0
+
+### R[$]<<=R[$];
+    op 50611  slots=c10457 c10458
+
+### R[$]=R[$]==R[$];
+    op 14102  slots=s0 s1 s2
+
+### var v0=R[$],v1=R[$];RBS=R[$];STACK=Object.getOwnPropertyDescriptor(v0,v1);RBS={get:RBS,configurable:!$,enumerable:!$};STACK&&typeof STACK.set==="function"&&(RBS.set=STACK.set);Object.defineProperty(v0,v1,RBS);
+    op 37491  slots=s0 s1 s2 c0 c0
+
+### var v0=STR($,$);v0=Object.prototype.hasOwnProperty.call(GLOBAL,v0)?GLOBAL[v0]:void $;R[$]=typeof v0;
+    op 39945  slots=s1 s2 c0 s0
+
+### R[$]=R[$]!=R[$];
+    op 59061  slots=s0 s1 s2
+
+### R[$]=R[$]>>R[$];
+    op 4153  slots=s0 s1 s2
+
+### var v0=HND;v0||(HND=v0=[]);v0.push({G:$,B:$});
+    op 38410  slots=s0 s1
+
+### R[$]=R[$]>=R[$];
+    op 52274  slots=s0 s1 s2
+
+### for(var v0=$,v1=Array(v0),v2=$;v2<v0;v2++)v1[v2]=R[$];R[$]=v1;
+    op 19440  slots=s1 c0 s2 s0
+
+### R[$]=typeof R[$];
+    op 56528  slots=s0 s1
+
+### throw R[$];
+    op 23343  slots=s0
+
+### var v0=$,v1=R[$],v2=R[$],v3=$;if(v3===$)var v4=R[$];else{v4=Array(v3);for(var v5=$;v5<v3;v5++)v4[v5]=R[$];}(v3=v2&&TPLMAP.get(v2))?PUSHFRAME(this,v3,v0<<$,_,_,v4,v1):R[v0]=v2.apply(v1,v4);
+    op 34608  slots=s0 s1 s2 s3 c185599912 s4 c0 s5 c1
+
+### R[$]=R[$]*R[$];
+    op 61304  slots=s0 s1 s2
+
+### STACK=R[$];Reflect.set(R[$],R[$],STACK);
+    op 61768  slots=s2 s0 s1
+
+### var v0=$,v1=R[$],v2=$;if(v2===$)var v3=R[$];else{v3=Array(v2);for(var v4=$;v4<v2;v4++)v3[v4]=R[$];}(v2=v1&&TPLMAP.get(v1))?PUSHFRAME(this,v2,v0<<$|$,_,_,v3,Object.create(v2.prototype||null)):R[v0]=Reflect.construct(v1,v3);
+    op 41833  slots=s0 s1 s2 c185599912 s3 c0 s4 c1 c1
+
+### GLOBAL[STR($,$)]=R[$];
+    op 14103  slots=s0 s1 s2
+
+### var v0=R[$];v0.u>=v0.b.length?PC=$:R[$]=v0.b[v0.u++];
+    op 47052  slots=s1 s2 s0
+
+### R[$]=R[$]in R[$];
+    op 25588  slots=s0 s1 s2
+
+### var v0=R[$],v1=R[$];v0=~~v0;v1=~~v1;R[$]=~~((($&~v1|$&v1|v1)-(~($&~v0^$&v0)&(v1|$)*(v1&$|$)-(v1|$)*(v1&$)))*(((v0|v0)-(~v0&v0)|$&~v0^$&v0)*((v0|$)*(v0&$|$)-(v0|$)*(v0&$)&($&~v1|$&v1)|$)-((v0&~v0)+(v0&v0)|$*(v0&$)+$*(v0&$^$))*(v0&$*(v0&$)+$*(v0&$^$)&~((v1&$)+(v1&$^$)))|(v1|v1)-(~v1&v1)&~((v0|v0)-(~v0&v0))|(v1|$)*(v1&$|$)-(v1|$)*(v1&$)&v0)-(((v0&~(v0&~v0|v0&v0))+(v0&(v0&~v0^v0&v0))|((v1|$)*(v1&$)+(v1|$)*(v1&$^$)|v0)-(~((v1|$)*(v1&$)+(v1|$)*(v1&$^$))&(v0&~v1|v0&v1)))-((v0&~(v1&~v1|v1&v1)|(v0&~v1)+(v0&v1)&(v1&~v0^v1&v0))&((v1|$)*(v0&$)+(v1|$)*(v0&$^$)&~((v1|$)*(v0&$)+(v1|$)*(v0&$^$))|(v1^v0^v0)&(v1&~v0^v1&v0))))-($*((v1&~v1)+(v1&v1)&($^v0^v0)&($^v0^v0))+($|$*(v0&$)+$*(v0&$^$))*(v1&($&~v0^$&v0)&(v0&$|$)-(v0&$)^$^v1^v1))*((((v0|$)*(v0&$)+(v0|$)*(v0&$^$)|$&~v1|$&v1)*(v1&$*(v1&$)+$*(v1&$^$)|(v0&$)+(v0&$^$))-((v0|$)*(v1&$|$)-(v0|$)*(v1&$)|$*(v1&$)+$*(v1&$^$))*(v1&($|v0)-(-$&v0)&~((v0&$|$)-(v0&$)))|(v1+v1-v1|$&~v0|$&v0)*((v1|v1)-(~v1&v1)&$&($&~v1)+($&v1))+((v1|$)*(v0&$|$)-(v1|$)*(v0&$)|$+v0-v0)*((v1|v1)-(~v1&v1)&($|v0)-(-$&v0)&$^$))-(v0^v1)));
+    op 45568  slots=s1 s2 s0 c2 c2 c2 c2 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c0 c1 c0 c1 c1 c65535 c1 c65535 c1 c1 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c2 c65535 c1 c2 c0 c1 c0 c1 c1 c65535 c65535 c65535 c1 c65534 c1 c0 c1 c0 c1 c1 c0 c0 c65535 c1 c65535 c1 c1 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c65535 c65536 c65535 c1 c65534 c0 c0 c65535 c1 c1 c0 c65535 c1 c0 c65534 c0 c65535 c65536 c1 c1

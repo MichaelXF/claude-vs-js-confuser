@@ -1,0 +1,12 @@
+const V = require("../vm.js");
+const t = require("@babel/types");
+const generate = require("@babel/generator").default;
+const blk = { stmts: [], branches: new Map() };
+const mk = (name, expr) => t.expressionStatement(t.assignmentExpression("=", t.identifier(name), expr));
+blk.stmts.push(mk("v0_1", t.binaryExpression("|", t.identifier("v0_2"), t.identifier("v0_3"))));
+blk.stmts.push(mk("v0_3", t.numericLiteral(5)));
+blk.stmts.push(mk("v0_1", t.binaryExpression("*", t.identifier("v0_1"), t.identifier("v0_3"))));
+const sink = new Set();
+V.ssaRenameBlock(blk, (n) => n.startsWith("v0_"), new Set(), "v0_", sink);
+console.log(blk.stmts.map((s) => generate(s).code).join("\n"));
+console.log("fresh:", [...sink]);

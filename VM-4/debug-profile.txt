@@ -1,0 +1,60 @@
+[94] id:g
+    ops: 44893, 19530, 21774, 2701, 12706, 8262, 59164, 32113, 50343, 10633, 58252, 11135, 25176, 20317, 43154, 52716, 26528, 9343, 22974, 6332, 34756, 46844, 5603, 31629, 41193, 64404, 28584, 33006, 196, 4017, 16252, 48848, 20988, 657, 19861, 57103, 20590, 49809, 58279, 58622, 55292, 42326, 35944, 42416, 3770, 59824, 30802, 63662, 35364, 50060, 14531, 32322, 54669, 2858, 59082, 41046, 44169, 31117, 14121, 22679, 35747, 9650, 33689, 2982, 36883, 41785, 56476, 9313, 61580, 59504, 41640, 12387, 10089, 21384, 27146, 4797, 27496, 43319, 46211, 19232, 8658, 12233, 54514, 53675, 3239, 41515, 270, 28141, 25403, 51290, 65530, 63372, 20321, 63714
+[31] id:g id:imul
+    ops: 55336, 48353, 40275, 64348, 53050, 38483, 51404, 43162, 54391, 39270, 26550, 60932, 12859, 35415, 19646, 48882, 39371, 3602, 28738, 31740, 13324, 20371, 1012, 32719, 20213, 6154, 26638, 6882, 7785, 2104, 43607
+[5] id:g id:z
+    ops: 52268, 13375, 32323, 38155, 52676
+[3] .set id:Reflect id:g id:set
+    ops: 63039, 55823, 22357
+[3] .b for id:g id:i
+    ops: 54870, 39585, 55507
+[2] arr id:ReferenceError id:g id:z new throw tpl
+    ops: 16899, 31031
+[2] .Q .l id:Q id:g
+    ops: 4061, 28778
+[2] id:ReferenceError id:g id:z new throw tpl
+    ops: 3974, 53528
+[2] .apply .get for id:Array id:apply id:g id:get id:t id:y obj
+    ops: 17866, 63766
+[1] .create .enumerable .getOwnPropertyDescriptor .getOwnPropertyNames .getPrototypeOf .length .push arr for id:B id:F id:Object id:create id:enumerable id:g id:getOwnPropertyDescriptor id:getOwnPropertyNames id:getPrototypeOf id:length id:push obj
+    ops: 4617
+[1] for id:g obj
+    ops: 57353
+[1] id:ReferenceError id:g id:z new obj throw tpl
+    ops: 29745
+[1] for id:Array id:g
+    ops: 6459
+[1] .pow id:g id:pow
+    ops: 46509
+[1] (pure arithmetic)
+    ops: 977
+[1] .C .J .call .l .length .prototype .push .set .slice for id:Array id:B id:C id:D id:G id:J id:arguments id:call id:g id:j id:k id:length id:o id:prototype id:push id:r id:set id:slice id:t id:w new obj
+    ops: 44553
+[1] .construct .create .get .prototype arr for id:Array id:Object id:Reflect id:construct id:create id:g id:get id:prototype id:t id:y
+    ops: 1229
+[1] .b arr for id:g id:i obj
+    ops: 65005
+[1] .B .F .length id:B id:F id:g id:length
+    ops: 40650
+[1] .pop id:g id:pop
+    ops: 1783
+[1] id:g throw
+    ops: 53189
+[1] .b arr for id:g id:i
+    ops: 41904
+[1] .call .hasOwnProperty .prototype id:Object id:call id:g id:hasOwnProperty id:prototype id:z
+    ops: 45891
+[1] .defineProperty .getOwnPropertyDescriptor .set id:Object id:configurable id:defineProperty id:enumerable id:g id:get id:getOwnPropertyDescriptor id:set obj
+    ops: 23106
+[1] for id:j
+    ops: 15948
+[1] .A .l .u .v id:g id:v
+    ops: 28718
+[1] .push arr id:g id:push id:s obj
+    ops: 30306
+[1] id:g id:z obj
+    ops: 53236
+[1] .push arr id:I id:K id:g id:push obj
+    ops: 38088
+[1] .defineProperty .get .getOwnPropertyDescriptor id:Object id:configurable id:defineProperty id:enumerable id:g id:get id:getOwnPropertyDescriptor id:set obj
+    ops: 48326

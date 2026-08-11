@@ -1,0 +1,325 @@
+# distinct canonical shapes: 90
+
+### R[#]*=R[#];
+    op 15213  nums=[10457,10458]
+    op 15092  nums=[10459,10460]
+    op 42349  nums=[10458,10459]
+    op 52513  nums=[10456,10457]
+
+### R[#]=!R[#];
+    op 3861  nums=[120,119]
+    op 46463  nums=[333,332]
+    op 27271  nums=[21,21]
+    op 35551  nums=[225,224]
+
+### R[#]=R[#][R[#]];
+    op 46333  nums=[13,11,12]
+    op 63170  nums=[12,2,11]
+    op 33300  nums=[12,13,11]
+    op 41954  nums=[13,11,12]
+
+### R[#]||(PC=#);
+    op 18613  nums=[120,636]
+    op 53326  nums=[81,41463]
+    op 37308  nums=[225,1048]
+    op 15437  nums=[333,1474]
+
+### R[#]=R[#];
+    op 24782  nums=[2,14]
+    op 58944  nums=[10,11]
+    op 8833  nums=[31,10456]
+    op 5100  nums=[3,12]
+
+### R[#]^=R[#];
+    op 31821  nums=[10457,10458]
+    op 52489  nums=[10459,10460]
+    op 9515  nums=[10456,10457]
+    op 37985  nums=[10458,10459]
+
+### R[#]=STRC(#,#);
+    op 59584  nums=[12,353450771,6]
+    op 7375  nums=[2,0,3]
+    op 60271  nums=[12,4267757210,5]
+    op 23703  nums=[3,2036349876,1]
+
+### R[#]=R[#]>>>R[#];
+    op 48321  nums=[542,540,541]
+    op 64147  nums=[224,222,223]
+    op 54890  nums=[430,428,429]
+    op 37314  nums=[119,117,118]
+
+### R[#]|=R[#];
+    op 32231  nums=[10457,10458]
+    op 39525  nums=[10458,10459]
+    op 48713  nums=[10459,10460]
+    op 40904  nums=[10456,10457]
+
+### R[#]-=R[#];
+    op 54947  nums=[10457,10458]
+    op 61055  nums=[10459,10460]
+    op 52555  nums=[10456,10457]
+    op 55899  nums=[10458,10459]
+
+### R[#]=-R[#];
+    op 59775  nums=[331,330]
+    op 36753  nums=[427,426]
+    op 30829  nums=[116,115]
+    op 58965  nums=[221,220]
+
+### var e=STRC(#,#);if(!(e in GLOBAL))throw new ReferenceError(`${e} is not defined`);R[#]=this.E[e];
+    op 41600  nums=[1644698516,4,11]
+    op 14592  nums=[476977390,0,2]
+    op 47427  nums=[1644698516,4,11]
+    op 4655  nums=[3514547561,2,2]
+
+### R[#]=#;
+    op 33216  nums=[10460,1]
+    op 7370  nums=[10457,0]
+    op 38636  nums=[10460,65535]
+    op 40507  nums=[10459,0]
+
+### R[#]=~R[#];
+    op 13809  nums=[10456,10456]
+    op 43102  nums=[10458,10458]
+    op 26346  nums=[10457,10457]
+    op 21241  nums=[10458,31]
+
+### PC=#;
+    op 32020  nums=[302]
+    op 4442  nums=[48381]
+    op 27002  nums=[50633]
+    op 38551  nums=[47623]
+
+### R[#]=R[#]%R[#];
+    op 54791  nums=[13,12,11]
+    op 29062  nums=[13,12,11]
+    op 57232  nums=[13,11,12]
+
+### R[#]+=R[#];
+    op 55507  nums=[10458,10459]
+    op 9028  nums=[10456,10457]
+    op 7008  nums=[10457,10458]
+
+### R[#]=TH;
+    op 30939  nums=[1]
+    op 15026  nums=[29]
+    op 40707  nums=[1]
+
+### Reflect.set(R[#],R[#],R[#]);
+    op 27026  nums=[12,11,13]
+    op 4284  nums=[2,3,4]
+
+### R[#]&=R[#];
+    op 54022  nums=[10459,10460]
+    op 65278  nums=[10458,10459]
+
+### R[#]=R[#]&R[#];
+    op 14497  nums=[10459,31,10460]
+    op 37632  nums=[10458,31,10459]
+
+### var c=R[$],d=[];if(c!==null&&c!==void #){var h=Object.create(null);for(c=Object(c);c!==null;){for(var k=Object.getOwnPropertyNames(c),n=#;n<k.length;n++){var p=k[n];if(!(p in h)){h[p]=!#;var l=Object.getOwnPropertyDescriptor(c,p);l&&l.enumerable&&d.push(p);}}c=Object.getPrototypeOf(c);}}R[$]={b:d,u:#};
+    op 19781  nums=[0,0,0,0]
+
+### R[$]=+R[$];
+    op 52744  nums=[]
+
+### for(var d=$,h=$,n=$,l=Array(n),m=#;m<n;m++){var A=$,t=$;l[m]={C:A,A:t};}d=new g({p:h,e:$,v:d,a:$});for(m=#;m<l.length;m++)h=l[m],h.C?d.j.push(this.c(a,{},h.A,void #,void #,#)):d.j.push(TPL.j[h.A]);var B=this;a=function(H){return function(){return z(new u(null,B.n,B.i,void #,B.E),"y",Array.prototype.slice.call(arguments),H,this==null?B.E:this);};}(d);r.set(a,d);a.prototype=d.prototype;R[$]=a;
+    op 33166  nums=[0,0,0,0,96,0]
+
+### var e=R[#];v(this,"z",[],a,"q");var c=PFP,d=RDST;d&#&&(typeof e!=="object"||e===null)&&(e=TH);for(var h=a+FSZ,k=a;k<h;k++)b[k]=void #;SP=a;FP=c;b[c?b[c+#]+(d>>#):#]=e;
+    op 26830  nums=[11,1,0,3,1,0]
+
+### R[$]=R[$]instanceof R[$];
+    op 36539  nums=[]
+
+### R[$]=Math.pow(R[$],R[$]);
+    op 19874  nums=[]
+
+### R[$]=R[$]<R[$];
+    op 24610  nums=[]
+
+### HND.pop();
+    op 45425  nums=[]
+
+### R[$]&&(PC=$);
+    op 38199  nums=[]
+
+### a=TPL.j[$];R[$]=a.m?a.o:a.g[a.s];
+    op 16654  nums=[]
+
+### R[$]=-R[$];
+    op 32209  nums=[]
+
+### R[$]=R[$]%R[$];
+    op 5592  nums=[]
+
+### PC=$;
+    op 16888  nums=[]
+
+### var e=HND;e||(HND=e=[]);e.push({H:$,F:$,k:$,D:$});
+    op 50327  nums=[]
+
+### debugger;
+    op 64678  nums=[]
+
+### PC=R[$];
+    op 37820  nums=[]
+
+### R[$]=R[$]-R[$];
+    op 31656  nums=[]
+
+### var e=$,c=R[$],d=$;if(d===#)var h=R[$];else{h=Array(d);for(var k=#;k<d;k++)h[k]=R[$];}(d=c&&r.get(c))?w(this,d,e<<#,void #,"q",h,GLOBAL,{}):R[e]=c.apply(null,h);
+    op 1971  nums=[185599912,0,1,0]
+
+### R[$]=R[$]|R[$];
+    op 32985  nums=[]
+
+### R[$]=R[$]+R[$];
+    op 52438  nums=[]
+
+### R[$]=delete R[$][R[$]];
+    op 6688  nums=[]
+
+### R[$]=R[$]!==R[$];
+    op 61122  nums=[]
+
+### R[$]=R[$]>R[$];
+    op 45559  nums=[]
+
+### var c=R[$],d=R[$];c=~~c;d=~~d;R[$]=~~(~~((c&~c^c&c|(#&~d)+(#&d))*(d+c-c&(#&~d^#&d)&#)+((c|#)*(d&#|#)-(c|#)*(d&#)|#*(d&#)+#*(d&#^#))*(d&#*(c&#)+#*(c&#^#)&(#|d)-(-#&d)^#+c-c))|~~(((d|d)-(~d&d)|#*(c&#|#)-#*(c&#))*((d&~c|d&c)&#*(d&#|#)-#*(d&#)|(d&#)+(d&#^#))-(d&~c|d&c|#)*((d&~c^d&c)&(#&~d^#&d)&~(#&~d^#&d))))&~(((c|#)*(d&#|#)-(c|#)*(d&#)|#&~d|#&d)*((c|#)*(d&#)+(c|#)*(d&#^#)&(#&~c)+(#&c)|(c&#)+(c&#^#))-((c|#)*(d&#|#)-(c|#)*(d&#)|#&~c^#&c)*((c|#)*(d&#|#)-(c|#)*(d&#)&#*(c&#|#)-#*(c&#)&~(#+d-d))&d)+((#+c-c|(#&~d)+(#&d))*((c|d)-(~c&d)&#|(#&~c)+(#&c))-(#+d-d|#)*((c&~d|c&d)&(#^d^d)&~((c&#|#)-(c&#))))-#^#;
+    op 46426  nums=[0,0,65535,65535,1,0,65535,1,0,65534,0,1,0,1,1,65535,1,65535,1,1,1,2,1,0,65535,1,0,65534,65535,65535,1,65535,65534,1,1,1,0,65535,65535,1,1,0,65535,1,0,65534,0,0,0,1,0,1,1,65535,65535,1,1,1,0,65535,1,0,65534,0,0,0,65535,1,0,65534,65535,65535,1,65535,65534,1,1,0,0,65535,1,1,1,0,65535,65535,1,65534,1,0]
+
+### R[$]=STR();
+    op 22894  nums=[]
+
+### a=TPL.j[$];b=R[$];a.m?a.o=b:a.g[a.s]=b;a.f={};
+    op 62987  nums=[]
+
+### for(var c=$,d={},h=#;h<c;h++){var k=R[$],n=R[$];d[k]=n;}R[$]=d;
+    op 49735  nums=[0]
+
+### $;R[$]=void #;
+    op 63024  nums=[0]
+
+### var e=R[$],c=R[$];b=R[$];a=Object.getOwnPropertyDescriptor(e,c);b={set:b,configurable:!#,enumerable:!#};a&&typeof a.get==="function"&&(b.get=a.get);Object.defineProperty(e,c,b);
+    op 10045  nums=[0,0]
+
+### R[$]=R[$]^R[$];
+    op 28883  nums=[]
+
+### var e=R[$];v(this,{},null,a,[]);var c=PFP,d=RDST;d&#&&(typeof e!=="object"||e===null)&&(e=TH);for(var h=a+FSZ,k=a;k<h;k++)b[k]=void #;SP=a;FP=c;b[c?b[c+#]+(d>>#):#]=e;
+    op 8162  nums=[1,0,3,1,0]
+
+### var c=STR();if(!(c in GLOBAL))throw new ReferenceError(`${c} is not defined`);R[$]=this.E[c];
+    op 39996  nums=[]
+
+### R[$]=R[$]<=R[$];
+    op 19567  nums=[]
+
+### R[$]=R[$]===R[$];
+    op 54465  nums=[]
+
+### R[$]=R[$]/R[$];
+    op 51468  nums=[]
+
+### R[$]=~R[$];
+    op 1964  nums=[]
+
+### var c=R[$],d=R[$];c=~~c;d=~~d;R[$]=((c|#)*(c&#|#)-(c|#)*(c&#)|(#&~d)+(#&d))*(((c|#)*(c&#|#)-(c|#)*(c&#)&#|#&~d^#&d)-((c&~d)+(c&d)&#+c-c^#^c^c))+(c|#*(d&#)+#*(d&#^#))*(((c|#)*(c&#|#)-(c|#)*(c&#)&(#|c)-(-#&c)&#|#)&~(c&#+d-d&(#&~d|#&d)&(#|d)-(-#&d)))^~(~(d+c-c)|~~((d&~c)+(d&c)))^~((~((d|c)-(~d&c))&~d)+(~((d|d)-(~d&d))^~(d&~d|d&d)))^#;
+    op 44135  nums=[0,65535,1,0,65534,0,0,0,65535,1,0,65534,65535,1,1,65535,1,0,1,0,1,1,0,65535,1,0,65534,65535,65536,1,1,65535,1,1,1,2,0]
+
+### for(var a=$,b=$,e=$,c=$^a|#,d=b;d<e;d++)c=c+#|#,this.i[a+(d-b)]=(this.i[d]^c^c>>>#)>>>#;
+    op 34490  nums=[0,2654435769,0,13,0]
+
+### R[#]<<=R[#];
+    op 50611  nums=[10457,10458]
+
+### R[#]=R[#]+R[#];
+    op 45809  nums=[10456,31,10457]
+
+### R[$]=R[$]==R[$];
+    op 14102  nums=[]
+
+### R[$]=$;
+    op 20161  nums=[]
+
+### var e=R[$],c=R[$];b=R[$];a=Object.getOwnPropertyDescriptor(e,c);b={get:b,configurable:!#,enumerable:!#};a&&typeof a.set==="function"&&(b.set=a.set);Object.defineProperty(e,c,b);
+    op 37491  nums=[0,0]
+
+### var c=STR();c=Object.prototype.hasOwnProperty.call(GLOBAL,c)?this.E[c]:void #;R[$]=typeof c;
+    op 39945  nums=[0]
+
+### var e=R[#];v(this,[],{},a);var c=PFP,d=RDST;d&#&&(typeof e!=="object"||e===null)&&(e=TH);for(var h=a+FSZ,k=a;k<h;k++)b[k]=void #;SP=a;FP=c;b[c?b[c+#]+(d>>#):#]=e;
+    op 43596  nums=[2,1,0,3,1,0]
+
+### R[$]=R[$]!=R[$];
+    op 59061  nums=[]
+
+### R[$]=R[$]>>>R[$];
+    op 59407  nums=[]
+
+### R[$]=R[$]>>R[$];
+    op 4153  nums=[]
+
+### R[$]||(PC=$);
+    op 64586  nums=[]
+
+### R[$]=R[$]&R[$];
+    op 13916  nums=[]
+
+### var e=HND;e||(HND=e=[]);e.push({G:$,B:$});
+    op 38410  nums=[]
+
+### R[#]=R[#]<<R[#];
+    op 47133  nums=[229,227,228]
+
+### R[$]=R[$]>=R[$];
+    op 52274  nums=[]
+
+### for(var c=$,d=Array(c),h=#;h<c;h++)d[h]=R[$];R[$]=d;
+    op 19440  nums=[0]
+
+### R[$]=typeof R[$];
+    op 56528  nums=[]
+
+### throw R[$];
+    op 23343  nums=[]
+
+### R[$]=R[$][R[$]];
+    op 28577  nums=[]
+
+### var e=$,c=R[$],d=R[$],h=$;if(h===#)var k=R[$];else{k=Array(h);for(var n=#;n<h;n++)k[n]=R[$];}(h=d&&r.get(d))?w(this,h,e<<#,[],"q",k,c,"y"):R[e]=d.apply(c,k);
+    op 34608  nums=[185599912,0,1]
+
+### R[$]=R[$];
+    op 30808  nums=[]
+
+### R[$]=R[$]*R[$];
+    op 61304  nums=[]
+
+### a=R[$];Reflect.set(R[$],R[$],a);
+    op 61768  nums=[]
+
+### R[$]=!R[$];
+    op 7660  nums=[]
+
+### R[$]=TH;
+    op 39367  nums=[]
+
+### var e=$,c=R[$],d=$;if(d===#)var h=R[$];else{h=Array(d);for(var k=#;k<d;k++)h[k]=R[$];}(d=c&&r.get(c))?w(this,d,e<<#|#,"k",void #,h,Object.create(d.prototype||null),[]):R[e]=Reflect.construct(c,h);
+    op 41833  nums=[185599912,0,1,1,0]
+
+### this.E[STR()]=R[$];
+    op 14103  nums=[]
+
+### R[$]=R[$]<<R[$];
+    op 22908  nums=[]
+
+### var d=R[$];d.u>=d.b.length?PC=$:R[$]=d.b[d.u++];
+    op 47052  nums=[]
+
+### R[$]=R[$]in R[$];
+    op 25588  nums=[]
+
+### var c=R[$],d=R[$];c=~~c;d=~~d;R[$]=~~(((#&~d|#&d|d)-(~(#&~c^#&c)&(d|#)*(d&#|#)-(d|#)*(d&#)))*(((c|c)-(~c&c)|#&~c^#&c)*((c|#)*(c&#|#)-(c|#)*(c&#)&(#&~d|#&d)|#)-((c&~c)+(c&c)|#*(c&#)+#*(c&#^#))*(c&#*(c&#)+#*(c&#^#)&~((d&#)+(d&#^#)))|(d|d)-(~d&d)&~((c|c)-(~c&c))|(d|#)*(d&#|#)-(d|#)*(d&#)&c)-(((c&~(c&~c|c&c))+(c&(c&~c^c&c))|((d|#)*(d&#)+(d|#)*(d&#^#)|c)-(~((d|#)*(d&#)+(d|#)*(d&#^#))&(c&~d|c&d)))-((c&~(d&~d|d&d)|(c&~d)+(c&d)&(d&~c^d&c))&((d|#)*(c&#)+(d|#)*(c&#^#)&~((d|#)*(c&#)+(d|#)*(c&#^#))|(d^c^c)&(d&~c^d&c))))-(#*((d&~d)+(d&d)&(#^c^c)&(#^c^c))+(#|#*(c&#)+#*(c&#^#))*(d&(#&~c^#&c)&(c&#|#)-(c&#)^#^d^d))*((((c|#)*(c&#)+(c|#)*(c&#^#)|#&~d|#&d)*(d&#*(d&#)+#*(d&#^#)|(c&#)+(c&#^#))-((c|#)*(d&#|#)-(c|#)*(d&#)|#*(d&#)+#*(d&#^#))*(d&(#|c)-(-#&c)&~((c&#|#)-(c&#)))|(d+d-d|#&~c|#&c)*((d|d)-(~d&d)&#&(#&~d)+(#&d))+((d|#)*(c&#|#)-(d|#)*(c&#)|#+c-c)*((d|d)-(~d&d)&(#|c)-(-#&c)&#^#))-(c^d)));
+    op 45568  nums=[2,2,2,2,0,65535,1,0,65534,0,0,0,65535,1,0,65534,65535,65535,1,0,1,0,1,1,65535,1,65535,1,1,1,1,1,0,65535,1,0,65534,0,1,0,1,1,0,1,0,1,1,0,1,0,1,1,0,1,0,1,1,2,65535,1,2,0,1,0,1,1,65535,65535,65535,1,65534,1,0,1,0,1,1,0,0,65535,1,65535,1,1,1,1,1,0,65535,1,0,65534,0,1,0,1,1,65535,65536,65535,1,65534,0,0,65535,1,1,0,65535,1,0,65534,0,65535,65536,1,1]

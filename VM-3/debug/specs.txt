@@ -1,0 +1,144 @@
+  1964  fixed=2  unop ~  slots=s0 s1
+  1971  fixed=3  call  slots=s0 s1 s2 c185599912 s3 c0 s4 c1
+  3861  fixed=0  unop !  slots=c120 c119
+  4153  fixed=3  binop >>  slots=s0 s1 s2
+  4284  fixed=0  setMember  slots=c2 c3 c4
+  4442  fixed=0  jump  slots=c48381
+  4655  fixed=0  loadGlobal  slots=c2 c3514547561 c2
+  5100  fixed=0  move  slots=c3 c12
+  5592  fixed=3  binop %  slots=s0 s1 s2
+  6688  fixed=3  deleteMember  slots=s0 s1 s2
+  7008  fixed=0  binop +  slots=c10457 c10458
+  7370  fixed=0  loadImm  slots=c10457 c0
+  7375  fixed=0  loadConst  slots=c2 c3 c0
+  7660  fixed=2  unop !  slots=s0 s1
+  8162  fixed=1  return  slots=s0 c1 c0 c3 c1 c0
+  8833  fixed=0  move  slots=c31 c10456
+  9028  fixed=0  binop +  slots=c10456 c10457
+  9515  fixed=0  binop ^  slots=c10456 c10457
+ 10045  fixed=3  defineSetter  slots=s0 s1 s2 c0 c0
+ 13809  fixed=0  unop ~  slots=c10456 c10456
+ 13916  fixed=3  binop &  slots=s0 s1 s2
+ 14102  fixed=3  binop ==  slots=s0 s1 s2
+ 14103  fixed=3  storeGlobal  slots=s0 s1 s2
+ 14497  fixed=0  binop &  slots=c10459 c31 c10460
+ 14592  fixed=0  loadGlobal  slots=c0 c476977390 c2
+ 15026  fixed=0  loadThis  slots=c29
+ 15092  fixed=0  binop *  slots=c10459 c10460
+ 15213  fixed=0  binop *  slots=c10457 c10458
+ 15437  fixed=0  branch  slots=c333 c1474
+ 16654  fixed=2  loadCell  slots=s1 s0
+ 16888  fixed=1  jump  slots=s0
+ 18613  fixed=0  branch  slots=c120 c636
+ 19440  fixed=2  arrayLit  slots=s1 c0 s2 s0
+ 19567  fixed=3  binop <=  slots=s0 s1 s2
+ 19781  fixed=2  forInInit  slots=s1 c0 c0 c0 s0 c0
+ 19874  fixed=3  binop **  slots=s0 s1 s2
+ 20161  fixed=2  loadImm  slots=s0 s1
+ 21241  fixed=0  unop ~  slots=c10458 c31
+ 22894  fixed=3  loadConst  slots=s0 s1 s2
+ 22908  fixed=3  binop <<  slots=s0 s1 s2
+ 23343  fixed=1  throw  slots=s0
+ 23703  fixed=0  loadConst  slots=c3 c1 c2036349876
+ 24610  fixed=3  binop <  slots=s0 s1 s2
+ 24782  fixed=0  move  slots=c2 c14
+ 25588  fixed=3  binop in  slots=s0 s1 s2
+ 26346  fixed=0  unop ~  slots=c10457 c10457
+ 26830  fixed=0  return  slots=c11 c1 c0 c3 c1 c0
+ 27002  fixed=0  jump  slots=c50633
+ 27026  fixed=0  setMember  slots=c12 c11 c13
+ 27271  fixed=0  unop !  slots=c21 c21
+ 28577  fixed=3  getMember  slots=s0 s1 s2
+ 28883  fixed=3  binop ^  slots=s0 s1 s2
+ 29062  fixed=0  binop %  slots=c13 c12 c11
+ 30808  fixed=2  move  slots=s0 s1
+ 30829  fixed=0  unop -  slots=c116 c115
+ 30939  fixed=0  loadThis  slots=c1
+ 31656  fixed=3  binop -  slots=s0 s1 s2
+ 31821  fixed=0  binop ^  slots=c10457 c10458
+ 32020  fixed=0  jump  slots=c302
+ 32209  fixed=2  unop -  slots=s0 s1
+ 32231  fixed=0  binop |  slots=c10457 c10458
+ 32985  fixed=3  binop |  slots=s0 s1 s2
+ 33166  fixed=6  makeFunction  slots=s1 s2 s4 c0 s6 s7 s3 s5 c0 c96 s0
+ 33216  fixed=0  loadImm  slots=c10460 c1
+ 33300  fixed=0  getMember  slots=c12 c13 c11
+ 34490  fixed=4  decrypt  slots=s0 s1 s2 s3 c0 c2654435769 c0 c13 c0
+ 34608  fixed=4  methodCall  slots=s0 s1 s2 s3 c185599912 s4 c0 s5 c1
+ 35551  fixed=0  unop !  slots=c225 c224
+ 36539  fixed=3  binop instanceof  slots=s0 s1 s2
+ 36753  fixed=0  unop -  slots=c427 c426
+ 37308  fixed=0  branch  slots=c225 c1048
+ 37314  fixed=0  binop >>>  slots=c119 c117 c118
+ 37491  fixed=3  defineGetter  slots=s0 s1 s2 c0 c0
+ 37632  fixed=0  binop &  slots=c10458 c31 c10459
+ 37820  fixed=1  jumpIndirect  slots=s0
+ 37985  fixed=0  binop ^  slots=c10458 c10459
+ 38199  fixed=2  branch  slots=s0 s1
+ 38410  fixed=2  pushCatch  slots=s0 s1
+ 38551  fixed=0  jump  slots=c47623
+ 38636  fixed=0  loadImm  slots=c10460 c65535
+ 39367  fixed=1  loadThis  slots=s0
+ 39525  fixed=0  binop |  slots=c10458 c10459
+ 39945  fixed=3  typeofGlobal  slots=s1 s2 c0 s0
+ 39996  fixed=3  loadGlobal  slots=s1 s2 s0
+ 40507  fixed=0  loadImm  slots=c10459 c0
+ 40707  fixed=0  loadThis  slots=c1
+ 40904  fixed=0  binop |  slots=c10456 c10457
+ 41600  fixed=0  loadGlobal  slots=c4 c1644698516 c11
+ 41833  fixed=3  construct  slots=s0 s1 s2 c185599912 s3 c0 s4 c1 c1
+ 41954  fixed=0  getMember  slots=c13 c11 c12
+ 42349  fixed=0  binop *  slots=c10458 c10459
+ 43102  fixed=0  unop ~  slots=c10458 c10458
+ 43596  fixed=0  return  slots=c2 c1 c0 c3 c1 c0
+ 44135  fixed=3  mba -> ^  slots=s1 s2 s0 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c1 c1 c65535 c1 c0 c1 c0 c1 c1 c0 c65535 c1 c0 c65534 c65535 c65536 c1 c1 c65535 c1 c1 c1 c2 c0
+ 45425  fixed=0  popHandler  slots=
+ 45559  fixed=3  binop >  slots=s0 s1 s2
+ 45568  fixed=3  mba -> ^  slots=s1 s2 s0 c2 c2 c2 c2 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c0 c1 c0 c1 c1 c65535 c1 c65535 c1 c1 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c0 c1 c0 c1 c1 c2 c65535 c1 c2 c0 c1 c0 c1 c1 c65535 c65535 c65535 c1 c65534 c1 c0 c1 c0 c1 c1 c0 c0 c65535 c1 c65535 c1 c1 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c65535 c65536 c65535 c1 c65534 c0 c0 c65535 c1 c1 c0 c65535 c1 c0 c65534 c0 c65535 c65536 c1 c1
+ 45809  fixed=0  binop +  slots=c10456 c31 c10457
+ 46333  fixed=0  getMember  slots=c13 c11 c12
+ 46426  fixed=3  mba -> ^  slots=s1 s2 s0 c0 c0 c65535 c65535 c1 c0 c65535 c1 c0 c65534 c0 c1 c0 c1 c1 c65535 c1 c65535 c1 c1 c1 c2 c1 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c65535 c65534 c1 c1 c1 c0 c65535 c65535 c1 c1 c0 c65535 c1 c0 c65534 c0 c0 c0 c1 c0 c1 c1 c65535 c65535 c1 c1 c1 c0 c65535 c1 c0 c65534 c0 c0 c0 c65535 c1 c0 c65534 c65535 c65535 c1 c65535 c65534 c1 c1 c0 c0 c65535 c1 c1 c1 c0 c65535 c65535 c1 c65534 c1 c0
+ 46463  fixed=0  unop !  slots=c333 c332
+ 47052  fixed=3  forInNext  slots=s1 s2 s0
+ 47133  fixed=0  binop <<  slots=c229 c227 c228
+ 47427  fixed=0  loadGlobal  slots=c4 c1644698516 c11
+ 48321  fixed=0  binop >>>  slots=c542 c540 c541
+ 48713  fixed=0  binop |  slots=c10459 c10460
+ 49735  fixed=2  objectLit  slots=s1 c0 s2 s3 s0
+ 50327  fixed=4  pushFinally  slots=s0 s1 s2 s3
+ 50611  fixed=0  binop <<  slots=c10457 c10458
+ 51468  fixed=3  binop /  slots=s0 s1 s2
+ 52274  fixed=3  binop >=  slots=s0 s1 s2
+ 52438  fixed=3  binop +  slots=s0 s1 s2
+ 52489  fixed=0  binop ^  slots=c10459 c10460
+ 52513  fixed=0  binop *  slots=c10456 c10457
+ 52555  fixed=0  binop -  slots=c10456 c10457
+ 52744  fixed=2  unop +  slots=s0 s1
+ 53326  fixed=0  branch  slots=c81 c41463
+ 54022  fixed=0  binop &  slots=c10459 c10460
+ 54465  fixed=3  binop ===  slots=s0 s1 s2
+ 54791  fixed=0  binop %  slots=c13 c12 c11
+ 54890  fixed=0  binop >>>  slots=c430 c428 c429
+ 54947  fixed=0  binop -  slots=c10457 c10458
+ 55507  fixed=0  binop +  slots=c10458 c10459
+ 55899  fixed=0  binop -  slots=c10458 c10459
+ 56528  fixed=2  unop typeof  slots=s0 s1
+ 57232  fixed=0  binop %  slots=c13 c11 c12
+ 58944  fixed=0  move  slots=c10 c11
+ 58965  fixed=0  unop -  slots=c221 c220
+ 59061  fixed=3  binop !=  slots=s0 s1 s2
+ 59407  fixed=3  binop >>>  slots=s0 s1 s2
+ 59584  fixed=0  loadConst  slots=c12 c6 c353450771
+ 59775  fixed=0  unop -  slots=c331 c330
+ 60271  fixed=0  loadConst  slots=c12 c5 c4267757210
+ 61055  fixed=0  binop -  slots=c10459 c10460
+ 61122  fixed=3  binop !==  slots=s0 s1 s2
+ 61304  fixed=3  binop *  slots=s0 s1 s2
+ 61768  fixed=3  setMember  slots=s2 s0 s1
+ 62987  fixed=2  storeCell  slots=s0 s1
+ 63024  fixed=2  loadUndef  slots=s1 s0 c0
+ 63170  fixed=0  getMember  slots=c12 c2 c11
+ 64147  fixed=0  binop >>>  slots=c224 c222 c223
+ 64586  fixed=2  branch  slots=s0 s1
+ 64678  fixed=0  debugger  slots=
+ 65278  fixed=0  binop &  slots=c10458 c10459

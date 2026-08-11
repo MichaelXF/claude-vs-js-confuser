@@ -1,0 +1,1011 @@
+// ===== op 196  nops=0 =====
+  r4 = (r0 ^ r5)
+
+// ===== op 270  nops=0 =====
+  r42 = (r4 >>> r8)
+
+// ===== op 657  nops=2 =====
+  r100 = (((-((-((… + …)) ^ ((… | …) - (… & …)))) - ((1 + (r101 & -1)) - (r101 & -1))) + (((1 | ~((… & …))) - (1 ^ ~((… & …)))) ^ ((1 + (r101 & -1)) - (1 | (r101 & -1))))) | 0)
+
+// ===== op 977  nops=0 =====
+  "debugger"
+
+// ===== op 1012  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (((((r101 >> 0) | ~(Math.imul(102,Math.imul(…,…)))) & ~((((… * …) - (… * …)) ^ -103))) - ~((~(~(Math.imul(…,…))) | ~(Math.imul(102,Math.imul(…,…)))))) | 0)
+
+// ===== op 1229  nops=VAR(105/205) =====
+  "nativecall"
+  r100 = Reflect.construct(r101,[r103,r104])
+
+// ===== op 1783  nops=0 =====
+  frame[5].pop()
+
+// ===== op 2104  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!(~(~((!((… | …)) + (0 * (… - …)))))))
+
+// ===== op 2701  nops=3 =====
+  r100 = (((((~(~(…)) | 102) - (~(~(…)) & 102)) ^ 102) + ((((~(…) | ~(…)) - (~(…) & ~(…))) & 102) << 1)) ^ 0)
+
+// ===== op 2858  nops=3 =====
+  r100 = r101[r102]
+
+// ===== op 2982  nops=0 =====
+  r12 = r13[r11]
+
+// ===== op 3239  nops=3 =====
+  r100 = ~(~(((((r101 ^ 0) ^ -103) + (((… | …) - (… & …)) * ((… - …) & -103))) + 1)))
+
+// ===== op 3602  nops=4 =====
+  r100 = ((~(~(~(((… - …) & ~(…))))) + (1 * (~(~((… - …))) - ~(~((… + …)))))) | 0)
+
+// ===== op 3770  nops=0 =====
+  r5 = (r0 << r4)
+
+// ===== op 3974  nops=0 =====
+  if (?) {
+    throw ?
+  }
+  r2 = vm.h[K(0,2145282205)]
+
+// ===== op 4017  nops=0 =====
+  r13 = 17537
+
+// ===== op 4061  nops=0 =====
+  frame[4][l][0].Q(k)
+  r42 = frame[4][l][0].Q(k)
+
+// ===== op 4617  nops=2 =====
+  if (?) {
+    "symbolicloop"
+  }
+  r100 = {F:[],B:0}
+
+// ===== op 4797  nops=3 =====
+  r100 = (r101 == r102)
+
+// ===== op 5603  nops=1 =====
+  r100 = frame[3]
+
+// ===== op 6154  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (~((~((((… >> …) & ~(…)) + ((… >> …) & (… | …)))) | ~((-((… - …)) ^ 0)))) ^ 0)
+
+// ===== op 6332  nops=0 =====
+  r39 = (r39 - r34)
+
+// ===== op 6459  nops=VAR(103/203) =====
+  r100 = [r102,r103]
+
+// ===== op 6882  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !((((((Math.imul(…,…) | r102) - (r101 & r102)) | 0) | -((((… | …) - (… & …)) | 0))) >>> 31))
+
+// ===== op 7785  nops=4 =====
+  r100 = (((0 * ((((… - …) + (… * …)) - (2 * (… - …))) | 0)) + (1 * (~(~((… & …))) ^ 0))) | 0)
+
+// ===== op 8262  nops=0 =====
+  r12 = (r11 + r3)
+
+// ===== op 8658  nops=2 =====
+  r100 = ~(r101)
+
+// ===== op 9313  nops=0 =====
+  r4 = (r0 ^ r1)
+
+// ===== op 9343  nops=0 =====
+  r12 = r2[r11]
+
+// ===== op 9650  nops=0 =====
+  r38 = !(r20)
+
+// ===== op 10089  nops=0 =====
+  r39 = (r39 & r38)
+
+// ===== op 10633  nops=0 =====
+  r38 = !(r17)
+
+// ===== op 11135  nops=3 =====
+  r100 = (r101 >> r102)
+
+// ===== op 12233  nops=0 =====
+  r11 = (r12 + r13)
+
+// ===== op 12387  nops=0 =====
+  r39 = 622906073
+
+// ===== op 12706  nops=0 =====
+  r5 = (r0 ^ r4)
+
+// ===== op 12859  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~((((~(~(…)) ^ ((… | …) - (… & …))) + (~(~(…)) & 102)) + (Math.imul(Math.imul(~(…),390412259),((… ^ …) | 1)) & 102))))
+
+// ===== op 13324  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (~((((r101 | 0) & (((… | …) & ~(…)) ^ 0)) | ~(((r101 | 0) | ((… & …) ^ (… + …)))))) ^ 0)
+
+// ===== op 13375  nops=0 =====
+  r3 = K(1,2805231536)
+
+// ===== op 14121  nops=3 =====
+  r100 = (r101 >>> r102)
+
+// ===== op 14531  nops=0 =====
+  r1 = frame[3]
+
+// ===== op 15948  nops=4 =====
+  vm.code[100] = (((vm.code[101] ^ -1640531524) ^ 324027) >>> 0)
+
+// ===== op 16252  nops=2 =====
+  if (r100) {
+    PC = 101
+  }
+
+// ===== op 16899  nops=0 =====
+  if (?) {
+    throw ?
+  }
+  r2 = vm.h[K(2,2759597571)]
+
+// ===== op 17866  nops=VAR(105/205) =====
+  r101.apply(null,[r103,r104])
+  r100 = r101.apply(null,[r103,r104])
+
+// ===== op 19232  nops=0 =====
+  r6 = (r4 >>> r5)
+
+// ===== op 19530  nops=0 =====
+  r34 = (r34 + r39)
+
+// ===== op 19646  nops=4 =====
+  r100 = ~(~((((((… + …) - (… + …)) + ~((… | …))) | 0) + (0 * ((~(…) ^ 0) - ((… - …) | 0))))))
+
+// ===== op 19861  nops=2 =====
+  r100 = !(r101)
+
+// ===== op 20213  nops=2 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (~(((~(~((… - …))) + ~(Math.imul(269138995,(… | …)))) + 1)) ^ 0)
+
+// ===== op 20317  nops=3 =====
+  r100 = (r101 > r102)
+
+// ===== op 20321  nops=3 =====
+  r100 = (r101 << r102)
+
+// ===== op 20371  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!((((((… & …) | (… & …)) ^ 0) | -(((… | …) ^ 0))) >>> 31)))
+
+// ===== op 20590  nops=0 =====
+  r11 = (r4 + r5)
+
+// ===== op 20988  nops=3 =====
+  r100 = (r101 % r102)
+
+// ===== op 21384  nops=3 =====
+  r100 = ((((r101 | 0) ^ ((102 * ((… | …) & 1)) + (102 * ((… & …) ^ 1)))) - (2 * (~((r101 | 0)) & 102))) | 0)
+
+// ===== op 21774  nops=2 =====
+  r100 = undefined
+
+// ===== op 22357  nops=3 =====
+  "nativecall"
+
+// ===== op 22679  nops=2 =====
+  r100 = -(r101)
+
+// ===== op 22974  nops=0 =====
+  r5 = (r0 - r4)
+
+// ===== op 23106  nops=3 =====
+  "nativecall"
+  "nativecall"
+
+// ===== op 25176  nops=0 =====
+  r6 = (r5 >>> r4)
+
+// ===== op 25403  nops=3 =====
+  r100 = ~(~(((((2 + (… & …)) - (r101 & -1)) * (((… & …) | 0) | 102)) - ((((… | …) - (… & …)) | 102) - (((… * …) + (… * …)) & ((… ^ …) ^ (… & …)))))))
+
+// ===== op 26528  nops=0 =====
+  r13 = (r12 % r11)
+
+// ===== op 26550  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!((((((… | …) & ~(…)) ^ 0) | (~(~(…)) & ((… + …) ^ 0))) >>> 31)))
+
+// ===== op 26638  nops=4 =====
+  r100 = ~(~((~(~(((… & …) | (… + …)))) + (1 * (~(~(…)) - ((… + …) | 0))))))
+
+// ===== op 27146  nops=0 =====
+  r13 = (r11 % r12)
+
+// ===== op 27496  nops=0 =====
+  r38 = +(r38)
+
+// ===== op 28141  nops=0 =====
+  r34 = 1681529156
+
+// ===== op 28584  nops=0 =====
+  r15 = 0
+
+// ===== op 28718  nops=2 =====
+  if (?) {
+    frame[4][l][100][u] = r101
+  } else {
+    frame[4][l][100][c][frame[4][l][100][v]] = r101
+  }
+
+// ===== op 28738  nops=4 =====
+  r100 = ~(~((((((… | …) + (… | …)) - ((… + …) | (… - …))) ^ 0) + (0 * (~(~(…)) - ((… - …) ^ 0))))))
+
+// ===== op 28778  nops=2 =====
+  frame[4][l][101].Q(undefined)
+  r100 = frame[4][l][101].Q(undefined)
+
+// ===== op 29745  nops=0 =====
+  if (?) {
+    throw ?
+  }
+  r11 = vm.h[K(4,4136326414)]
+
+// ===== op 30306  nops=2 =====
+  if (!(frame[5])) {
+    frame[5] = [{p:100,s:101}]
+  }
+
+// ===== op 30802  nops=0 =====
+  r3 = r12
+
+// ===== op 31031  nops=0 =====
+  if (?) {
+    throw ?
+  }
+  r11 = vm.h[K(4,4136326414)]
+
+// ===== op 31117  nops=0 =====
+  r6 = (r0 >>> r4)
+
+// ===== op 31629  nops=0 =====
+  r12 = (r4 - r11)
+
+// ===== op 31740  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~(((Math.imul(Math.imul(r101,(… | …)),-2097869451) ^ Math.imul(r102,Math.imul((… | …),-2097869451))) + ((((… + …) | (… - …)) - (Math.imul(…,…) ^ Math.imul(…,…))) << (((… & …) | 1) - (r101 & 65534))))))
+
+// ===== op 32113  nops=3 =====
+  r100 = (r101 != r102)
+
+// ===== op 32322  nops=3 =====
+  r100 = (r101 / r102)
+
+// ===== op 32323  nops=0 =====
+  r12 = K(6,1834899045)
+
+// ===== op 32719  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (~(((~((r101 >> 0)) | ~(~(~(…)))) - (~((r101 >> 0)) ^ ~(~(~(…)))))) ^ 0)
+
+// ===== op 33006  nops=0 =====
+  r3 = frame[3]
+
+// ===== op 33689  nops=0 =====
+  r4 = r12
+
+// ===== op 34756  nops=3 =====
+  r100 = (r101 & r102)
+
+// ===== op 35364  nops=0 =====
+  PC = 1244
+
+// ===== op 35415  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ((((Math.imul(~(~(…)),Math.imul((… | …),-1132271229)) | 102) & ~((Math.imul(Math.imul(…,…),-1132271229) & 102))) - (2 * (~(~(~(…))) & ((102 & ~(…)) + (102 & ~(…)))))) ^ 0)
+
+// ===== op 35747  nops=0 =====
+  r39 = (r39 & r38)
+
+// ===== op 35944  nops=0 =====
+  r10 = r11
+
+// ===== op 36883  nops=3 =====
+  r100 = (r101 instanceof r102)
+
+// ===== op 38088  nops=4 =====
+  if (!(frame[5])) {
+    frame[5] = [{H:100,I:101,K:102,x:103}]
+  }
+
+// ===== op 38155  nops=0 =====
+  r2 = K(3,0)
+
+// ===== op 38483  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (((((r101 | 0) ^ ~(Math.imul(658959758,(… | …)))) + (2 * (((… & …) | (… & …)) & ~(Math.imul(…,…))))) + 1) ^ 0)
+
+// ===== op 39270  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (((((r101 ^ 0) | Math.imul(102,Math.imul((… | …),-1338205493))) & ~(((r101 ^ 0) & 102))) + (((((… ^ …) & -103) + ((… ^ …) & 102)) & 102) << Math.imul(1,Math.imul(((… ^ …) | 1),-1338205493)))) | 0)
+
+// ===== op 39371  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~((((((… | …) ^ (… >> …)) | ((… | …) & (… + …))) + (((… ^ …) & (… | …)) & (r103 >> 0))) + ((((… + …) | 0) | ((… & …) ^ (… & …))) - (((… + …) | Math.imul(…,…)) ^ ((… & …) | (… & …)))))))
+
+// ===== op 39585  nops=0 =====
+  vm.b(undefined,21,null,0)
+  "symbolicloop"
+  vm.i = 0
+  vm.g = frame[7]
+  stack[(? (stack[?] + (frame[10] >> 1)) : 0)] = frame[3]
+
+// ===== op 40275  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~(((((Math.imul(…,…) & ~(…)) | (~(…) & Math.imul(…,…))) | ~((~(…) | ~(…)))) - ((Math.imul(Math.imul(…,…),(… | …)) | (r102 >> 0)) & (-((… & …)) - ((… & …) + (… ^ …)))))))
+
+// ===== op 40650  nops=3 =====
+  if (?) {
+    PC = 102
+  } else {
+    r101[B] = (r101[B] + 1)
+    r100 = r101[F][r101[B]]
+  }
+
+// ===== op 41046  nops=3 =====
+  r100 = ((((((~(…) ^ -103) ^ (2 * (… & …))) + ((~(…) ^ ~(…)) & ((… | …) * (… & …)))) + ((~(~(…)) ^ -103) & (2 * ((… ^ …) & -103)))) + 1) ^ 0)
+
+// ===== op 41193  nops=0 =====
+  r39 = (r39 * r38)
+
+// ===== op 41515  nops=3 =====
+  r100 = (((((((… ^ …) + 102) - 102) ^ 102) + ((((… * …) - (… * …)) & ((… ^ …) ^ (… ^ …))) << 1)) - (((((… ^ …) | 0) * 0) + (((… ^ …) | 0) * 1)) | 102)) ^ 0)
+
+// ===== op 41640  nops=0 =====
+  r38 = -(r38)
+
+// ===== op 41785  nops=3 =====
+  r100 = (r101 === r102)
+
+// ===== op 41904  nops=0 =====
+  vm.b(null,18,[],0)
+  "symbolicloop"
+  vm.i = 0
+  vm.g = frame[7]
+  stack[(? (stack[?] + (frame[10] >> 1)) : 0)] = frame[3]
+
+// ===== op 42326  nops=0 =====
+  r15 = (r14 * r12)
+
+// ===== op 42416  nops=3 =====
+  r100 = delete r101[r102]
+
+// ===== op 43154  nops=0 =====
+  r38 = !(r19)
+
+// ===== op 43162  nops=4 =====
+  r100 = (((~(~(((… | …) & ~(…)))) ^ 0) + (1 * (~(~((… & …))) - (((… - …) & ~(…)) | 0)))) ^ 0)
+
+// ===== op 43319  nops=0 =====
+  r38 = !(r18)
+
+// ===== op 43607  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~((((((… & …) ^ 102) ^ ((… - …) & Math.imul(…,…))) + (2 * ((… & …) & 102))) + ((Math.imul(Math.imul(…,…),Math.imul(…,…)) | 102) - ((r101 & -1) ^ 102)))))
+
+// ===== op 44169  nops=3 =====
+  r100 = (r101 <= r102)
+
+// ===== op 44553  nops=VAR(214/414) =====
+  new k({m:102,o:103,D:101,d:105})
+  w({__vm:true},0,107)
+  new k({m:102,o:103,D:101,d:105})[l].push(w({__vm:true},0,107))
+  w({__vm:true},0,109)
+  new k({m:102,o:103,D:101,d:105})[l].push(w({__vm:true},0,109))
+  <fn>[prototype] = new k({m:102,o:103,D:101,d:105})[prototype]
+  r100 = <fn>
+
+// ===== op 44893  nops=0 =====
+  r39 = (r39 * r38)
+
+// ===== op 45891  nops=3 =====
+  "nativecall"
+  r100 = typeof((? vm.h[K(101,102)] : undefined))
+
+// ===== op 46211  nops=2 =====
+  r100 = +(r101)
+
+// ===== op 46509  nops=3 =====
+  "nativecall"
+  r100 = Math.pow(r101,r102)
+
+// ===== op 46844  nops=0 =====
+  r13 = (r5 * r11)
+
+// ===== op 48326  nops=3 =====
+  "nativecall"
+  "nativecall"
+
+// ===== op 48353  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ((Math.imul(Math.imul(~(~(r101)),2061106067),((Math.imul((… - …),199442163) ^ 385042988) | 1)) - 102) | 0)
+
+// ===== op 48848  nops=3 =====
+  r100 = (r101 ^ r102)
+
+// ===== op 48882  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ~(~(((Math.imul(Math.imul((… ^ …),1242285975),((… ^ …) | 1)) | ((-(…) ^ (… & …)) ^ (0 & (… ^ …)))) & (-(((… ^ …) ^ Math.imul(…,…))) - 1))))
+
+// ===== op 49809  nops=3 =====
+  r100 = (r101 * r102)
+
+// ===== op 50060  nops=0 =====
+  r4 = (r5 | r6)
+
+// ===== op 50343  nops=3 =====
+  r100 = (r101 in r102)
+
+// ===== op 51290  nops=3 =====
+  r100 = ((((r101 >> 0) ^ 102) + (2 * ((((… >> …) & -103) + ((… >> …) & 102)) & 102))) | 0)
+
+// ===== op 51404  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = ((~(~((((… | …) - (… & …)) + (Math.imul(…,…) * (… & …))))) - ~(~(r103))) ^ 0)
+
+// ===== op 52268  nops=3 =====
+  vm.h[K(100,101)] = r102
+
+// ===== op 52676  nops=3 =====
+  r100 = K(101,102)
+
+// ===== op 52716  nops=0 =====
+  r13 = r11[r12]
+
+// ===== op 53050  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!(~(~((!((… | …)) + (1 * (… - …)))))))
+
+// ===== op 53189  nops=1 =====
+  throw r100
+
+// ===== op 53236  nops=0 =====
+  r12 = K(5,2843980791)
+
+// ===== op 53528  nops=3 =====
+  if (?) {
+    throw ?
+  }
+  r100 = vm.h[K(101,102)]
+
+// ===== op 53675  nops=2 =====
+  r100 = 101
+
+// ===== op 54391  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!(~(~((!((… | …)) + (1 * (… - …)))))))
+
+// ===== op 54514  nops=2 =====
+  r100 = typeof(r101)
+
+// ===== op 54669  nops=0 =====
+  r13 = (r12 % r11)
+
+// ===== op 54870  nops=0 =====
+  vm.b(x,q,null,0)
+  "symbolicloop"
+  vm.i = 0
+  vm.g = frame[7]
+  stack[(? (stack[?] + (frame[10] >> 1)) : 0)] = frame[3]
+
+// ===== op 55292  nops=0 =====
+  r2 = r14
+
+// ===== op 55336  nops=3 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = (((((r101 >> 0) ^ 102) + (Math.imul(Math.imul((… >> …),(… | …)),-678933577) & Math.imul(-531748118,((… ^ …) | 1)))) + ((((r101 >> 0) & ~((… >> …))) | ((r101 >> 0) & (r101 >> 0))) & 102)) | 0)
+
+// ===== op 55507  nops=1 =====
+  vm.b(undefined,undefined,undefined,0)
+  "symbolicloop"
+  vm.i = 0
+  vm.g = frame[7]
+  stack[(? (stack[?] + (frame[10] >> 1)) : 0)] = frame[3]
+
+// ===== op 55823  nops=0 =====
+  "nativecall"
+
+// ===== op 56476  nops=2 =====
+  r100 = r101
+
+// ===== op 57103  nops=2 =====
+  if (!(r100)) {
+    PC = 101
+  }
+
+// ===== op 57353  nops=VAR(204/404) =====
+  r100 = {}
+
+// ===== op 58252  nops=1 =====
+  PC = r100
+
+// ===== op 58279  nops=0 =====
+  r13 = r11[r12]
+
+// ===== op 58622  nops=3 =====
+  r100 = (r101 < r102)
+
+// ===== op 59082  nops=3 =====
+  r100 = (r101 | r102)
+
+// ===== op 59164  nops=3 =====
+  r100 = (r101 + r102)
+
+// ===== op 59504  nops=3 =====
+  r100 = ~(~((((2 * ((… & …) | (… - …))) - (((… * …) - (… * …)) ^ ((… * …) + (… * …)))) - (((r101 & -1) + 102) - ((r101 & -1) & 102)))))
+
+// ===== op 59824  nops=3 =====
+  r100 = (r101 >= r102)
+
+// ===== op 60932  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!(~(~(((0 * !(…)) + (1 * !(…)))))))
+
+// ===== op 61580  nops=3 =====
+  r100 = (r101 - r102)
+
+// ===== op 63039  nops=0 =====
+  "nativecall"
+
+// ===== op 63372  nops=3 =====
+  r100 = (r101 !== r102)
+
+// ===== op 63662  nops=0 =====
+  r1 = frame[3]
+
+// ===== op 63714  nops=1 =====
+  PC = 100
+
+// ===== op 63766  nops=VAR(107/207) =====
+  r102.apply(r101,[r104,r105])
+  r100 = r102.apply(r101,[r104,r105])
+
+// ===== op 64348  nops=4 =====
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  "nativecall"
+  r100 = !(!(~(~((!((… ^ …)) + (0 * (… - …)))))))
+
+// ===== op 64404  nops=0 =====
+  PC = r34
+
+// ===== op 65005  nops=0 =====
+  vm.b(null,{},[],0)
+  "symbolicloop"
+  vm.i = 0
+  vm.g = frame[7]
+  stack[(? (stack[?] + (frame[10] >> 1)) : 0)] = frame[3]
+
+// ===== op 65530  nops=0 =====
+  r12 = frame[3]

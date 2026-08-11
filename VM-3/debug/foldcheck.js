@@ -1,0 +1,14 @@
+const fs = require("fs"), path = require("path"), parser = require("@babel/parser");
+const generate = require("@babel/generator").default;
+const V = require("../vm.js");
+const ast = parser.parse(fs.readFileSync(path.join(__dirname, "..", "input.js"), "utf8"), { sourceType: "script" });
+const vm = V.detectVM(ast);
+const payload = V.extractPayload(ast, vm);
+const opmap = V.buildOpcodeMap(vm);
+const dis = V.disassemble(payload, opmap);
+const decode = V.makeDecoder(payload.pool);
+const fn2 = [...dis.functions.values()].find((f) => f.id === 2);
+const spec = V.specializeFunction(fn2, decode);
+console.log("blocks", spec.blocks.size);
+const sizes = [...spec.blocks.values()].map((b) => b.steps.length).sort((a, b) => b - a);
+console.log("largest blocks:", sizes.slice(0, 8).join(","));

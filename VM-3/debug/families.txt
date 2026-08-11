@@ -1,0 +1,845 @@
+# families: 90
+
+--- opcodes [15213, 15092, 42349, 52513] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] *= a[b + #];
+}
+
+--- opcodes [3861, 46463, 27271, 35551] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = !a[b + #];
+}
+
+--- opcodes [46333, 63170, 33300, 41954] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #][a[b + #]];
+}
+
+--- opcodes [18613, 53326, 37308, 15437] (4) ---
+function () {
+  var a = this.w,
+    b = this.g;
+  b[b[a + #] + #] || (b[a + #] = #);
+}
+
+--- opcodes [24782, 58944, 8833, 5100] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #];
+}
+
+--- opcodes [31821, 52489, 9515, 37985] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] ^= a[b + #];
+}
+
+--- opcodes [59584, 7375, 60271, 23703] (4) ---
+function () {
+  var a = this.g;
+  a[a[this.w + #] + #] = y(this, #, #);
+}
+
+--- opcodes [48321, 64147, 54890, 37314] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #] >>> a[b + #];
+}
+
+--- opcodes [32231, 39525, 48713, 40904] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] |= a[b + #];
+}
+
+--- opcodes [54947, 61055, 52555, 55899] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] -= a[b + #];
+}
+
+--- opcodes [59775, 36753, 30829, 58965] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = -a[b + #];
+}
+
+--- opcodes [41600, 14592, 47427, 4655] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = y(this, #, #);
+  if (!(e in this.E)) throw new ReferenceError(`${e} is not defined`);
+  a[b + #] = this.E[e];
+}
+
+--- opcodes [33216, 7370, 38636, 40507] (4) ---
+function () {
+  var a = this.g;
+  a[a[this.w + #] + #] = #;
+}
+
+--- opcodes [13809, 43102, 26346, 21241] (4) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = ~a[b + #];
+}
+
+--- opcodes [32020, 4442, 27002, 38551] (4) ---
+function () {
+  this.g[this.w + #] = #;
+}
+
+--- opcodes [54791, 29062, 57232] (3) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #] % a[b + #];
+}
+
+--- opcodes [55507, 9028, 7008] (3) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] += a[b + #];
+}
+
+--- opcodes [30939, 15026, 40707] (3) ---
+function () {
+  var a = this.w,
+    b = this.g;
+  b[b[a + #] + #] = b[a + #];
+}
+
+--- opcodes [27026, 4284] (2) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  Reflect.set(a[b + #], a[b + #], a[b + #]);
+}
+
+--- opcodes [54022, 65278] (2) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] &= a[b + #];
+}
+
+--- opcodes [14497, 37632] (2) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #] & a[b + #];
+}
+
+--- opcodes [19781] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "k"),
+    c = a[b + x(this, [])],
+    d = [];
+  if (c !== null && c !== void #) {
+    var h = Object.create(null);
+    for (c = Object(c); c !== null;) {
+      for (var k = Object.getOwnPropertyNames(c), n = #; n < k.length; n++) {
+        var p = k[n];
+        if (!(p in h)) {
+          h[p] = !#;
+          var l = Object.getOwnPropertyDescriptor(c, p);
+          l && l.enumerable && d.push(p);
+        }
+      }
+      c = Object.getPrototypeOf(c);
+    }
+  }
+  a[b + e] = {
+    b: d,
+    u: #
+  };
+}
+
+--- opcodes [52744] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #);
+  a[b + e] = +a[b + x(this, #)];
+}
+
+--- opcodes [33166] (1) ---
+function () {
+  for (var a = this.w, b = this.g, e = b[a + #], c = x(this, "x"), d = x(this, []), h = x(this, #), k = x(this, []), n = x(this, []), p = x(this), l = Array(n), m = #; m < n; m++) {
+    var A = x(this, #),
+      t = x(this);
+    l[m] = {
+      C: A,
+      A: t
+    };
+  }
+  d = new g({
+    p: h,
+    e: k,
+    v: d,
+    a: p
+  });
+  for (m = #; m < l.length; m++) h = l[m], h.C ? d.j.push(this.c(a, {}, h.A, void #, void #, #)) : d.j.push(b[a + #].j[h.A]);
+  var B = this;
+  a = function (H) {
+    return function () {
+      return z(new u(null, B.n, B.i, void #, B.E), "y", Array.prototype.slice.call(arguments), H, this == null ? B.E : this);
+    };
+  }(d);
+  r.set(a, d);
+  a.prototype = d.prototype;
+  b[e + c] = a;
+}
+
+--- opcodes [26830] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[b[a + #] + #];
+  v(this, "z", [], a, "q");
+  var c = b[a + #],
+    d = b[a + #];
+  d & # && (typeof e !== "object" || e === null) && (e = b[a + #]);
+  for (var h = a + b[a + #], k = a; k < h; k++) b[k] = void #;
+  this.h = a;
+  this.w = c;
+  b[c ? b[c + #] + (d >> #) : #] = e;
+}
+
+--- opcodes [36539] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this)];
+  a[b + e] = c instanceof a[b + x(this)];
+}
+
+--- opcodes [19874] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = a[b + x(this, null)];
+  a[b + e] = Math.pow(c, a[b + x(this, null)]);
+}
+
+--- opcodes [24610] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, "z")];
+  a[b + e] = c < a[b + x(this)];
+}
+
+--- opcodes [45425] (1) ---
+function () {
+  this.g[this.w + #].pop();
+}
+
+--- opcodes [38199] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, null),
+    d = x(this, "z");
+  b[e + c] && (b[a + #] = d);
+}
+
+--- opcodes [16654] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, "y");
+  a = b[a + #].j[x(this, null)];
+  b[e + c] = a.m ? a.o : a.g[a.s];
+}
+
+--- opcodes [32209] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []);
+  a[b + e] = -a[b + x(this, {})];
+}
+
+--- opcodes [5592] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, "k")];
+  a[b + e] = c % a[b + x(this, "x")];
+}
+
+--- opcodes [16888] (1) ---
+function () {
+  this.g[this.w + #] = x(this, "q");
+}
+
+--- opcodes [50327] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #];
+  e || (b[a + #] = e = []);
+  e.push({
+    H: x(this, {}),
+    F: x(this, {}),
+    k: x(this, {}),
+    D: x(this, [])
+  });
+}
+
+--- opcodes [64678] (1) ---
+function () {
+  debugger;
+}
+
+--- opcodes [37820] (1) ---
+function () {
+  var a = this.w,
+    b = this.g;
+  b[a + #] = b[b[a + #] + x(this, "y")];
+}
+
+--- opcodes [31656] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = a[b + x(this, {})];
+  a[b + e] = c - a[b + x(this, null)];
+}
+
+--- opcodes [1971] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, "z")],
+    d = x(this, #);
+  if (d === #) var h = a[b + x(this, {})];else {
+    h = Array(d);
+    for (var k = #; k < d; k++) h[k] = a[b + x(this, {})];
+  }
+  (d = c && r.get(c)) ? w(this, d, e << #, void #, "q", h, this.E, {}) : a[b + e] = c.apply(null, h);
+}
+
+--- opcodes [32985] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, {})];
+  a[b + e] = c | a[b + x(this, null)];
+}
+
+--- opcodes [52438] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, [])];
+  a[b + e] = c + a[b + x(this, "y")];
+}
+
+--- opcodes [6688] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = a[b + x(this, "z")],
+    d = a[b + x(this, {})];
+  a[b + e] = delete c[d];
+}
+
+--- opcodes [61122] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, [])];
+  a[b + e] = c !== a[b + x(this)];
+}
+
+--- opcodes [45559] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, [])];
+  a[b + e] = c > a[b + x(this, [])];
+}
+
+--- opcodes [46426] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, null),
+    c = a[b + x(this, "q")],
+    d = a[b + x(this, "x")];
+  c = ~~c;
+  d = ~~d;
+  a[b + e] = ~~(~~((c & ~c ^ c & c | (# & ~d) + (# & d)) * (d + c - c & (# & ~d ^ # & d) & #) + ((c | #) * (d & # | #) - (c | #) * (d & #) | # * (d & #) + # * (d & # ^ #)) * (d & # * (c & #) + # * (c & # ^ #) & (# | d) - (-# & d) ^ # + c - c)) | ~~(((d | d) - (~d & d) | # * (c & # | #) - # * (c & #)) * ((d & ~c | d & c) & # * (d & # | #) - # * (d & #) | (d & #) + (d & # ^ #)) - (d & ~c | d & c | #) * ((d & ~c ^ d & c) & (# & ~d ^ # & d) & ~(# & ~d ^ # & d)))) & ~(((c | #) * (d & # | #) - (c | #) * (d & #) | # & ~d | # & d) * ((c | #) * (d & #) + (c | #) * (d & # ^ #) & (# & ~c) + (# & c) | (c & #) + (c & # ^ #)) - ((c | #) * (d & # | #) - (c | #) * (d & #) | # & ~c ^ # & c) * ((c | #) * (d & # | #) - (c | #) * (d & #) & # * (c & # | #) - # * (c & #) & ~(# + d - d)) & d) + ((# + c - c | (# & ~d) + (# & d)) * ((c | d) - (~c & d) & # | (# & ~c) + (# & c)) - (# + d - d | #) * ((c & ~d | c & d) & (# ^ d ^ d) & ~((c & # | #) - (c & #)))) - # ^ #;
+}
+
+--- opcodes [22894] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #);
+  a[b + e] = y(this);
+}
+
+--- opcodes [62987] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, []);
+  a = b[a + #].j[c];
+  b = b[e + x(this, #)];
+  a.m ? a.o = b : a.g[a.s] = b;
+  a.f = {};
+}
+
+--- opcodes [49735] (1) ---
+function () {
+  for (var a = this.g, b = a[this.w + #], e = x(this, "y"), c = x(this, {}), d = {}, h = #; h < c; h++) {
+    var k = a[b + x(this)],
+      n = a[b + x(this, {})];
+    d[k] = n;
+  }
+  a[b + e] = d;
+}
+
+--- opcodes [63024] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "y");
+  x(this, null);
+  a[b + e] = void #;
+}
+
+--- opcodes [10045] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = a[b + x(this, #)],
+    c = a[b + x(this, null)];
+  b = a[b + x(this, null)];
+  a = Object.getOwnPropertyDescriptor(e, c);
+  b = {
+    set: b,
+    configurable: !#,
+    enumerable: !#
+  };
+  a && typeof a.get === "function" && (b.get = a.get);
+  Object.defineProperty(e, c, b);
+}
+
+--- opcodes [28883] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = a[b + x(this, "q")];
+  a[b + e] = c ^ a[b + x(this, {})];
+}
+
+--- opcodes [8162] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[b[a + #] + x(this, #)];
+  v(this, {}, null, a, []);
+  var c = b[a + #],
+    d = b[a + #];
+  d & # && (typeof e !== "object" || e === null) && (e = b[a + #]);
+  for (var h = a + b[a + #], k = a; k < h; k++) b[k] = void #;
+  this.h = a;
+  this.w = c;
+  b[c ? b[c + #] + (d >> #) : #] = e;
+}
+
+--- opcodes [39996] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = y(this);
+  if (!(c in this.E)) throw new ReferenceError(`${c} is not defined`);
+  a[b + e] = this.E[c];
+}
+
+--- opcodes [19567] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, {}),
+    c = a[b + x(this, "q")];
+  a[b + e] = c <= a[b + x(this, null)];
+}
+
+--- opcodes [54465] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, {})];
+  a[b + e] = c === a[b + x(this, {})];
+}
+
+--- opcodes [51468] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, {}),
+    c = a[b + x(this, "q")];
+  a[b + e] = c / a[b + x(this, "x")];
+}
+
+--- opcodes [1964] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []);
+  a[b + e] = ~a[b + x(this, {})];
+}
+
+--- opcodes [44135] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, #)],
+    d = a[b + x(this, "z")];
+  c = ~~c;
+  d = ~~d;
+  a[b + e] = ((c | #) * (c & # | #) - (c | #) * (c & #) | (# & ~d) + (# & d)) * (((c | #) * (c & # | #) - (c | #) * (c & #) & # | # & ~d ^ # & d) - ((c & ~d) + (c & d) & # + c - c ^ # ^ c ^ c)) + (c | # * (d & #) + # * (d & # ^ #)) * (((c | #) * (c & # | #) - (c | #) * (c & #) & (# | c) - (-# & c) & # | #) & ~(c & # + d - d & (# & ~d | # & d) & (# | d) - (-# & d))) ^ ~(~(d + c - c) | ~~((d & ~c) + (d & c))) ^ ~((~((d | c) - (~d & c)) & ~d) + (~((d | d) - (~d & d)) ^ ~(d & ~d | d & d))) ^ #;
+}
+
+--- opcodes [34490] (1) ---
+function () {
+  for (var a = x(this, null), b = x(this, {}), e = x(this, null), c = x(this, "x") ^ a | #, d = b; d < e; d++) c = c + # | #, this.i[a + (d - b)] = (this.i[d] ^ c ^ c >>> #) >>> #;
+}
+
+--- opcodes [50611] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] <<= a[b + #];
+}
+
+--- opcodes [45809] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #] + a[b + #];
+}
+
+--- opcodes [14102] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this)];
+  a[b + e] = c == a[b + x(this, "q")];
+}
+
+--- opcodes [20161] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "q");
+  a[b + e] = x(this, {});
+}
+
+--- opcodes [37491] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = a[b + x(this, [])],
+    c = a[b + x(this, null)];
+  b = a[b + x(this)];
+  a = Object.getOwnPropertyDescriptor(e, c);
+  b = {
+    get: b,
+    configurable: !#,
+    enumerable: !#
+  };
+  a && typeof a.set === "function" && (b.set = a.set);
+  Object.defineProperty(e, c, b);
+}
+
+--- opcodes [39945] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "z"),
+    c = y(this);
+  c = Object.prototype.hasOwnProperty.call(this.E, c) ? this.E[c] : void #;
+  a[b + e] = typeof c;
+}
+
+--- opcodes [43596] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[b[a + #] + #];
+  v(this, [], {}, a);
+  var c = b[a + #],
+    d = b[a + #];
+  d & # && (typeof e !== "object" || e === null) && (e = b[a + #]);
+  for (var h = a + b[a + #], k = a; k < h; k++) b[k] = void #;
+  this.h = a;
+  this.w = c;
+  b[c ? b[c + #] + (d >> #) : #] = e;
+}
+
+--- opcodes [59061] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, null),
+    c = a[b + x(this, "x")];
+  a[b + e] = c != a[b + x(this, [])];
+}
+
+--- opcodes [59407] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []),
+    c = a[b + x(this, #)];
+  a[b + e] = c >>> a[b + x(this, #)];
+}
+
+--- opcodes [4153] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, #),
+    c = a[b + x(this, "z")];
+  a[b + e] = c >> a[b + x(this, null)];
+}
+
+--- opcodes [64586] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, []),
+    d = x(this, []);
+  b[e + c] || (b[a + #] = d);
+}
+
+--- opcodes [13916] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "x"),
+    c = a[b + x(this, {})];
+  a[b + e] = c & a[b + x(this, #)];
+}
+
+--- opcodes [38410] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #];
+  e || (b[a + #] = e = []);
+  e.push({
+    G: x(this, #),
+    B: x(this, #)
+  });
+}
+
+--- opcodes [47133] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  a[b + #] = a[b + #] << a[b + #];
+}
+
+--- opcodes [52274] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, {}),
+    c = a[b + x(this, [])];
+  a[b + e] = c >= a[b + x(this, #)];
+}
+
+--- opcodes [19440] (1) ---
+function () {
+  for (var a = this.g, b = a[this.w + #], e = x(this, "k"), c = x(this, []), d = Array(c), h = #; h < c; h++) d[h] = a[b + x(this, {})];
+  a[b + e] = d;
+}
+
+--- opcodes [56528] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "y");
+  a[b + e] = typeof a[b + x(this, [])];
+}
+
+--- opcodes [23343] (1) ---
+function () {
+  var a = this.g;
+  throw a[a[this.w + #] + x(this, [])];
+}
+
+--- opcodes [28577] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, {})],
+    d = a[b + x(this)];
+  a[b + e] = c[d];
+}
+
+--- opcodes [34608] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, {}),
+    c = a[b + x(this, "z")],
+    d = a[b + x(this, null)],
+    h = x(this);
+  if (h === #) var k = a[b + x(this, "q")];else {
+    k = Array(h);
+    for (var n = #; n < h; n++) k[n] = a[b + x(this, [])];
+  }
+  (h = d && r.get(d)) ? w(this, h, e << #, [], "q", k, c, "y") : a[b + e] = d.apply(c, k);
+}
+
+--- opcodes [30808] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, null);
+  a[b + e] = a[b + x(this, #)];
+}
+
+--- opcodes [61304] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, null),
+    c = a[b + x(this, null)];
+  a[b + e] = c * a[b + x(this, {})];
+}
+
+--- opcodes [61768] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = a[b + x(this, null)],
+    c = a[b + x(this, [])];
+  a = a[b + x(this, null)];
+  Reflect.set(e, c, a);
+}
+
+--- opcodes [7660] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, []);
+  a[b + e] = !a[b + x(this, "x")];
+}
+
+--- opcodes [39367] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, null);
+  b[e + c] = b[a + #];
+}
+
+--- opcodes [41833] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, null),
+    c = a[b + x(this, "k")],
+    d = x(this, null);
+  if (d === #) var h = a[b + x(this, null)];else {
+    h = Array(d);
+    for (var k = #; k < d; k++) h[k] = a[b + x(this, {})];
+  }
+  (d = c && r.get(c)) ? w(this, d, e << # | #, "k", void #, h, Object.create(d.prototype || null), []) : a[b + e] = Reflect.construct(c, h);
+}
+
+--- opcodes [14103] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #];
+  this.E[y(this)] = a[b + x(this, #)];
+}
+
+--- opcodes [22908] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, {}),
+    c = a[b + x(this, "x")];
+  a[b + e] = c << a[b + x(this, null)];
+}
+
+--- opcodes [47052] (1) ---
+function () {
+  var a = this.w,
+    b = this.g,
+    e = b[a + #],
+    c = x(this, #),
+    d = b[e + x(this, #)],
+    h = x(this);
+  d.u >= d.b.length ? b[a + #] = h : b[e + c] = d.b[d.u++];
+}
+
+--- opcodes [25588] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this),
+    c = a[b + x(this, null)];
+  a[b + e] = c in a[b + x(this, null)];
+}
+
+--- opcodes [45568] (1) ---
+function () {
+  var a = this.g,
+    b = a[this.w + #],
+    e = x(this, "k"),
+    c = a[b + x(this)],
+    d = a[b + x(this, [])];
+  c = ~~c;
+  d = ~~d;
+  a[b + e] = ~~(((# & ~d | # & d | d) - (~(# & ~c ^ # & c) & (d | #) * (d & # | #) - (d | #) * (d & #))) * (((c | c) - (~c & c) | # & ~c ^ # & c) * ((c | #) * (c & # | #) - (c | #) * (c & #) & (# & ~d | # & d) | #) - ((c & ~c) + (c & c) | # * (c & #) + # * (c & # ^ #)) * (c & # * (c & #) + # * (c & # ^ #) & ~((d & #) + (d & # ^ #))) | (d | d) - (~d & d) & ~((c | c) - (~c & c)) | (d | #) * (d & # | #) - (d | #) * (d & #) & c) - (((c & ~(c & ~c | c & c)) + (c & (c & ~c ^ c & c)) | ((d | #) * (d & #) + (d | #) * (d & # ^ #) | c) - (~((d | #) * (d & #) + (d | #) * (d & # ^ #)) & (c & ~d | c & d))) - ((c & ~(d & ~d | d & d) | (c & ~d) + (c & d) & (d & ~c ^ d & c)) & ((d | #) * (c & #) + (d | #) * (c & # ^ #) & ~((d | #) * (c & #) + (d | #) * (c & # ^ #)) | (d ^ c ^ c) & (d & ~c ^ d & c)))) - (# * ((d & ~d) + (d & d) & (# ^ c ^ c) & (# ^ c ^ c)) + (# | # * (c & #) + # * (c & # ^ #)) * (d & (# & ~c ^ # & c) & (c & # | #) - (c & #) ^ # ^ d ^ d)) * ((((c | #) * (c & #) + (c | #) * (c & # ^ #) | # & ~d | # & d) * (d & # * (d & #) + # * (d & # ^ #) | (c & #) + (c & # ^ #)) - ((c | #) * (d & # | #) - (c | #) * (d & #) | # * (d & #) + # * (d & # ^ #)) * (d & (# | c) - (-# & c) & ~((c & # | #) - (c & #))) | (d + d - d | # & ~c | # & c) * ((d | d) - (~d & d) & # & (# & ~d) + (# & d)) + ((d | #) * (c & # | #) - (d | #) * (c & #) | # + c - c) * ((d | d) - (~d & d) & (# | c) - (-# & c) & # ^ #)) - (c ^ d)));
+}
