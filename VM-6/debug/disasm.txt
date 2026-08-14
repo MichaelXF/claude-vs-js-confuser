@@ -1,0 +1,75 @@
+    0: LOADTHIS     {"dst":1}
+    2: LOADCONST    r3 = false
+    6: DATA         [2,3] dst=r2 regs=[r3]
+    9: LOADGLOBAL   r3 = "window"
+   13: LOADCONST    r4 = "_k1crlxlk2w8"
+   17: MAKEFUNC     r5 = fn@37 params=0 regs=72 rest=0 C=893140373 cells=[{"isNew":1,"idx":2}]
+   27: SETMEMBER    {"obj":3,"key":4,"val":5}
+   31: LOADCONST    r3 = undefined
+   35: RETURN       {"src":3}
+   37: MAKEFUNC     r62 = fn@3010 params=3 regs=10 rest=0 C=893140373 cells=[]
+   45: LOADTHIS     {"dst":35}
+   47: DATA         [36,31300] dst=r36 regs=[]
+   50: DATA         [37,36] dst=r37 regs=[r36]
+   53: DATA         [38,0] dst=r38 regs=[]
+   56: DATA         [39,38] dst=r39 regs=[r38]
+   59: DATA         [40,37,7924,19] dst=r40 regs=[r37,r19]
+   64: DATA         [64,40] dst=r64 regs=[r40]
+   67: DATA         [64,64] dst=r64 regs=[r64]
+   70: DATA         [59,2729680695] dst=r59 regs=[]
+   73: DATA         [65,2829953979] dst=r65 regs=[]
+   76: DATA         [65,65,59] dst=r65 regs=[r65,r59]
+   80: DATA         [65,65,64] dst=r65 regs=[r65,r64]
+   84: DATA         [59,59,65] dst=r59 regs=[r59,r65]
+   88: DATA         [60,16327] dst=r60 regs=[]
+   91: DATA         [61,64355] dst=r61 regs=[]
+   94: JMP          {"target":1867}
+      ---- gap 96..1866 ----
+ 1867: CALL         {"dst":59,"fn":62,"argc":3,"args":[59,60,61]}
+ 1874: DATA         [63,0] dst=r63 regs=[]
+ 1877: DATA         [59,59,63] dst=r59 regs=[r59,r63]
+ 1881: JMPDYN       {"reg":59}
+      ---- gap 1883..3009 ----
+ 3010: LOADTHIS     {"dst":4}
+ 3012: LOADCONST    r6 = 16
+ 3016: DATA         [7,2,6] dst=r7 regs=[r2,r6]
+ 3020: DATA         [6,1,7] dst=r6 regs=[r1,r7]
+ 3024: LOADCONST    r7 = 0
+ 3028: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3032: DATA         [5,8] dst=r5 regs=[r8]
+ 3035: LOADCONST    r6 = 24
+ 3039: DATA         [7,0,6] dst=r7 regs=[r0,r6]
+ 3043: DATA         [6,0,7] dst=r6 regs=[r0,r7]
+ 3047: LOADCONST    r7 = 0
+ 3051: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3055: DATA         [0,8] dst=r0 regs=[r8]
+ 3058: DATA         [6,0] dst=r6 regs=[r0]
+ 3061: LOADCONST    r7 = 0
+ 3065: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3069: DATA         [0,8] dst=r0 regs=[r8]
+ 3072: DATA         [6,0] dst=r6 regs=[r0]
+ 3075: LOADCONST    r7 = 0
+ 3079: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3083: DATA         [0,8] dst=r0 regs=[r8]
+ 3086: LOADCONST    r6 = 7
+ 3090: DATA         [7,0,6] dst=r7 regs=[r0,r6]
+ 3094: LOADCONST    r6 = 25
+ 3098: DATA         [8,0,6] dst=r8 regs=[r0,r6]
+ 3102: DATA         [6,7,8] dst=r6 regs=[r7,r8]
+ 3106: LOADCONST    r7 = 0
+ 3110: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3114: DATA         [0,8] dst=r0 regs=[r8]
+ 3117: LOADGLOBAL   r6 = "Math"
+ 3121: LOADCONST    r7 = "imul"
+ 3125: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3129: LOADCONST    r7 = -150892297
+ 3133: CALLMETHOD   {"dst":9,"thisReg":6,"fn":8,"argc":2,"args":[0,7]}
+ 3140: LOADCONST    r6 = 0
+ 3144: DATA         [7,9,6] dst=r7 regs=[r9,r6]
+ 3148: DATA         [0,7] dst=r0 regs=[r7]
+ 3151: DATA         [6,0,5] dst=r6 regs=[r0,r5]
+ 3155: LOADCONST    r7 = 0
+ 3159: DATA         [8,6,7] dst=r8 regs=[r6,r7]
+ 3163: DATA         [0,8] dst=r0 regs=[r8]
+ 3166: ARRAY        {"dst":6,"count":1,"elems":[0]}
+ 3170: RETURN       {"src":6}

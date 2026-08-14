@@ -1,0 +1,41 @@
+
+===== fn@0 params=0 regs=6 blocks=1 volatile=[2]
+  b0: 8 stmts -> return
+
+===== fn@37 params=0 regs=72 blocks=13 volatile=[]
+  b37: 19 stmts -> dyn free=[] targets=[96]
+  b59: 13 stmts -> dyn free=[r37@59] targets=[96]
+  b96: 15 stmts -> dyn free=[r37@96] targets=[154]
+  b154: 14 stmts -> dyn free=[r37@154,r39@154] targets=[]
+  b208: 15 stmts -> dyn free=[] targets=[265]
+  b265: 15 stmts -> dyn free=[] targets=[322]
+  b322: 14 stmts -> dyn free=[] targets=[376]
+  b376: 14 stmts -> dyn free=[] targets=[430]
+  b430: 14 stmts -> dyn free=[] targets=[484]
+  b484: 14 stmts -> dyn free=[] targets=[537]
+  b537: 14 stmts -> dyn free=[] targets=[580]
+  b580: 6 stmts -> dyn free=[] targets=[1260]
+  b1260: 14 stmts -> dyn free=[] targets=[59]
+
+===== fn@3010 params=3 regs=10 blocks=1 volatile=[]
+  b3010: 42 stmts -> return
+
+===== fn@1883 params=2 regs=44 blocks=15 volatile=[]
+  b1883: 19 stmts -> dyn free=[] targets=[1942]
+  b1905: 13 stmts -> dyn free=[r14@1905] targets=[1942]
+  b1942: 13 stmts -> dyn free=[r14@1942,r40@1942] targets=[]
+  b1991: 14 stmts -> dyn free=[] targets=[2041]
+  b2041: 13 stmts -> dyn free=[] targets=[2089]
+  b2089: 13 stmts -> dyn free=[] targets=[2137]
+  b2137: 13 stmts -> dyn free=[] targets=[2185]
+  b2185: 14 stmts -> dyn free=[] targets=[2236]
+  b2236: 13 stmts -> dyn free=[] targets=[2283]
+  b2283: 14 stmts -> dyn free=[] targets=[2334]
+  b2334: 13 stmts -> dyn free=[] targets=[2381]
+  b2381: 14 stmts -> dyn free=[] targets=[2432]
+  b2432: 14 stmts -> dyn free=[] targets=[2475]
+  b2475: 5 stmts -> dyn free=[] targets=[2930]
+  b2930: 12 stmts -> dyn free=[] targets=[1905]
+
+===== fn@3178 params=2 regs=8 blocks=1 volatile=[]
+  b3178: 36 stmts -> return

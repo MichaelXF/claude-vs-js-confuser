@@ -1,0 +1,79 @@
+
+===== function @0  params=0 regs=6 C=893140373 cells=[]
+    0: LOADTHIS    {"dst":1}
+    2: LOADCONST   r3 = false
+    6: DATA        ?? MOV op=44425 words=[2,3] regs=[3]      ; op=44425
+    9: LOADGLOBAL  r3 = "window"
+   13: LOADCONST   r4 = "_k1crlxlk2w8"
+   17: MAKEFUNC    r5 = fn@37(params=0,regs=72,rest=0) cells=[{"isNew":1,"idx":2}]
+   27: SETMEMBER   {"obj":3,"key":4,"val":5}
+   31: LOADCONST   r3 = undefined
+   35: RETURN      {"src":3}
+
+===== function @37  params=0 regs=72 C=653392047 cells=[{"isNew":1,"idx":2}]
+   37: MAKEFUNC    r62 = fn@3010(params=3,regs=10,rest=0) cells=[]
+   45: LOADTHIS    {"dst":35}
+   47: DATA        r36 = 31300      ; op=41209
+   50: DATA        ?? MOV op=44425 words=[37,36] regs=[36]      ; op=44425
+   53: DATA        r38 = 0      ; op=41209
+   56: DATA        ?? MOV op=44425 words=[39,38] regs=[38]      ; op=44425
+   59: DATA        r40 = r37 != 7924      ; op=17224
+   64: DATA        r64 = ! r40      ; op=20471
+   67: DATA        r64 = + r64      ; op=15249
+   70: DATA        r59 = 2729680695      ; op=41209
+   73: DATA        r65 = 2829953979      ; op=41209
+   76: DATA        r65 = r65 - r59      ; op=54245
+   80: DATA        r65 = r65 * r64      ; op=25413
+   84: DATA        r59 = r59 + r65      ; op=4803
+   88: DATA        r60 = 16327      ; op=41209
+   91: DATA        r61 = 64355      ; op=41209
+   94: JMP         {"target":1867}
+ 1867: CALL        {"dst":59,"fn":62,"argc":3,"args":[59,60,61]}
+ 1874: DATA        r63 = 0      ; op=41209
+ 1877: DATA        r59 = r59 [] r63      ; op=18294
+ 1881: JMPDYN      {"reg":59}
+
+===== function @3010  params=3 regs=10 C=228404641 cells=[]
+ 3010: LOADTHIS    {"dst":4}
+ 3012: LOADCONST   r6 = 16
+ 3016: DATA        r7 = r2 << r6      ; op=54022
+ 3020: DATA        r6 = r1 | r7      ; op=50529
+ 3024: LOADCONST   r7 = 0
+ 3028: DATA        r8 = r6 >>> r7      ; op=33179
+ 3032: DATA        ?? MOV op=44425 words=[5,8] regs=[8]      ; op=44425
+ 3035: LOADCONST   r6 = 24
+ 3039: DATA        r7 = r0 >>> r6      ; op=33179
+ 3043: DATA        r6 = r0 ^ r7      ; op=9974
+ 3047: LOADCONST   r7 = 0
+ 3051: DATA        r8 = r6 >>> r7      ; op=33179
+ 3055: DATA        ?? MOV op=44425 words=[0,8] regs=[8]      ; op=44425
+ 3058: DATA        r6 = ~ r0      ; op=31526
+ 3061: LOADCONST   r7 = 0
+ 3065: DATA        r8 = r6 >>> r7      ; op=33179
+ 3069: DATA        ?? MOV op=44425 words=[0,8] regs=[8]      ; op=44425
+ 3072: DATA        r6 = ~ r0      ; op=31526
+ 3075: LOADCONST   r7 = 0
+ 3079: DATA        r8 = r6 >>> r7      ; op=33179
+ 3083: DATA        ?? MOV op=44425 words=[0,8] regs=[8]      ; op=44425
+ 3086: LOADCONST   r6 = 7
+ 3090: DATA        r7 = r0 << r6      ; op=54022
+ 3094: LOADCONST   r6 = 25
+ 3098: DATA        r8 = r0 >>> r6      ; op=33179
+ 3102: DATA        r6 = r7 | r8      ; op=50529
+ 3106: LOADCONST   r7 = 0
+ 3110: DATA        r8 = r6 >>> r7      ; op=33179
+ 3114: DATA        ?? MOV op=44425 words=[0,8] regs=[8]      ; op=44425
+ 3117: LOADGLOBAL  r6 = "Math"
+ 3121: LOADCONST   r7 = "imul"
+ 3125: DATA        r8 = r6 [] r7      ; op=18294
+ 3129: LOADCONST   r7 = -150892297
+ 3133: CALLMETHOD  {"dst":9,"thisReg":6,"fn":8,"argc":2,"args":[0,7]}
+ 3140: LOADCONST   r6 = 0
+ 3144: DATA        r7 = r9 >>> r6      ; op=33179
+ 3148: DATA        ?? MOV op=44425 words=[0,7] regs=[7]      ; op=44425
+ 3151: DATA        r6 = r0 ^ r5      ; op=9974
+ 3155: LOADCONST   r7 = 0
+ 3159: DATA        r8 = r6 >>> r7      ; op=33179
+ 3163: DATA        ?? MOV op=44425 words=[0,8] regs=[8]      ; op=44425
+ 3166: ARRAY       {"dst":6,"count":1,"elems":[0]}
+ 3170: RETURN      {"src":6}
