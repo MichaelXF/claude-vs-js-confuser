@@ -62,7 +62,12 @@ for (const [pc, h] of trace) {
   let st = state.get(h);
   if (!st) { st = { block: pc, lastPc: null, pending: null }; state.set(h, st); }
   const last = st.lastPc !== null ? a.instrs.get(st.lastPc) : null;
-  if (last && a.isTerminator(last.kind)) {
+  if (last && (last.kind.kind === "return" || last.kind.kind === "throw")) {
+    // the frame was popped; whatever runs next at this frame pointer belongs to
+    // a different call, so there is no control-flow edge between the two
+    st = { block: pc, lastPc: null, pending: null };
+    state.set(h, st);
+  } else if (last && a.isTerminator(last.kind)) {
     if (a.isDispatchBlock(pc)) st.pending = st.pending || st.block;
     else {
       observed.add((st.pending || st.block) + "->" + pc);

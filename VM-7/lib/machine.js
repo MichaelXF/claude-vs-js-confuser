@@ -127,6 +127,16 @@ function makeProbeObject(index, log) {
   return new Proxy(target, handler);
 }
 
+/**
+ * A reproducible stand-in for a random int32, so that repeated runs of the tool
+ * probe the handlers with exactly the same values and produce the same output.
+ */
+function spread(round, slot) {
+  let h = (Math.imul(round + 1, 2654435761) ^ Math.imul(slot + 1, 2246822519)) >>> 0;
+  h ^= h >>> 15;
+  return Math.imul(h, 668265263) | 0;
+}
+
 /** Returns the absolute pc a handler jumped to, or null if it only advanced. */
 function jumpTarget(res) {
   const seq = res.frameWrites.filter(([k]) => k === 0).map(([, v]) => v);
@@ -241,7 +251,7 @@ class Machine {
       const types = new Set();
       for (let trial = 0; trial < 10; trial++) {
         const regs = [];
-        for (let j = 0; j < NREG; j++) regs[j] = (Math.random() * 2 ** 32) | 0;
+        for (let j = 0; j < NREG; j++) regs[j] = spread(trial, j);
         const r = this.runAt(words, 0, 0, regs, {});
         if (r.error || !r.regWrites.length) { types.add("?"); continue; }
         types.add(typeof r.regWrites[r.regWrites.length - 1][1]);

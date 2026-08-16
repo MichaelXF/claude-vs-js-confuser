@@ -50,15 +50,37 @@ const RANK = ["", "!", "~", "-", "+", "typeof", "void",
 function intPool() {
   return [0, 1, -1, 2, 3, 5, 7, 8, 9, 16, 31, 32, 255, -256, 1023, 65535, -65536,
     2147483647, -2147483648, 123456789, -987654321,
-    (Math.random() * 2 ** 32) | 0, (Math.random() * 2 ** 32) | 0, (Math.random() * 2 ** 32) | 0,
-    (Math.random() * 200 - 100) | 0, (Math.random() * 200 - 100) | 0];
+    305419896, -1985229329, 1985229337, -57, 42];
 }
 function mixedPool() {
-  return [0, 1, -1, 2, "", "0", "1", "abc", true, false, null, undefined, NaN, 1.5, -0.25, [], {}, "5"];
+  return [0, 1, -1, 2, "", "0", "1", "abc", true, false, null, undefined, NaN, 1.5, -0.25, [], {}, "5",
+    1000000007, -1000000007, "1000000007", 987654.321];
+}
+
+/**
+ * Deterministic stand-in for random sampling.
+ *
+ * The fitter must draw many uncorrelated operand combinations, but drawing them
+ * randomly would make the tool emit slightly different code on different runs,
+ * which is a poor property for a deobfuscator. Scrambling the trial index and
+ * the register number gives the same spread reproducibly.
+ */
+function scatter(trial, slot, size) {
+  let h = (Math.imul(trial + 1, 2654435761) ^ Math.imul(slot + 1, 2246822519)) >>> 0;
+  h ^= h >>> 15;
+  return (Math.imul(h, 668265263) >>> 8) % size;
 }
 
 /**
  * Fits the operator implemented by the instruction at `pc`.
+ *
+ * Pinning the known operands is what makes the MBA handlers identifiable, but
+ * for a plain handler it destroys information: with one operand held at a
+ * constant a binary operator can become indistinguishable from a unary one --
+ * `a % 97` returns exactly `+a` for every sample smaller than the modulus, and
+ * the unary reading wins the ranking. So the unpinned fit is attempted first,
+ * and only when the handler cannot be explained without its real operand values
+ * (which is the signature of an MBA handler) does the pinned fit decide.
  *
  * @param machine  the probed VM
  * @param code     bytecode array
@@ -68,7 +90,19 @@ function mixedPool() {
  * @param fixed    Map reg -> concrete value for operands whose value is known
  */
 function fitInstruction(machine, code, pc, key, srcRegs, fixed) {
-  const NREG = machine.constructor.NREG || 256;
+  if (fixed && fixed.size) {
+    const plain = fitWith(machine, code, pc, key, srcRegs, new Map(), true);
+    if (plain) return plain;
+  }
+  return fitWith(machine, code, pc, key, srcRegs, fixed, false) || { kind: "unknown" };
+}
+
+/**
+ * One fitting attempt.
+ * @param plainOnly accept only an exact match over mixed-type operands, which
+ *                  no MBA handler can produce; returns null otherwise
+ */
+function fitWith(machine, code, pc, key, srcRegs, fixed, plainOnly) {
   const uniq = [...new Set(srcRegs)];
   const free = uniq.filter((r) => !fixed || !fixed.has(r));
   if (!free.length) return { kind: "const" };
@@ -86,9 +120,9 @@ function fitInstruction(machine, code, pc, key, srcRegs, fixed) {
     const trials = [];
     for (let i = 0; i < pool.length * 3; i++) {
       const assignments = {};
-      for (const r of free) assignments[r] = pool[(Math.random() * pool.length) | 0];
+      for (const r of free) assignments[r] = pool[scatter(i, r, pool.length)];
       if (i % 4 === 0 && free.length > 1) {
-        const v = pool[(Math.random() * pool.length) | 0];
+        const v = pool[scatter(i, 0, pool.length)];
         for (const r of free) assignments[r] = v; // equal operands
       }
       const out = observe(assignments);
@@ -146,6 +180,7 @@ function fitInstruction(machine, code, pc, key, srcRegs, fixed) {
     const exact = candidatesFrom(mixed, false);
     if (exact.length) return { ...pick(exact), all: exact.map((c) => c.op) };
   }
+  if (plainOnly) return null;
   // otherwise the handler is an int32-domain MBA implementation
   const ints = gather(intPool());
   if (!ints) return { kind: "unknown" };

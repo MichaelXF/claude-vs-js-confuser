@@ -1,10 +1,11 @@
 # JS-Confuser-VM MBA v5 — analysis notes
 
-Status: **partially solved.** The VM is fully mapped, the bytecode is disassembled,
-the dispatcher and both layers of control-flow flattening are resolved, and the
-program is lifted back to readable JavaScript. Two arithmetic details are still
-lifted incorrectly, so `output.js` is not yet behaviorally identical to
-`input.js` (see [Known defects](#known-defects) and [Next steps](#next-steps)).
+Status: **solved.** `node vm.js input.js output.js` recovers a 862-byte readable
+program from an 84 KB sample. `node test.js` passes 12/12, including a
+behavioral diff that runs `input.js` and `output.js` in identical deterministic
+sandboxes and compares every observable event: **all 11 events are identical**.
+The recovered control-flow graph covers every block and transition the real VM
+executes. The tool is deterministic — repeated runs are byte-for-byte equal.
 
 ---
 
@@ -88,10 +89,28 @@ Numeric constants are simply `pool[idx] ^ key`.
    for `fn@1758`) doing `imul`/rotate/xor mixing. Block addresses never appear
    literally in the bytecode.
 2. **Control-flow flattening (`controlFlowFlattening: true`).** Inside the
-   bytecode there is a second switch: a chain of blocks each comparing a state
-   register (`r36` in `fn@37`, `r13` in `fn@1758`) against a concealed constant
-   and dispatching to one case. Body blocks end by assigning the next state
-   constant and jumping back to the chain head.
+   bytecode a state register (`r36` in `fn@37`, `r13` in `fn@1758`) is compared
+   against concealed constants, and the comparison result is **not** branched
+   on: it is coerced to `0`/`-1` and used to *mask* the next trampoline
+   constant.
+
+```
+1826  r17 = <state> === <concealed const>          // false here
+1832  r33 = !r17 ; r33 = +r33 ; r33 = -r33         // 0 or -1
+1841  r29 = C1                                     // constant for one successor
+1844  r34 = C2 ; r34 = r34 - r29                   // difference to the other
+1851  r34 = r34 & r33                              // branchless select
+1855  r29 = r29 + r34                              // == C1 or C2
+1862  JMP <trampoline>                             // hash(r29, r30, r31)
+```
+
+The whole build contains **no conditional-jump instruction at all** — the
+`branch` opcode exists in the handler table but is never emitted, and every
+block in every function ends in `jump` or `return`. Real `if`s and `while`s are
+encoded the same way as the flattening: the predicate becomes a mask that
+selects the next dispatcher constant. That is why §4.4's boolean path split is
+not an optimization but a requirement — splitting on an unknown predicate is the
+*only* way the recovered graph gets more than one successor.
 
 Recovered program structure:
 
@@ -197,7 +216,8 @@ globals proxy means `setglobal`, a write into the bytecode array means
 `decrypt`, a change of `this.h` means `return`, and so on. Conditional jumps are
 found by running the handler twice, once with a falsy and once with a truthy
 condition register, and seeing which run writes an out-of-sequence pc
-(`jumpTarget()` filters the ordinary `pc++` writes that operand fetching does).
+(`jumpTarget()` filters the ordinary `pc++` writes that operand fetching does) —
+this build never emits one, but the classifier finds them anyway.
 
 This part is **build-independent**: nothing keys off the opcode numbers.
 `debug/test-classify.js` checks the classifier against the 61 opcode roles that
@@ -211,10 +231,10 @@ running the handler and matching results against 20 binary and 7 unary candidate
 operators:
 
 * **Round 1 — mixed types.** Values drawn from
-  `{0,1,-1,2,"","0","1","abc",true,false,null,undefined,NaN,1.5,-0.25,[],{},"5"}`
-  plus forced pairs (`0/false`, `"0"/0`, `1/true`, `null/undefined`, equal
-  operands). A handler that reproduces a candidate operator exactly on this pool
-  is a *plain* handler and is reported as that operator.
+  `{0,1,-1,2,"","0","1","abc",true,false,null,undefined,NaN,1.5,-0.25,[],{},"5",
+  1e9+7,-1e9-7,"1000000007",987654.321}` plus forced pairs (`0/false`, `"0"/0`,
+  `1/true`, `null/undefined`, equal operands). A handler that reproduces a
+  candidate operator exactly on this pool is a *plain* handler.
 * **Round 2 — int32 domain.** If nothing matches exactly, the pool switches to
   int32 values and the candidates are re-tested both exactly and truncated
   (`(a op b) | 0`). MBA handlers match here, which also flags them as int32-only
@@ -223,11 +243,19 @@ operators:
   non-truncated first) plus a bonus for keeping the operand order the handler
   reads them in, so `a > b` is not silently rewritten as `b < a`.
 
-Critically, fitting happens **at a concrete instruction site**, not on synthetic
-words: the real operand words are used, the owning function's salt is installed,
-and every operand the analyzer already knows is **pinned to its real value**
-while only the unknown ones are sampled. That is what makes the junk operands,
-the nibble-9 constraint and the immediate low-bit constraints hold.
+Fitting happens **at a concrete instruction site**: the real operand words are
+used, the owning function's salt is installed, and the operands the analyzer
+already knows are pinned to their real values. That is what makes the junk
+operands, the nibble-9 constraint and the immediate low-bit constraints hold.
+
+**But pinning is tried second, not first.** Holding an operand at a constant
+destroys the information that distinguishes a binary operator from a unary one:
+`a % 97` returns exactly `+a` for every sample smaller than the modulus, and the
+unary reading outranks the binary one. So each site is first fitted with *all*
+operands free, and only a handler that cannot be explained that way — the
+signature of an MBA handler, which needs its real junk-operand values — falls
+through to the pinned fit. Without this, all three `% 97`, `% 89` and `% 83`
+operations in `fn@37` were silently lifted as unary `+`.
 
 Distinguishing `==` from `===` (and `!=` from `!==`) is impossible for the MBA
 variants, because they coerce both operands to int32 first; the fitter prefers
@@ -244,32 +272,48 @@ fully known operands are **executed by the real handler**, so:
 * the dispatcher resolves itself — the trampoline's callee register holds a real
   JS closure produced by the `func` handler, so the analyzer literally calls it
   to get the next block address,
-* the flattening predicates fold, which unflattens the CFG.
+* the flattening masks fold, which unflattens the CFG.
 
 Extra mechanisms that were needed:
 
 * **Invariance folding.** An MBA instruction whose result does not change while
   its *unknown* operands are resampled is a concealed constant, so it is folded
-  even with unknown inputs. This is what lets the state register stay concrete
-  when a junk operand happens to be `this` or a global. *This is also the source
-  of one of the remaining defects — see §6.*
+  even with unknown inputs. Two things make this sound enough to rely on:
+  * every register is sampled **independently**. Indexing the sample pool by
+    `(round + register) % pool.length` (what an earlier version did) gives
+    registers whose numbers differ by a multiple of the pool size the *same*
+    value in every round — with a 34-value pool, `r4 ^ r38` was invariantly `0`,
+    and the decoder lost its entire keystream XOR;
+  * unknown operands are perturbed **one at a time** as well as together, since
+    a handler can be invariant along the diagonal without being constant;
+  * the pool is **derived from the site**, not generic: the values the known
+    operands hold, and their neighbors, are added to it. A generic pool never
+    contains the 32-bit constant a flattening state is compared against, so
+    `state === K` would look invariantly `false` and the control flow would
+    resolve to nonsense.
 * **Path sensitivity with liveness-based keys.** Block instances are keyed on the
   values of the *live* registers, so the flattening state stays precise while
   dead scratch values do not multiply states.
-* **Adaptive widening.** If a block exceeds 40 instances the register with the
-  most distinct values is widened to unknown and the pass restarts, preferring
-  registers that are *not* written exclusively by MBA opcodes (the flattening
-  state is; loop counters and accumulators are not). In this sample exactly one
-  register is widened per function: `r9` in `fn@37` (closure-aliased) and `r6`
-  in `fn@1758` (the loop counter).
+* **Measured widening.** When a block exceeds 40 instances, one live register is
+  widened to unknown and the pass restarts. *Which* register is chosen is
+  measured, not guessed: every candidate is tried and the resulting pass is
+  scored by whether it still overflows, then by **how many distinct bytecode
+  blocks it can still see**, then by unresolved jumps, unfolded arithmetic and
+  size. Widening the flattening state costs coverage immediately (in `fn@1758`
+  it drops from 33 blocks to 19, because the dispatcher no longer knows where to
+  go), while widening a loop counter costs nothing. Shape-based heuristics do
+  not separate the two: in this sample the flattening state (`r13`) and the loop
+  counter (`r6`) are both written exclusively by MBA opcodes and both take a
+  similar number of values, and preferring one by "distinct value count" picks
+  the wrong one. The result is one widened register per function: `r9` in
+  `fn@37` (closure-aliased) and `r6` in `fn@1758` (the loop counter).
 * **Closure aliasing.** Registers captured by a nested function are never
   assumed constant, since the child can write them through a closure cell.
 
 Validation: `debug/validate2.js` traces the real VM (with a DOM shim) and checks
 that every block transition it performs exists in the recovered graph.
-Result: **83/83 observed blocks and all intra-function transitions covered, 0
-missing** (the two reported "missing" self-edges are frame-reuse artifacts of the
-tracer for the single-block dispatcher functions).
+Result: **83/83 observed blocks and 99/99 observed transitions covered, 0
+missing.**
 
 ### 4.5 Lifting and structuring (`lib/lift.js`, `lib/emit.js`, `lib/structure.js`, `lib/polish.js`)
 
@@ -284,116 +328,71 @@ switch(state)` fallback that is not needed here) → cosmetic passes
 (`o["x"]`→`o.x`, `else` flattening after a terminator, declaration hoisting,
 `x + -5` → `x - 5`).
 
+The bytecode carries no identifiers, so variables are named after the **role**
+they play rather than invented from context: `p0` for a parameter, `v0` for a
+local, `args0` for the argument array the VM keeps in a register, and `c1_0` for
+a variable captured by a nested function (`1` being the index of the function
+that owns it). Names are unique program-wide, so a nested function can never
+shadow a captured variable it also reads, and a final pass renumbers them so
+each role counts from zero in reading order.
+
+Warnings about an expression that could not be lifted are **deferred** until the
+expression is known to survive cleanup. The flattening state updates are exactly
+the instructions the fitter cannot name and exactly the ones dead-code
+elimination removes, so reporting them at lift time made every clean run print
+three false alarms.
+
 ---
 
-## 5. Current output
+## 5. Output
 
-`node vm.js input.js output.js` currently produces:
+`node vm.js input.js output.js`:
 
 ```js
-var bh = false;
+var c0_0 = false;
 window._k1crlxlk2w8 = function () {
-  var bm, ce, bz, ca, s, bg, bq;
-  var cp = function (x, w) {
-    var aa, z, y, af;
-    if (!s) { return; }
-    aa = w; z = ""; y = 0;
-    while (y < x.length) {
-      aa = aa - 1640531527 | 0;
-      af = x.charCodeAt(y) | 0;             // <-- WRONG, see §6.1
-      z = z + String.fromCharCode(af);
-      y = y + 1;
+  var v0, v1, v2, v3, c1_0, v5, v6;
+  var v4 = function (p0, p1) {
+    var v7, v8, v9, v10;
+    if (!c1_0) {
+      return;
     }
-    return z;
+    v7 = p1;
+    v8 = "";
+    v9 = 0;
+    while (v9 < p0.length) {
+      v7 = v7 - 1640531527 | 0;
+      v10 = p0.charCodeAt(v9) ^ (v7 ^ v7 >>> 13) & 65535;
+      v8 = v8 + String.fromCharCode(v10);
+      v9 = v9 + 1;
+    }
+    return v8;
   };
-  if (!bh) {
-    bh = true;
-    bm = document.createElement("div");
-    bm.style.width = "calc(100px + 20px * 2)";
-    document.body.appendChild(bm);
-    ce = bm.offsetWidth;
-    bz = Date.now();
-    bg = Math.random();
-    ca = Math.floor(bg * 1000000);
-    s = bz + "|" + ca + "|" + +(bz - 10000 + ca * 5) + "|" + ...;   // <-- missing `% 97`, see §6.2
-    bq = cp(s, ce + ca);
-    console.log(s, bq);
+  if (!c0_0) {
+    c0_0 = true;
+    v0 = document.createElement("div");
+    v0.style.width = "calc(100px + 20px * 2)";
+    document.body.appendChild(v0);
+    v1 = v0.offsetWidth;
+    v2 = Date.now();
+    v5 = Math.random();
+    v3 = Math.floor(v5 * 1000000);
+    c1_0 = v2 + "|" + v3 + "|" + (v2 - 10000 + v3 * 5) % 97 + "|" + (v2 - v1 + v3) % 89 + "|" + (v3 + 1500) % 83;
+    v6 = v4(c1_0, v1 + v3);
+    console.log(c1_0, v6);
   }
 };
 ```
 
-Structurally this is the original program: the class/dispatcher/VM scaffolding,
-both flattening layers, the concealed constants and the string encoding are all
-gone, strings are decoded (`"_k1crlxlk2w8"`, `"calc(100px + 20px * 2)"`,
-`"offsetWidth"`, `"fromCharCode"`, …), and the closure structure is preserved.
+84,539 bytes in, 862 bytes out. The class/dispatcher/VM scaffolding, both
+flattening layers, the concealed constants and the string encoding are all gone;
+the guest program's own encoder (a xorshift keystream identical to the one the
+VM uses for its constant pool) is fully readable; the closure structure is
+preserved.
 
 ---
 
-## 6. Known defects
-
-`debug/compare-run.js` runs `input.js` and `output.js` in identical
-deterministic sandboxes (stubbed `Date.now`, seeded `Math.random`, DOM shim) and
-diffs every observable event. Current result: **10 of 11 events identical, 1
-differing** — the single `console.log`, whose two arguments are both wrong.
-
-### 6.1 The decoder loses its keystream XOR
-
-Expected inner statement (this is the same algorithm as the VM's own `y()`):
-
-```js
-z += String.fromCharCode(x.charCodeAt(y) ^ ((aa ^ aa >>> 13) & 65535));
-```
-
-Lifted as `x.charCodeAt(y) | 0`. The right-hand operand — the whole
-`(aa ^ aa >>> 13) & 65535` sub-expression — was **folded to the constant 0** by
-the analyzer. `aa` (the running hash) is unknown at that point, so
-`aa >>> 13` must not fold. Root cause is almost certainly `invariantValue()` in
-`lib/analyze.js`: with the junk operands resampled the MBA handler apparently
-returned the same value for every sample, and the fold was accepted.
-
-Evidence: an early dump of block `2534`/`2744` showed
-`r39 = <const> // = 0` and `r38 = r4 >>> r8 // = 0` in contexts where `r4` was
-genuinely unknown.
-
-### 6.2 A `%` operation is dropped from the string expression
-
-Ground truth from the bytecode (`fn@37`, block `@1259`):
-
-```
-1259  op  6548 [66,24,25]        r66 = r24 + r25          // (now-10000) + (rnd*5)
-1263  op  3501 [67,11,...]       r67 = 97                 // decoded constant
-1267  op  9164 [68,66,67]        r68 = r66 % r67          // opcode 9164 == `%`
-1271  op 19461 [6,68]            r6  = r68                // move
-```
-
-Original output is `…|89|40|41` (small numbers, consistent with `% 97`), the
-lifted output is `…|1700003266770|…` — the `% 97` step is missing and the `move`
-came out as unary `+`. Opcode 9164 is a *plain* handler correctly classified as
-`%`, so this is a lifting/cleanup bug, not a fitting bug. Prime suspects, in
-order: `mergeEquivalentNodes()` merging two blocks that only look alike after
-one of them lost a statement; the dead-store→effect conversion in
-`eliminateDeadCode()`; or `inlineTemporaries()` dropping a definition whose use
-lives in a later block (the live-out set is computed on the lifted graph and
-must stay in sync with `mergeChains`).
-
-### 6.3 Smaller open items
-
-* Three residual warnings (`could not identify the operator of opcode 19570 /
-  50279`) come from the flattening state-update opcodes. They are dead code and
-  are eliminated, but the warning is emitted during lifting, before DCE runs —
-  it should be deferred until the statement is known to survive.
-* `trycatch` / `tryfinally` / `trypop` are classified but **not reconstructed**;
-  the lifter only records a warning. This sample contains no exception handling
-  (0 occurrences in the bytecode), so it is untested territory.
-* The `decrypt` opcode is classified but not emulated during the sweep. This
-  sample never uses it; a build that does would need the decryption applied
-  before/while disassembling.
-* Generated variable names (`bh`, `cp`, `ce`, …) come from a global counter;
-  naming by role/first use would read better.
-
----
-
-## 7. Answers to the specific questions
+## 6. Answers to the specific questions
 
 **Is the opcode analysis per-build, or only this sample?**
 Per-build. Nothing keys off the opcode numbers, the handler source text, or the
@@ -418,14 +417,16 @@ execution, so the interpreter loop never starts. After that, the only code that
 runs is (a) individual opcode handlers against synthetic frames, and (b) the
 dispatcher hash functions, which are pure integer math. The DOM shim
 (`debug/dom-shim.js`) and everything that calls the exported function exist only
-in `debug/` for validation — `vm.js` and `lib/` never require them.
+for validation — `vm.js` and `lib/` never require them.
 
 **Are the MBAs hard to decipher, and why?**
 Yes, statically. See §3: salt-derived modular inverses, nibble-constrained
 operand transforms, immediate low-bit constraints, dead selector branches and
 junk register operands, all layered on ~1–5 KB expressions, times ~50 handlers.
 Behaviorally they are easy — a few hundred handler invocations identify each one
-exactly.
+exactly. **The MBA layer cost far more effort in the abstract interpreter than
+in the disassembler**: both of the last two defects to fall were folding
+mistakes caused by junk operands, not by the MBA algebra itself.
 
 **Was the salt guessed, symbolically executed, or probed?**
 Neither guessed nor symbolically executed: it is **read out of the running VM**
@@ -436,82 +437,252 @@ independently (`imul(derive(salt), 47908741) === 1` for exactly one function).
 
 ---
 
-## 8. File map
+## 7. Weaknesses of this obfuscation
+
+Ordered by how much each one cost to defeat — the cheapest first, which is also
+the order in which they should be fixed.
+
+### 7.1 The handler table is a working interpreter, handed over intact
+
+This is the root weakness and everything else follows from it. The sample must
+build a live, callable `prototype[opcode]` table before it can run, and it
+builds all 113 of them eagerly. A deobfuscator does not need to understand a
+single MBA identity — it needs to *call* the handlers. `lib/machine.js` replaces
+one AST node (the entry call's callee), runs the file, and walks away with the
+bytecode, the constant pool, the globals and every handler, without the guest
+program executing a single instruction.
+
+Every subsequent layer — randomized opcodes, shuffled tables, encoded bytecode,
+concealed constants — is defeated by that same oracle, because each of those
+layers is *decoded by the handlers themselves*.
+
+### 7.2 The MBA identities are exactly identities
+
+Each MBA handler computes a plain operator, exactly, over int32. That makes it
+identifiable by 50–80 executions against candidate operators. The obfuscation
+raises the cost of *reading* a handler by three or four orders of magnitude and
+the cost of *identifying* it by nothing at all. The junk operands, the
+salt-derived modular inverses and the nibble constraints are all invisible to a
+fitter that simply calls the handler at a real instruction site.
+
+### 7.3 The salt is stored where the VM can find it
+
+Because the interpreter must recover the per-function key at runtime, it is
+either in the frame (`+7`) or reachable from the function record (`m.get(fn).C.x`).
+The tool reads it from the same places the VM does. Making the key harder to
+*derive* is pointless as long as it is materialized in memory.
+
+### 7.4 Concealed constants are pure functions of the bytecode
+
+A concealed constant is computed by an MBA opcode from immediates plus junk
+registers. Purity is what lets an abstract interpreter fold it: run the handler,
+keep the answer. There is no dependence on program input, so no amount of
+arithmetic complexity helps — the constant is decided before the program runs.
+
+### 7.5 Both flattening layers are input-independent
+
+The dispatcher hash takes only per-block constants, and the flattening state
+transitions are arithmetic over concealed constants. Neither depends on data the
+analyzer cannot know, so both fold completely under constant propagation. The
+mask-select form (§1.4) is actually *easier* than a switch: with no conditional
+jumps, there is nothing to enumerate — the arithmetic simply evaluates.
+
+### 7.6 The MBA handlers are algebraically distinguishable from the plain ones
+
+MBA handlers coerce to int32 and cannot reproduce string or `undefined`
+semantics; plain handlers can. One round of mixed-type probing separates the two
+populations for free, which is what tells the tool where the interesting sites
+are.
+
+### 7.7 The bytecode never changes
+
+A `decrypt` opcode exists but is never used. Everything the analyzer needs is
+present, in final form, from load time — so a single sweep disassembles the whole
+program and the recovered CFG can be validated against a trace.
+
+### 7.8 One function, one salt
+
+The salt is per function, so once it is known, *every* MBA opcode in that
+function is decodable. There are 5 functions and therefore 5 secrets in an 84 KB
+file.
+
+---
+
+## 8. Hardening the obfuscator (MBA first)
+
+Concrete changes, ordered by how much each one would have cost this tool.
+Roughly: **§8.1 breaks it, §8.2–8.4 make MBA identification genuinely hard, and
+§8.5–8.8 raise the cost of everything else.**
+
+### 8.1 Don't hand over a callable interpreter (highest impact)
+
+Everything here rests on being able to call handlers in isolation. Break that:
+
+* **Bind handlers to interpreter-loop state that a synthetic frame cannot fake.**
+  Have each handler read a rolling value that only the dispatch loop maintains —
+  e.g. `this.r = imul(this.r ^ opcode, K) + pcDelta` updated on every dispatch,
+  with the MBA identities depending on `this.r` and not just on `frame[+7]`. A
+  handler invoked out of order then computes garbage, and the tool cannot probe
+  it without emulating the whole loop.
+* **Make the table lazy and self-consuming.** Materialize `prototype[op]` only on
+  first dispatch, from a generator keyed on the running state, and drop it
+  afterwards. Capturing "the handler table" at load time then yields nothing.
+* **Fuse the guest program's start into the setup.** The tool relies on being
+  able to stop the sample cleanly between "VM built" and "program runs" by
+  rewriting the entry call. If the entry call is not a distinguishable top-level
+  statement — if the first blocks execute during table construction, or the table
+  is only complete after N instructions have run — there is no such seam.
+* **Detect the probe.** Handlers executed against a `Proxy`-backed frame see
+  register reads in a fixed order with sentinel values. Cheap self-checks
+  (`frame[+9] === 13 + Q`, pc within the owning function's range, a checksum over
+  the frame) turn probing into observable misbehavior.
+
+### 8.2 Make the MBA identities *conditional*, not unconditional
+
+The fitter works because every MBA handler is an exact identity on all of int32.
+Weaken that deliberately:
+
+* **Domain-restricted identities.** Emit an identity that only equals `a + b`
+  when the operands satisfy a property the *compiler* can prove of the real
+  values at that site (`a` known non-negative, `b < 2^16`, `a & 1 === 0`), and
+  computes something else otherwise. A fitter sampling `0x7fffffff` and `-1` gets
+  a mismatch on every candidate operator and reports "unknown". The tool then has
+  to prove the same range facts before it can even name the opcode — that is real
+  work, and it is exactly the work MBA is supposed to force.
+* **Per-site specialization.** Today an opcode means the same operator at every
+  site in a function. Make the identity depend on the instruction address as well
+  as the salt (`k = imul(pc, C) ^ salt`), so an opcode is a different operator at
+  different sites and the fitter's 50 observations cannot be pooled.
+* **Split one operator across several opcodes with disjoint valid domains**, so
+  even a correct per-site fit does not generalize.
+
+### 8.3 Give the junk operands real semantics
+
+Both of the last two bugs in this tool were folding mistakes caused by junk
+operands, which shows where the pressure point is — but the junk currently
+cancels for *arbitrary* values, so once sampling is done independently it is
+detected immediately. Instead:
+
+* **Make junk operands carry live program data.** Feed them registers that hold
+  real values (a loop counter, a string length) with an identity that cancels
+  only for the values those registers actually take. An analyzer that resamples
+  them sees the result change and must refuse to fold — which is correct but
+  costs it every concealed constant, so the whole unflattening stalls.
+* **Make the junk operand's contribution depend on data the analyzer cannot know**
+  (a DOM measurement, `Date.now()`), so no amount of probing settles it and
+  static folding becomes impossible without emulating the browser.
+
+### 8.4 Make concealed constants impure
+
+Right now a concealed constant is a pure function of the bytecode, so it folds by
+execution. Derive flattening state and constants from a value that only exists at
+runtime — a hash of the page, a timing measurement, the length of an input string
+— mixed so that the *low nibble* constraints still hold. Constant propagation
+then cannot fold the state, path sensitivity cannot key on it, and the dispatcher
+becomes genuinely dynamic. This single change would have stopped the unflattening
+in §4.4 outright.
+
+### 8.5 Make the salt not exist as a value
+
+* **Never materialize it.** Instead of storing `desc.x` and deriving multipliers
+  from it in each handler, bake the already-derived multiplier constants into
+  per-function *copies* of the handlers, generated at build time. There is then
+  no `frame[+7]` to read and no `WeakMap` record to interrogate.
+* **Or split it across the frame** (a few bits in the pc, a few in the frame size,
+  a few in a scratch slot), so a synthetic frame that gets any one of them wrong
+  produces wrong arithmetic — silently.
+
+### 8.6 Rotate the bytecode while it runs
+
+The unused `decrypt` opcode is the right idea, unused. Encrypt each block under a
+key derived from the *path* taken to reach it, decrypt on entry, re-encrypt on
+exit. A single static sweep then cannot disassemble the program, `instrLen`
+cannot be computed ahead of time, and the trace-based validation this tool uses
+becomes the only way to see the code — which requires running it.
+
+### 8.7 Make blocks non-linear to disassemble
+
+`instrLen` is computable from the handler's operand-fetch count, so the sweep is
+exact. Overlapping instructions, opcode-dependent operand counts that depend on a
+*register* value rather than an immediate, and jumps into the middle of an
+instruction all break the "one sweep, one instruction stream" assumption that
+everything downstream is built on.
+
+### 8.8 Exploit the analyzer's need to widen
+
+The abstract interpreter must give up precision somewhere, and §4.4 shows how
+much rides on giving it up in the right place. Emit loops whose counter is
+*aliased into the flattening state*, so that widening the counter also widens the
+state and widening the state loses the loop. Combined with §8.4 this makes the
+widening choice a genuine dilemma rather than a search over seven candidates.
+
+### 8.9 What is not worth doing
+
+For completeness, these cost this tool essentially nothing and should not be
+where effort goes:
+
+* **more MBA terms per handler** — 1 KB and 5 KB expressions are equally easy to
+  call;
+* **more opcodes / re-randomized numbering / shuffled handler tables** — nothing
+  in `lib/` keys off opcode numbers;
+* **stronger string encryption** — the decoder is in the file and is run;
+* **deeper dispatcher hashes** — they are pure integer functions and get called;
+* **minification, class obfuscation, dead code** — invisible to a bytecode lifter.
+
+---
+
+## 9. Limitations of this deobfuscator
+
+Honest scope, so the results are not read as broader than they are.
+
+* **Exception handling is not reconstructed.** `trycatch`, `tryfinally` and
+  `trypop` are classified correctly but not lifted; a sample using them would
+  emit a warning and lose the protected-region structure. This sample contains
+  zero occurrences, so the code path is untested and was deliberately left out
+  rather than written blind. The mechanism is understood: the try opcodes push
+  `{catchPc, catchReg}` / `{s, G, z, B}` onto `frame[+3]` and the interpreter
+  unwinds by scanning parent frames, so reconstruction means treating a
+  `trycatch` as opening a region that ends at the matching `trypop` and wrapping
+  the dominated blocks.
+* **Self-modifying bytecode is not emulated.** The `decrypt` opcode is classified
+  but a build that uses it would need its XOR
+  (`c = (c + 2654435769)|0; i[dst+j] = (i[src+j] ^ c ^ c>>>13)>>>0`) applied
+  during `Analyzer.sweep()` before the destination range is disassembled.
+* **`==` versus `===` cannot be recovered for MBA comparison handlers**, which
+  coerce to int32 first; the strict form is assumed. Every surviving comparison
+  in this sample is a plain handler, so nothing is lost here.
+* **Invariance folding is a heuristic, not a proof.** §4.4 lists the three things
+  that make it reliable in practice, but a handler engineered along the lines of
+  §8.3 would defeat it.
+* **Some VM-template details are hard-coded** — see the list in §6.
+
+---
+
+## 10. File map
 
 | file | purpose |
 |---|---|
 | `vm.js` | CLI + `require("./vm.js")(file)` entry point; passes non-samples through untouched |
+| `test.js` | the test suite (`node test.js`) — 12 checks, including the behavioral diff |
+| `regular.js` | an ordinary file, used to check pass-through |
 | `lib/machine.js` | sandbox load, entry-call capture, handler probing, behavioral classification, constant decoding |
 | `lib/fit.js` | operator recovery for plain and MBA arithmetic opcodes |
 | `lib/analyze.js` | sweep, abstract interpretation, dispatcher resolution, unflattening, liveness, widening |
-| `lib/lift.js` | instruction → AST, DCE, temporary inlining, terminator construction |
-| `lib/emit.js` | graph cleanup, block minimization, structuring entry, function assembly |
+| `lib/lift.js` | instruction → AST, naming, DCE, temporary inlining, terminator construction |
+| `lib/emit.js` | graph cleanup, block minimization, structuring entry, function assembly, renumbering |
 | `lib/structure.js` | dominators / post-dominators / natural loops → `if`/`while` |
 | `lib/polish.js` | cosmetic AST passes |
-| `debug/validate2.js` | **CFG validation against the real VM** (currently passing) |
-| `debug/compare-run.js` | **behavioral diff of input.js vs output.js** (currently 1 differing event) |
+| `debug/validate2.js` | **CFG validation against the real VM** (passing: 0 missing blocks/edges) |
+| `debug/compare-run.js` | **behavioral diff of input.js vs output.js** (passing: identical) |
+| `debug/dump-lib-ir.js` | disassembly of the analyzed graph with folded values and fitted operators |
+| `debug/lift-trace.js` | lifted block graph after each cleanup pass — attributes a lost statement to a pass |
+| `debug/widen-trace.js` | every widening trial and the score it produced |
+| `debug/widen-metrics.js` | candidate widenings side by side on all scoring signals |
+| `debug/fold-flaky.js` | repeats the analysis and reports fold sites whose answer is not stable |
+| `debug/fold-probe.js` | per-operand sensitivity of one instruction — which junk operands really cancel |
+| `debug/count-oracle.js` | how much real code the tool executes, by phase, and inputs per operator fit |
 | `debug/trace-values.js` | logs every register write the real VM performs — ground truth for folded values |
 | `debug/test-classify.js` | classifier regression check against hand-read opcode roles |
-| `debug/ir-nodes.js`, `debug/print-cfg.js`, `debug/sweep.js` | disassembly / IR dumps |
+| `debug/ir-nodes.js`, `debug/print-cfg.js`, `debug/sweep.js` | earlier disassembly / IR dumps |
 | `debug/junk-test.js`, `debug/keycheck.js` | experiments that established the junk-operand and salt mechanics |
 | `debug/analyze.js`, `debug/vmmodel2.js`, `debug/semantics.js`, … | earlier research versions, superseded by `lib/` but kept for reference |
-
----
-
-## Next steps
-
-Ordered by what unblocks the most.
-
-1. **Fix §6.1 (missing keystream XOR) — highest priority.**
-   Make `invariantValue()` in `lib/analyze.js` sound:
-   * require a much larger and more adversarial sample set, and resample the
-     *known* operands too (with their low nibble preserved) rather than only the
-     unknown ones;
-   * refuse to fold when any unknown operand feeds a shift/xor chain, or more
-     simply: only accept a fold when the instruction's result is also invariant
-     under perturbing every unknown operand **independently** (currently all
-     unknown registers are perturbed together, so a handler that is invariant on
-     the diagonal can look constant);
-   * add an assertion mode that cross-checks every folded value against
-     `debug/trace-values.js` output for the pcs the real VM executed. That
-     harness already exists and would have caught this immediately.
-
-2. **Fix §6.2 (dropped `%`).**
-   Bisect the cleanup pipeline in `lib/emit.js::liftFunctionBody` by dumping the
-   statement lists after each pass for `fn@37` and locating where the
-   `r68 = r66 % r67` statement disappears. Order to test:
-   `mergeEquivalentNodes` → `eliminateDeadCode` (second call) → `mergeChains` →
-   `inlineTemporaries`. Note that `liveSets()` is recomputed inside
-   `inlineTemporaries` but `mergeChains` rewrites `n.term` in place, so a stale
-   successor set is a plausible culprit.
-
-3. **Re-run the two validators until clean.**
-   `node debug/validate2.js` must stay at 0 missing blocks/edges, and
-   `node debug/compare-run.js` must reach `IDENTICAL BEHAVIOR`. Extend
-   `compare-run.js` to call the exported function several times (the run-once
-   flag means only the first call does work) and to exercise the decoder with
-   longer inputs.
-
-4. **Write `test.js` and `regular.js`** as the README asks:
-   `require("./vm.js")("input.js")` for the decoded output and
-   `require("./vm.js")("regular.js")` for pass-through. `vm.js` already returns
-   the source unchanged for non-samples; the test should assert that, assert the
-   decoded strings appear in the deobfuscated output, and shell out to
-   `debug/compare-run.js` for the behavioral check.
-
-5. **Defer the unknown-operator warnings until after DCE** (§6.3) so a clean run
-   is silent.
-
-6. **Implement `trycatch`/`tryfinally`/`decrypt`** for other builds:
-   * the try opcodes push `{catchPc, catchReg}` / `{s, G, z, B}` onto
-     `frame[+3]`, and the interpreter loop unwinds by scanning parent frames;
-     reconstructing them means treating a `trycatch` as opening a protected
-     region that ends at the matching `trypop`, and emitting `try { … } catch
-     (r) { … }` around the dominated blocks;
-   * `decrypt` should be applied during `Analyzer.sweep()` — scan for it and run
-     its XOR (`c = (c + 2654435769)|0; i[dst+j] = (i[src+j] ^ c ^ c>>>13)>>>0`)
-     before disassembling the destination range.
-
-7. **Nice-to-haves:** name variables from context (`el`, `now`, `rnd`, `out`),
-   turn `y = y + 1` into `y++` where the value is unused, and reconstruct `for`
-   loops from the `while` + trailing-increment shape.

@@ -158,12 +158,49 @@ class Analyzer {
   }
 }
 
-/** Probe values used to test whether an operand really influences a result. */
-function probeSamples() {
-  const out = [0, 1, -1, 2, 3, 9, 16, 255, -256, 65535, 2147483647, -2147483648];
-  for (let i = 0; i < 14; i++) out.push((Math.random() * 2 ** 32) | 0);
-  for (let i = 0; i < 8; i++) out.push((((Math.random() * 2 ** 32) | 0) & ~15) | 9);
+/**
+ * Fixed probe values. Roughly a third of them satisfy `v & 15 === 9`, which is
+ * the shape the obfuscator gives its concealed constants and which some MBA
+ * operand transforms need in order to cancel.
+ */
+const BASE_SAMPLES = [
+  0, 1, -1, 2, 3, 7, 8, 16, 255, -256, 4095, 65535, -65536, 2147483647, -2147483648,
+  305419896, -1985229329, 1234567, -7654321, 19088743, -1732584194,
+  9, 25, 41, 57, 73, 89, 105, 121, 1073741833, 2147483641, -1431655751, -559038729, 1985229337,
+];
+
+/**
+ * Probe values for one instruction site.
+ *
+ * The values the instruction's *known* operands hold are added to the pool,
+ * together with their immediate neighbors. Without them a comparison against a
+ * concealed constant looks invariant -- no value in a generic pool ever equals
+ * the 32-bit constant a flattening state is tested against, so `state === K`
+ * would fold to `false` and the control flow would resolve to nonsense.
+ */
+function probeSamples(known) {
+  const out = BASE_SAMPLES.slice();
+  for (const v of known || []) {
+    if (typeof v !== "number" || !Number.isFinite(v)) continue;
+    for (const d of [0, 1, -1]) {
+      const x = (v + d) | 0;
+      if (!out.includes(x)) out.push(x);
+    }
+  }
   return out;
+}
+
+/**
+ * Scatters a (round, register) pair over the sample pool.
+ *
+ * Indexing the pool by `(round + register) % pool.length` instead would give
+ * registers whose numbers differ by a multiple of the pool size the same value
+ * in every round, which makes an instruction like `r4 ^ r38` look invariantly 0.
+ */
+function sampleIndex(round, reg) {
+  let h = (Math.imul(round + 1, 2654435761) ^ Math.imul(reg + 1, 40503)) >>> 0;
+  h ^= h >>> 13;
+  return Math.imul(h, 1274126177) >>> 8;
 }
 
 class FuncAnalysis {
@@ -256,48 +293,103 @@ class FuncAnalysis {
     this.defs = defs;
   }
 
-  /** Registers written only by MBA opcodes: the flattening state and its helpers. */
-  computeDefKinds() {
-    const plain = new Set();
-    const mba = new Set();
-    for (const pc of this.staticBlocks) {
-      for (const ins of this.a.block(pc)) {
-        if (this.a.isTerminator(ins.kind)) continue;
-        const d = this.a.destOf(ins, this.key);
-        if (d === null) continue;
-        (ins.kind.kind === "arith" ? mba : plain).add(d);
-      }
-    }
-    this.stateRegs = new Set([...mba].filter((r) => !plain.has(r)));
-  }
-
   // ---- phase 2: path sensitive ----
 
+  /**
+   * Explores the function, widening registers until the state space is finite.
+   *
+   * Which register to widen is *measured*, not guessed: each candidate is tried
+   * and the pass it produces is scored by how much control flow it leaves
+   * unresolved. Widening the flattening state hides the dispatcher's inputs and
+   * costs the whole unflattening, while widening a loop counter costs nothing,
+   * so the scores separate them cleanly. Guessing from the register's shape does
+   * not: in this sample the flattening state and the loop counter are both
+   * written exclusively by MBA opcodes and both take a similar number of values.
+   */
   run() {
     this.runMerged();
     this.computeLiveness();
-    this.computeDefKinds();
-    this.widened = new Set(this.captured); // aliased through closures, never assume a value
-    for (let attempt = 0; attempt < 64; attempt++) {
-      this.nodes = new Map();
-      this.byPc = new Map();
-      this.nextId = 0;
-      this.overflow = null;
-      this.runPass();
-      if (!this.overflow) return;
-      const { pc, list } = this.overflow;
-      let best = null;
-      for (const r of this.liveIn.get(pc) || []) {
-        if (this.widened.has(r)) continue;
-        const distinct = new Set(list.map((n) => n.state[r])).size;
-        const cand = { r, distinct, state: this.stateRegs.has(r) };
-        if (!best) { best = cand; continue; }
-        if (best.state !== cand.state) { if (best.state) best = cand; continue; }
-        if (cand.distinct > best.distinct) best = cand;
-      }
-      if (!best || best.distinct < 3) return;
-      this.widened.add(best.r);
+    const widened = new Set(this.captured); // aliased through closures, never assume a value
+    let current = this.pass(widened);
+    let budget = 24; // trial passes allowed for this function
+    for (let attempt = 0; attempt < 16 && current.overflow && budget > 0; attempt++) {
+      const choice = this.chooseWidening(current, widened, budget);
+      budget -= choice.tried;
+      if (!choice.best) break;
+      widened.add(choice.best.reg);
+      current = choice.best.result;
     }
+    this.adopt(current);
+  }
+
+  /** Runs one path-sensitive pass and returns its result without adopting it. */
+  pass(widened) {
+    this.widened = widened;
+    this.nodes = new Map();
+    this.byPc = new Map();
+    this.nextId = 0;
+    this.overflow = null;
+    this.runPass();
+    // Everything is counted per bytecode address rather than per block
+    // instance, so a pass is not rewarded or punished for how many instances
+    // the path sensitivity happened to create.
+    const unresolved = new Set();
+    const blocks = new Set();
+    const arith = new Set();
+    const folded = new Set();
+    for (const node of this.nodes.values()) {
+      blocks.add(node.pc);
+      for (const o of node.outcomes || []) if (o.kind === "dynamic") unresolved.add(node.pc);
+      for (const ins of node.instrs || []) {
+        if (ins.kind.kind !== "arith") continue;
+        arith.add(ins.pc);
+        if (node.values.has(ins.pc)) folded.add(ins.pc);
+      }
+    }
+    return {
+      widened: new Set(widened), nodes: this.nodes, byPc: this.byPc,
+      startNode: this.startNode, overflow: this.overflow,
+      unresolved: unresolved.size, blocks: blocks.size, unfolded: arith.size - folded.size,
+    };
+  }
+
+  adopt(result) {
+    this.widened = result.widened;
+    this.nodes = result.nodes;
+    this.byPc = result.byPc;
+    this.startNode = result.startNode;
+    this.overflow = result.overflow;
+  }
+
+  /** Picks the register whose widening leaves the most control flow decidable. */
+  chooseWidening(current, widened, budget) {
+    const { pc, list } = current.overflow;
+    const candidates = [];
+    for (const r of this.liveIn.get(pc) || []) {
+      if (widened.has(r)) continue;
+      const distinct = new Set(list.map((n) => n.state[r])).size;
+      if (distinct >= 2) candidates.push({ reg: r, distinct });
+    }
+    candidates.sort((a, b) => b.distinct - a.distinct || a.reg - b.reg);
+    // The state space has to become finite, so an overflowing pass loses first.
+    // After that the decisive signal is how much of the program the pass can
+    // still see: widening the flattening state hides whole regions of the
+    // bytecode, because the dispatcher no longer knows where to go, while
+    // widening a loop counter costs no coverage at all.
+    const score = (r) => [r.overflow ? 1 : 0, -r.blocks, r.unresolved, r.unfolded, r.nodes.size];
+    const better = (a, b) => {
+      for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] < b[i];
+      return false;
+    };
+    let best = null;
+    let tried = 0;
+    for (const cand of candidates.slice(0, 8)) {
+      if (tried >= budget) break;
+      tried++;
+      const result = this.pass(new Set([...widened, cand.reg]));
+      if (!best || better(score(result), score(best.result))) best = { reg: cand.reg, result };
+    }
+    return { best, tried };
   }
 
   runPass() {
@@ -435,18 +527,42 @@ class FuncAnalysis {
     return { instrs, values, dests, inputs, term, outcomes };
   }
 
+  /**
+   * Folds an MBA instruction whose result does not depend on its unknown
+   * operands: those operands are junk, so the instruction is a concealed
+   * constant in disguise.
+   *
+   * The unknown registers are perturbed together first, and then one at a time,
+   * because a handler can be invariant along the diagonal without being
+   * constant -- `a ^ b` never changes while a and b are resampled to the same
+   * value, yet it obviously depends on both.
+   */
   invariantValue(ins, regs, unknown) {
-    const samples = probeSamples();
+    const pool = probeSamples(this.a.srcRegs(ins).filter((r) => regs[r] !== TOP).map((r) => regs[r]));
+    const baseline = regs.slice();
+    for (let j = 0; j < NREG; j++) if (baseline[j] === TOP) baseline[j] = pool[sampleIndex(0, j) % pool.length];
+
     let first;
-    for (let i = 0; i < samples.length; i++) {
-      const probe = regs.slice();
-      for (const u of unknown) probe[u] = samples[(i + u) % samples.length];
-      for (let j = 0; j < NREG; j++) if (probe[j] === TOP) probe[j] = samples[(i + j) % samples.length];
+    let seen = 0;
+    const run = (probe) => {
       const res = this.m.runAt(this.m.code, ins.pc, this.key, probe, { fnObj: this.fnObj });
-      if (res.error || !res.regWrites.length) return { ok: false };
+      if (res.error || !res.regWrites.length) return false;
       const v = res.regWrites[res.regWrites.length - 1][1];
-      if (i === 0) first = v;
-      else if (!Object.is(first, v)) return { ok: false };
+      if (seen++ === 0) first = v;
+      return Object.is(first, v);
+    };
+
+    for (let round = 0; round < 16; round++) {
+      const probe = regs.slice();
+      for (let j = 0; j < NREG; j++) if (probe[j] === TOP) probe[j] = pool[sampleIndex(round, j) % pool.length];
+      if (!run(probe)) return { ok: false };
+    }
+    for (const u of unknown) {
+      for (let i = 0; i < pool.length; i++) {
+        const probe = baseline.slice();
+        probe[u] = pool[i];
+        if (!run(probe)) return { ok: false };
+      }
     }
     return { ok: true, value: first };
   }

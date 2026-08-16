@@ -258,13 +258,19 @@ function install(Lifter, helpers) {
         }
       }
       if (locals.length) body.unshift(t.variableDeclaration("var", locals));
+      for (const st of body) {
+        walkAll(st, (node) => {
+          const message = this.deferredWarnings.get(node);
+          if (message) this.warnings.push(message);
+        });
+      }
       return { params, body };
     },
 
     /** Fallback for graphs that cannot be structured: an explicit state machine. */
     emitStateMachine(fn, graph, api) {
       const ids = new Map(graph.nodes.map((n, i) => [n, i]));
-      const stateName = this.freshName();
+      const stateName = this.freshName("state");
       const cases = [];
       for (const n of graph.nodes) {
         const stmts = api.stmts(n);
@@ -285,13 +291,47 @@ function install(Lifter, helpers) {
       ];
     },
 
+    /**
+     * Renumbers the generated names so each role counts up from zero in the
+     * order the reader meets it. Names are handed out lazily while lifting, and
+     * plenty of them belong to registers whose statements are later deleted, so
+     * without this pass the output is full of gaps like `v54` and `p7`.
+     */
+    renumberNames(program) {
+      const order = [];
+      const seen = new Set();
+      walkAll(program, (node) => {
+        if (node.type !== "Identifier" || seen.has(node.name) || !this.nameRole.has(node.name)) return;
+        seen.add(node.name);
+        order.push(node.name);
+      });
+      const taken = new Set([...this.usedNames].filter((n) => !this.nameRole.has(n)));
+      const counters = new Map();
+      const renamed = new Map();
+      for (const name of order) {
+        const prefix = this.nameRole.get(name);
+        let next;
+        do {
+          const n = counters.get(prefix) || 0;
+          counters.set(prefix, n + 1);
+          next = prefix + n;
+        } while (taken.has(next));
+        renamed.set(name, next);
+      }
+      walkAll(program, (node) => {
+        if (node.type === "Identifier" && renamed.has(node.name)) node.name = renamed.get(node.name);
+      });
+    },
+
     /** Lifts the whole program. */
     liftProgram() {
       const top = this.functions.get(this.m.topDesc.m);
       const { body } = this.liftFunctionBody(top);
       while (body.length && body[body.length - 1].type === "ReturnStatement" && !body[body.length - 1].argument) body.pop();
       if (this.needsForInHelper) body.unshift(forInHelper(this.forInHelperName()));
-      return t.program(body);
+      const program = t.program(body);
+      this.renumberNames(program);
+      return program;
     },
   });
 }

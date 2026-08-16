@@ -134,8 +134,14 @@ class Lifter {
     this.functions = functions;
     this.names = new Map(); // "fnEntry:reg" -> name
     this.usedNames = new Set(RESERVED);
-    this.nameSeq = 0;
+    this.nameSeq = new Map(); // name prefix -> next number
+    this.capturedSeq = new Map(); // function index -> next captured-cell number
+    this.nameRole = new Map(); // generated name -> its prefix, used to renumber at the end
+    this.fnIndex = new Map([...functions.keys()].map((entry, i) => [entry, i]));
     this.warnings = [];
+    // warnings about a single lifted expression, reported only if that
+    // expression survives the cleanup passes (the flattening glue does not)
+    this.deferredWarnings = new Map(); // AST node -> message
     this.collectGlobalNames();
   }
 
@@ -147,20 +153,57 @@ class Lifter {
     }
   }
 
-  freshName() {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  /** `prefix0`, `prefix1`, ... skipping anything the program already uses. */
+  freshName(prefix) {
     for (;;) {
-      let n = this.nameSeq++;
-      let name = "";
-      do { name = alphabet[n % 26] + name; n = Math.floor(n / 26) - 1; } while (n >= 0);
-      if (!this.usedNames.has(name)) { this.usedNames.add(name); return name; }
+      const n = this.nameSeq.get(prefix) || 0;
+      this.nameSeq.set(prefix, n + 1);
+      const name = prefix + n;
+      if (!this.usedNames.has(name)) {
+        this.usedNames.add(name);
+        this.nameRole.set(name, prefix);
+        return name;
+      }
     }
   }
 
+  /**
+   * Names a register after the role it plays, since the bytecode carries no
+   * identifiers to recover:
+   *
+   *   `p0`     parameter
+   *   `args0`  the array of all arguments, which the VM keeps in its own register
+   *   `c1_0`   a variable captured by a nested function (`1` is the owning function)
+   *   `v0`     an ordinary local
+   *
+   * Names are unique across the whole program rather than per function, so a
+   * nested function can never shadow a captured variable it also reads.
+   */
   regName(fnEntry, reg) {
     const key = fnEntry + ":" + reg;
-    if (!this.names.has(key)) this.names.set(key, this.freshName());
+    if (!this.names.has(key)) this.names.set(key, this.roleName(fnEntry, reg));
     return this.names.get(key);
+  }
+
+  roleName(fnEntry, reg) {
+    const fn = this.functions.get(fnEntry);
+    if (!fn) return this.freshName("v");
+    const params = fn.desc.d | 0;
+    if (reg < params) return this.freshName("p");
+    if (fn.captured.has(reg)) {
+      const index = this.fnIndex.get(fnEntry) || 0;
+      const n = this.capturedSeq.get(index) || 0;
+      this.capturedSeq.set(index, n + 1);
+      const name = `c${index}_${n}`;
+      if (!this.usedNames.has(name)) {
+        this.usedNames.add(name);
+        this.nameRole.set(name, `c${index}_`);
+        return name;
+      }
+      return this.freshName(`c${index}_`);
+    }
+    if (reg === params) return this.freshName("args");
+    return this.freshName("v");
   }
 
   reg(fn, r) {
@@ -265,8 +308,9 @@ class Lifter {
         else if (fit.kind === "unary" && fit.op === "") assign(R(fit.a));
         else if (fit.kind === "unary") assign(t.unaryExpression(fit.op, R(fit.a), true));
         else {
-          this.warnings.push(`could not identify the operator of opcode ${ins.op} at ${ins.pc}`);
-          assign(t.identifier("undefined"));
+          const placeholder = t.identifier("undefined");
+          this.deferredWarnings.set(placeholder, `could not identify the operator of opcode ${ins.op} at ${ins.pc}`);
+          assign(placeholder);
         }
         break;
       }
@@ -290,7 +334,7 @@ class Lifter {
   }
 
   forInHelperName() {
-    if (!this._forInName) this._forInName = this.freshName();
+    if (!this._forInName) this._forInName = this.freshName("forIn");
     return this._forInName;
   }
 

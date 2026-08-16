@@ -1,0 +1,610 @@
+
+===== buildGraph  (19 nodes, start #0)
+  block#0 @1758
+       1758 y = function(f,c,a){f=Math["imul"](f,-1821398801)>>>0;f=(f^(c|a<<16)>>>0)>>>0;f=(f^f>>>18)>>>0;f=(f^1608449592)>>>0;return(f<<14|f>>>18)>>>0;}
+       1766 z = this
+       1768 aa = 96725497
+       1773 ab = 0
+       1776 ac = 0
+       1779 ad = true
+       1785 k = false
+       1788 k = 0
+       1791 k = -0
+       1794 m = 3904794744
+       1797 l = 2856766707
+       1800 l = -1048028037
+       1804 l = 0
+       1808 m = 3904794744
+       1812 ae = 11995
+       1815 af = 44047
+      term goto -> #1
+  block#1 @1820
+       1820 ac = undefined
+       1826 ag = false
+       1832 k = true
+       1835 k = 1
+       1838 k = -1
+       1841 m = 3791479256
+       1844 l = 2570072219
+       1847 l = -1221407037
+       1851 l = -1221407037
+       1855 m = 2570072219
+       1859 ae = 63020
+       1862 af = 64158
+      term goto -> #2
+  block#2 @1878
+       1878 ac = undefined
+       1883 ah = false
+       1889 k = true
+       1892 k = 1
+       1895 k = -1
+       1898 m = 3186716419
+       1901 l = 3922838682
+       1904 l = 736122263
+       1908 l = 736122263
+       1912 m = 3922838682
+       1916 ae = 30086
+       1919 af = 57667
+      term goto -> #3
+  block#3 @1935
+       1935 ac = undefined
+       1940 ai = false
+       1946 k = true
+       1949 k = 1
+       1952 k = -1
+       1955 m = 1725179844
+       1958 l = 3248746247
+       1961 l = 1523566403
+       1965 l = 1523566403
+       1969 m = 3248746247
+       1973 ae = 20878
+       1976 af = 17679
+      term goto -> #4
+  block#4 @1992
+       1992 ac = undefined
+       1997 j = undefined
+       2003 k = !j
+       2006 k = +k
+       2009 k = -k
+       2012 m = 1508920620
+       2015 l = 1689398349
+       2018 l = l-m
+       2022 l = l&k
+       2026 m = m+l
+       2030 ae = 557
+       2033 af = 9238
+      term branch (j) -> #5, #6
+  block#5 @2038
+       2038 m = 2241654307
+       2041 ae = 43503
+       2044 af = 26140
+      term goto -> #8
+  block#6 @2049
+       2049 ac = undefined
+       2054 aj = false
+       2060 k = true
+       2063 k = 1
+       2066 k = -1
+       2069 m = 1858538062
+       2072 l = 1284327337
+       2075 l = -574210725
+       2079 l = -574210725
+       2083 m = 1284327337
+       2087 ae = 12082
+       2090 af = 13061
+      term goto -> #7
+  block#7 @2106
+       2106 ac = undefined
+       2111 ak = false
+       2117 k = true
+       2120 k = 1
+       2123 m = 2319056135
+       2126 l = 3761762340
+       2129 l = 1442706205
+       2133 l = 1442706205
+       2137 m = 3761762340
+       2141 ae = 12323
+       2144 af = 43890
+      term goto -> #9
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 al = n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 o = r.call(p,q)
+       2723 am = o^s
+       2728 aa = undefined
+       2733 m = 1500819900
+       2736 ae = 41400
+       2739 af = 22795
+      term goto -> #10
+  block#9 @2160
+       2160 ac = undefined
+       2165 an = false
+       2171 k = true
+       2174 k = 1
+       2177 k = -1
+       2180 m = 1519343112
+       2183 l = 1138613665
+       2186 l = -380729447
+       2190 l = -380729447
+       2194 m = 1138613665
+       2198 ae = 28713
+       2201 af = 64536
+      term goto -> #11
+  block#10 @1779
+       1779 ad = true
+       1785 k = false
+       1788 k = 0
+       1791 k = -0
+       1794 m = 3904794744
+       1797 l = 2856766707
+       1800 l = -1048028037
+       1804 l = 0
+       1808 m = 3904794744
+       1812 ae = 11995
+       1815 af = 44047
+      term goto -> #1
+  block#11 @2217
+       2217 ac = undefined
+       2222 t = undefined
+       2228 k = !t
+       2231 k = +k
+       2234 k = -k
+       2237 m = 1589895455
+       2240 l = 2944946300
+       2243 l = l-m
+       2247 l = l&k
+       2251 m = m+l
+       2255 ae = 25321
+       2258 af = 4750
+      term branch (t) -> #12, #13
+  block#12 @2263
+       2263 m = 787581553
+       2266 ae = 34646
+       2269 af = 14367
+      term goto -> #15
+  block#13 @2274
+       2274 ac = undefined
+       2279 ao = false
+       2284 k = true
+       2287 k = 1
+       2290 k = -1
+       2293 m = 3213975025
+       2296 l = 188374710
+       2299 l = -3025600315
+       2303 l = 1269366981
+       2307 m = 4483342006
+       2311 ae = 15167
+       2314 af = 10041
+      term goto -> #14
+  block#14 @2330
+       2330 ac = undefined
+       2335 ap = false
+       2341 k = true
+       2344 k = 1
+       2347 m = 394675809
+       2350 l = 968886534
+       2353 l = 574210725
+       2357 l = 574210725
+       2361 m = 968886534
+       2365 ae = 48133
+       2368 af = 12624
+      term goto -> #16
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+       2558 aa = undefined
+       2563 m = 3137308590
+       2566 ae = 13390
+       2569 af = 16409
+      term goto -> #10
+  block#16 @2384
+       2384 ac = undefined
+       2389 aq = false
+       2394 k = true
+       2397 k = 1
+       2400 m = 2165126521
+       2403 l = 3758886264
+       2406 l = 1593759743
+       2410 l = 1593759743
+       2414 m = 3758886264
+       2418 ae = 45890
+       2421 af = 43733
+      term goto -> #17
+  block#17 @2437
+       2437 ac = undefined
+       2442 ar = false
+       2448 k = true
+       2451 k = 1
+       2454 k = -1
+       2457 m = 2256039594
+       2460 l = 291966197
+       2463 l = -1964073397
+       2467 l = -1964073397
+       2471 m = 291966197
+       2475 ae = 202
+       2478 af = 21974
+      term goto -> #18
+  block#18 @2494
+       2494 m = 3192047810
+       2497 ae = 21026
+       2500 af = 41508
+      term goto -> #10
+
+===== simplifyGraph  (19 nodes, start #0)
+  block#0 @1758
+       1758 y = function(f,c,a){f=Math["imul"](f,-1821398801)>>>0;f=(f^(c|a<<16)>>>0)>>>0;f=(f^f>>>18)>>>0;f=(f^1608449592)>>>0;return(f<<14|f>>>18)>>>0;}
+       1766 z = this
+       1768 aa = 96725497
+       1773 ab = 0
+       1776 ac = 0
+       1779 ad = true
+       1785 k = false
+       1788 k = 0
+       1791 k = -0
+       1794 m = 3904794744
+       1797 l = 2856766707
+       1800 l = -1048028037
+       1804 l = 0
+       1808 m = 3904794744
+       1812 ae = 11995
+       1815 af = 44047
+      term goto -> #1
+  block#1 @1820
+       1820 ac = undefined
+       1826 ag = false
+       1832 k = true
+       1835 k = 1
+       1838 k = -1
+       1841 m = 3791479256
+       1844 l = 2570072219
+       1847 l = -1221407037
+       1851 l = -1221407037
+       1855 m = 2570072219
+       1859 ae = 63020
+       1862 af = 64158
+      term goto -> #2
+  block#2 @1878
+       1878 ac = undefined
+       1883 ah = false
+       1889 k = true
+       1892 k = 1
+       1895 k = -1
+       1898 m = 3186716419
+       1901 l = 3922838682
+       1904 l = 736122263
+       1908 l = 736122263
+       1912 m = 3922838682
+       1916 ae = 30086
+       1919 af = 57667
+      term goto -> #3
+  block#3 @1935
+       1935 ac = undefined
+       1940 ai = false
+       1946 k = true
+       1949 k = 1
+       1952 k = -1
+       1955 m = 1725179844
+       1958 l = 3248746247
+       1961 l = 1523566403
+       1965 l = 1523566403
+       1969 m = 3248746247
+       1973 ae = 20878
+       1976 af = 17679
+      term goto -> #4
+  block#4 @1992
+       1992 ac = undefined
+       1997 j = undefined
+       2003 k = !j
+       2006 k = +k
+       2009 k = -k
+       2012 m = 1508920620
+       2015 l = 1689398349
+       2018 l = l-m
+       2022 l = l&k
+       2026 m = m+l
+       2030 ae = 557
+       2033 af = 9238
+      term branch (j) -> #5, #6
+  block#5 @2038
+       2038 m = 2241654307
+       2041 ae = 43503
+       2044 af = 26140
+      term goto -> #8
+  block#6 @2049
+       2049 ac = undefined
+       2054 aj = false
+       2060 k = true
+       2063 k = 1
+       2066 k = -1
+       2069 m = 1858538062
+       2072 l = 1284327337
+       2075 l = -574210725
+       2079 l = -574210725
+       2083 m = 1284327337
+       2087 ae = 12082
+       2090 af = 13061
+      term goto -> #7
+  block#7 @2106
+       2106 ac = undefined
+       2111 ak = false
+       2117 k = true
+       2120 k = 1
+       2123 m = 2319056135
+       2126 l = 3761762340
+       2129 l = 1442706205
+       2133 l = 1442706205
+       2137 m = 3761762340
+       2141 ae = 12323
+       2144 af = 43890
+      term goto -> #9
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 al = n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 o = r.call(p,q)
+       2723 am = o^s
+       2728 aa = undefined
+       2733 m = 1500819900
+       2736 ae = 41400
+       2739 af = 22795
+      term goto -> #10
+  block#9 @2160
+       2160 ac = undefined
+       2165 an = false
+       2171 k = true
+       2174 k = 1
+       2177 k = -1
+       2180 m = 1519343112
+       2183 l = 1138613665
+       2186 l = -380729447
+       2190 l = -380729447
+       2194 m = 1138613665
+       2198 ae = 28713
+       2201 af = 64536
+      term goto -> #11
+  block#10 @1779
+       1779 ad = true
+       1785 k = false
+       1788 k = 0
+       1791 k = -0
+       1794 m = 3904794744
+       1797 l = 2856766707
+       1800 l = -1048028037
+       1804 l = 0
+       1808 m = 3904794744
+       1812 ae = 11995
+       1815 af = 44047
+      term goto -> #1
+  block#11 @2217
+       2217 ac = undefined
+       2222 t = undefined
+       2228 k = !t
+       2231 k = +k
+       2234 k = -k
+       2237 m = 1589895455
+       2240 l = 2944946300
+       2243 l = l-m
+       2247 l = l&k
+       2251 m = m+l
+       2255 ae = 25321
+       2258 af = 4750
+      term branch (t) -> #12, #13
+  block#12 @2263
+       2263 m = 787581553
+       2266 ae = 34646
+       2269 af = 14367
+      term goto -> #15
+  block#13 @2274
+       2274 ac = undefined
+       2279 ao = false
+       2284 k = true
+       2287 k = 1
+       2290 k = -1
+       2293 m = 3213975025
+       2296 l = 188374710
+       2299 l = -3025600315
+       2303 l = 1269366981
+       2307 m = 4483342006
+       2311 ae = 15167
+       2314 af = 10041
+      term goto -> #14
+  block#14 @2330
+       2330 ac = undefined
+       2335 ap = false
+       2341 k = true
+       2344 k = 1
+       2347 m = 394675809
+       2350 l = 968886534
+       2353 l = 574210725
+       2357 l = 574210725
+       2361 m = 968886534
+       2365 ae = 48133
+       2368 af = 12624
+      term goto -> #16
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+       2558 aa = undefined
+       2563 m = 3137308590
+       2566 ae = 13390
+       2569 af = 16409
+      term goto -> #10
+  block#16 @2384
+       2384 ac = undefined
+       2389 aq = false
+       2394 k = true
+       2397 k = 1
+       2400 m = 2165126521
+       2403 l = 3758886264
+       2406 l = 1593759743
+       2410 l = 1593759743
+       2414 m = 3758886264
+       2418 ae = 45890
+       2421 af = 43733
+      term goto -> #17
+  block#17 @2437
+       2437 ac = undefined
+       2442 ar = false
+       2448 k = true
+       2451 k = 1
+       2454 k = -1
+       2457 m = 2256039594
+       2460 l = 291966197
+       2463 l = -1964073397
+       2467 l = -1964073397
+       2471 m = 291966197
+       2475 ae = 202
+       2478 af = 21974
+      term goto -> #18
+  block#18 @2494
+       2494 m = 3192047810
+       2497 ae = 21026
+       2500 af = 41508
+      term goto -> #10
+
+===== eliminateDeadCode  (19 nodes, start #0)
+  block#0 @1758
+      term goto -> #1
+  block#1 @1820
+      term goto -> #2
+  block#2 @1878
+      term goto -> #3
+  block#3 @1935
+      term goto -> #4
+  block#4 @1992
+       1997 j = undefined
+      term branch (j) -> #5, #6
+  block#5 @2038
+      term goto -> #8
+  block#6 @2049
+      term goto -> #7
+  block#7 @2106
+      term goto -> #9
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 r.call(p,q)
+      term goto -> #10
+  block#9 @2160
+      term goto -> #11
+  block#10 @1779
+      term goto -> #1
+  block#11 @2217
+       2222 t = undefined
+      term branch (t) -> #12, #13
+  block#12 @2263
+      term goto -> #15
+  block#13 @2274
+      term goto -> #14
+  block#14 @2330
+      term goto -> #16
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+      term goto -> #10
+  block#16 @2384
+      term goto -> #17
+  block#17 @2437
+      term goto -> #18
+  block#18 @2494
+      term goto -> #10
+
+===== simplifyGraph#2  (4 nodes, start #4)
+  block#4 @1992
+       1997 j = undefined
+      term branch (j) -> #8, #11
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 r.call(p,q)
+      term goto -> #4
+  block#11 @2217
+       2222 t = undefined
+      term branch (t) -> #15, #4
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+      term goto -> #4
+
+===== mergeEquivalentNodes  (4 nodes, start #4)
+  block#4 @1992
+       1997 j = undefined
+      term branch (j) -> #8, #11
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 r.call(p,q)
+      term goto -> #4
+  block#11 @2217
+       2222 t = undefined
+      term branch (t) -> #15, #4
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+      term goto -> #4
+
+===== mergeChains  (4 nodes, start #4)
+  block#4 @1992
+       1997 j = undefined
+      term branch (j) -> #8, #11
+  block#8 @2701
+       2701 o = "fromCharCode"
+       2705 n[o]
+       2709 o = "charCodeAt"
+       2713 r = p[o]
+       2717 r.call(p,q)
+      term goto -> #4
+  block#11 @2217
+       2222 t = undefined
+      term branch (t) -> #15, #4
+  block#15 @2534
+       2534 r = u>>>v
+       2538 w = u^r
+       2543 r = 65535
+       2547 x = w&r
+       2551 s = x
+       2554 n = String
+      term goto -> #4
+
+===== inlineTemporaries  (4 nodes, start #4)
+  block#4 @1992
+      term branch (undefined) -> #8, #11
+  block#8 @2701
+       2705 n["fromCharCode"]
+       2717 p["charCodeAt"].call(p,q)
+      term goto -> #4
+  block#11 @2217
+      term branch (undefined) -> #15, #4
+  block#15 @2534
+       2551 s = (u^u>>>v)&65535
+       2554 n = String
+      term goto -> #4
