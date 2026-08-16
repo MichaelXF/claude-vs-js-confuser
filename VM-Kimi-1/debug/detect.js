@@ -116,21 +116,36 @@ function detectFlow(ctx, blocks, argRegs) {
     }
     if (deltaReg !== null) break;
   }
-  // maskRegs: registers written by NOT/POS/NEG in conditional blocks + select temps
+  // maskRegs: the MBA select machinery per conditional block. A select looks like:
+  //   tmp = (lit2 - lit1); tmp = tmp & mask (or tmp * mask); argB = argB + tmp
+  // where `mask` is written by a NOT/POS/NEG chain rooted at the condition.
+  // Only the mask register and the select temp are machinery. Intermediates of the
+  // NOT chain (e.g. r83 in inner's guard block) may collide with REAL registers used
+  // in other blocks, so they must NOT be classified as machinery.
   const maskRegs = new Set();
+  const argSet = new Set(argRegs);
   for (const [, b] of blocks) {
     if (b.kind !== 'dispatch-cond') continue;
+    // select temps: non-argReg sources of the ADD/SUB that writes the B argument
+    const selectTemps = new Set();
     for (const ins of b.instrs) {
       const o = ins.operands;
-      if (['NOT', 'POS', 'NEG'].includes(ins.name)) maskRegs.add(o[0]);
-      // select: ADD(argB, argB, tmp) ; tmp is select-temp. AND/MUL(tmp, ..., mask)
-      if ((ins.name === 'AND' || ins.name === 'MUL') && o[1] !== stateReg && o[2] !== stateReg) {
-        // one of o[1]/o[2] is mask, other is tmp
+      if ((ins.name === 'ADD' || ins.name === 'SUB') && argSet.has(o[0])) {
+        for (const s of [o[1], o[2]]) if (!argSet.has(s)) selectTemps.add(s);
+      }
+    }
+    // select instruction: AND/MUL writing a select temp; mask = operand written by NOT/POS/NEG
+    for (const ins of b.instrs) {
+      const o = ins.operands;
+      if ((ins.name === 'AND' || ins.name === 'MUL') && selectTemps.has(o[0])) {
         maskRegs.add(o[0]);
+        for (const s of [o[1], o[2]]) {
+          const writtenByChain = b.instrs.some(x => ['NOT', 'POS', 'NEG'].includes(x.name) && x.operands[0] === s);
+          if (writtenByChain) maskRegs.add(s);
+        }
       }
     }
   }
-  // remove real registers from maskRegs (argRegs and stateReg/accReg aren't maskRegs anyway)
   return { headerIp, stateReg, accReg, specialValue, deltaReg, maskRegs: [...maskRegs] };
 }
 

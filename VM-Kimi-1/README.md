@@ -46,7 +46,7 @@ Example directory:
 Code and Formatting Rules:
 
 - American English (such as "randomized" over "randomised")
-- Packages already installed
+- Packages already installed (See `../package.json`)
 
 Obfuscated Sample Notes:
 
@@ -69,8 +69,8 @@ Options Used:
 }
 ```
 
-Cost and Time:
+Results:
 
-- 11:11pm - 11:42pm
-- 276.3K (26%) · $8.55
-
+- Total time: 1 hour, 1 minute
+- Total tokens: 412.4K
+- Total cost: $12.35

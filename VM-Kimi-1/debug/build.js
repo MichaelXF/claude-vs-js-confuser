@@ -23,7 +23,7 @@ function decompileInner() {
   const uf = unflatten(ctx, blocks, cfg);
   // inner's closure[0] = main's r9 -> 'm9'
   const out = L.liftFunction(ctx, blocks, uf, cfg, { 0: 'm9' }, (e) => { throw new Error('nested nested ' + e); });
-  cleanup(out.body);
+  cleanup(out.body, cfg.prefix);
   innerCache = out;
   return out;
 }
@@ -41,7 +41,7 @@ function decompileMain() {
   };
   // main's closure[0] = top-level r2 -> 't2'
   const out = L.liftFunction(ctx, blocks, uf, cfg, { 0: 't2' }, makeFunc);
-  cleanup(out.body);
+  cleanup(out.body, cfg.prefix);
   return out;
 }
 

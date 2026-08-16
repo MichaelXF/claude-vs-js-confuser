@@ -130,12 +130,19 @@ function methodCalls(body) {
   body.forEach(walk);
 }
 
-function cleanupPass(body) {
-  // recurse into nested blocks first
+function cleanupPass(body, tempRe) {
+  // recurse into nested blocks first; propagate their change flags so the outer
+  // fixpoint loop keeps running until NOTHING changed anywhere
+  let changedNested = false;
   for (const s of body) {
-    if (s.type === 'IfStatement') { cleanupPass(s.consequent.body); if (s.alternate) cleanupPass(s.alternate.body); }
-    else if (s.type === 'WhileStatement') cleanupPass(s.body.body);
-    else if (s.type === 'BlockStatement') cleanupPass(s.body);
+    if (s.type === 'IfStatement') {
+      if (cleanupPass(s.consequent.body, tempRe)) changedNested = true;
+      if (s.alternate && cleanupPass(s.alternate.body, tempRe)) changedNested = true;
+    } else if (s.type === 'WhileStatement') {
+      if (cleanupPass(s.body.body, tempRe)) changedNested = true;
+    } else if (s.type === 'BlockStatement') {
+      if (cleanupPass(s.body, tempRe)) changedNested = true;
+    }
   }
   // inline single-use assignments within this body
   for (let i = 0; i < body.length; i++) {
@@ -155,7 +162,10 @@ function cleanupPass(body) {
 
     const rest = body.slice(i + 1);
     const reads = countReads(rest, name);
-    const isTemp = /t\d+$/.test(name);
+    // Only lifter temporaries (prefix + 't' + counter, e.g. mt0/it1) may be dropped
+    // when unread. Anything else (notably closure variables like t2, which are read
+    // on later invocations) must be kept even if this body never reads it again.
+    const isTemp = tempRe.test(name);
     if (reads === 0) {
       if (isTemp) {
         // dead temp: drop the assignment, keep side effects (if any) as bare statement
@@ -184,17 +194,34 @@ function cleanupPass(body) {
       }
     }
   }
-  return false;
+  return changedNested;
 }
 
-function cleanup(body) {
+// prune declared variables that are never read anywhere (all uses were inlined).
+// Only init-less declarators are removed (initializers may have side effects).
+function pruneDeclarations(body) {
+  for (let i = body.length - 1; i >= 0; i--) {
+    const s = body[i];
+    if (s.type !== 'VariableDeclaration') continue;
+    s.declarations = s.declarations.filter(d => {
+      if (d.init) return true;
+      if (d.id.type !== 'Identifier') return true;
+      return countReads(body, d.id.name) > 0;
+    });
+    if (s.declarations.length === 0) body.splice(i, 1);
+  }
+}
+
+function cleanup(body, prefix) {
+  const tempRe = new RegExp('^' + prefix + 't\\d+$');
   let guard = 0;
   while (guard++ < 200) {
-    const changed = cleanupPass(body);
+    const changed = cleanupPass(body, tempRe);
     methodCalls(body);
     if (!changed) break;
   }
   methodCalls(body);
+  pruneDeclarations(body);
 }
 
 module.exports = { cleanup, isPure, hasCall };

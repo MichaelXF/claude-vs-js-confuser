@@ -101,11 +101,17 @@ A browser-fingerprint / bot-check function installed as a global:
   out += String.fromCharCode(s.charCodeAt(i) ^ m); } return out;`
   (with its own captured-variable guard on main's fingerprint string register `r9`).
 
-## 5. Deobfuscation approach (implemented in debug/, to be assembled into vm.js)
+## 5. Deobfuscation approach (assembled into vm.js)
 
-1. **Extract** bytecode words + constants pool from the AST of `input.js`.
+1. **Extract** bytecode words + constants pool from the AST of `input.js`
+   (`@babel/parser` + `@babel/traverse`): the base64 payload is the single long
+   base64 `StringLiteral` call argument; the constants pool is the `ArrayExpression`
+   third argument of `new d(E, C, [...])` inside the `.E(...)` boot call; the boot
+   metadata `new g({j,b,p,d})` gives the top-level entry `p`. Files without this
+   pattern are returned unchanged (pass-through).
 2. **Disassemble** using the operand-count table derived from the 61 handlers
-   (variable-length for CALL/NEW/MAKE_FUNC/MAKE_ARRAY/MAKE_OBJECT).
+   (variable-length for CALL/NEW/MAKE_FUNC/MAKE_ARRAY/MAKE_OBJECT). DECRYPT
+   (encodeBytecode) ops are applied statically in execution order first.
 3. **Explore** each function's CFG by abstract interpretation: concrete values fold,
    unknowns stay symbolic; a block's select expression is evaluated with its condition =
    true/false to get both successor states; the dispatcher function is emulated concretely
@@ -123,3 +129,78 @@ A browser-fingerprint / bot-check function installed as a global:
 
 Debug artifacts live in `debug/` (extract/disasm/trace/graph/cases/simulate/unflatten/lift/
 cleanup/build/harness etc.).
+
+## 6. Closure cell semantics (MAKE_FUNC pairs)
+
+`MAKE_FUNC dest, p, j, b, nclosures, d, (H,e)*`:
+
+- `H` truthy → the new function's closure slot gets a **new cell capturing register `e`
+  of the current frame** (`w(this, a, h.e)`). Lifted: the child's `closureMap[i] = V(e)`,
+  and register `e` is forced to be a materialized variable in the parent.
+- `H` falsy → the slot **reuses the current function's own closure cell `e`**
+  (`b[a+5].i[h.e]`, pass-through). Lifted: `closureMap[i] = closureMap[e]`.
+- `LOAD_CLOSURE dest, idx` / `STORE_CLOSURE idx, src` read/write through the cell.
+
+In this sample: top-level captures its `r2` (`flag`) into main's closure[0]; main
+captures its `r9` (fingerprint string) into inner's closure[0]. The top-level lifter
+hoists captured registers as `var g2 = <value at capture time>`.
+
+## 7. Auto-detection (no hand-tuned configs in vm.js)
+
+- `findTrampoline`: decode from the function entry to the first `JUMP` → trampoline;
+  read `(Areg, Breg)` from its `CALL_NULL`, the result property from its `GET_PROP`
+  (classObfuscation random name, e.g. `e6pfz`), and the dispatcher entry from the
+  `MAKE_FUNC` writing the called register.
+- `detectFlow`: header = highest in-degree block; stateReg = register compared to a
+  constant there; accReg = the other register in chain comparisons; deltaReg = the
+  other register in `stateReg ±= tmp` updates.
+- **maskRegs (refined)**: only the *mask* (operand of the select `AND`/`MUL` that is
+  written by the `NOT/POS/NEG` chain) and the *select temp* (the `AND`/`MUL` result
+  added into the dispatcher's B argument). Naively marking every `NOT/POS/NEG`
+  destination breaks the sample: inner's guard block uses `r83` as a NOT-chain
+  intermediate, but `r83` is a REAL register in three other blocks
+  (`GET_PROP r83 = arg0.length`, `CALL r83 = charCodeAt(...)`, `ADD r83` string concat).
+
+## 8. Bugs found while assembling vm.js (fixed in debug/ and vm.js)
+
+1. **cleanup `isTemp` regex** (`/t\d+$/`) matched the closure variable `t2`, so the
+   run-once guard store `t2 = true` (0 later reads in the body) was deleted as a "dead
+   temp" — the deobfuscated function ran twice. Fix: temps are exactly
+   `^<prefix>t\d+$` (e.g. `mt0`, `it1`); closure/register names never match.
+2. **cleanup never reached fixpoint**: `cleanupPass` discarded the change flags of its
+   recursive calls into `if`/`while`/block bodies, so `cleanup()`'s outer loop broke
+   after a single pass — almost nothing was inlined (debug `out.js` kept
+   `m11 = document; mt1 = m11["createElement"](m13); ...`). Fix: propagate nested
+   change flags; added dead-declaration pruning once uses are inlined away.
+3. Final cleaned output is essentially the original program:
+
+   ```js
+   var g2 = false;
+   window["_k1crlxlk2w8"] = function () {
+     var a2, a3, a4, a5, a9, a10;
+     a10 = function (arg0, arg1) { /* XOR stream cipher, guarded by a9 */ };
+     if (g2) { return undefined; } else {
+       g2 = true;
+       a2 = document["createElement"]("div");
+       a2["style"]["width"] = "calc(100px + 20px * 2)";
+       document["body"]["appendChild"](a2);
+       a3 = a2["offsetWidth"];
+       a4 = Date["now"]();
+       a5 = Math["floor"](Math["random"]() * 1000000);
+       a9 = a4 + "|" + a5 + "|" + (a4 - 10000 + a5 * 5) % 97 + "|" + (a4 - a3 + a5) % 89 + "|" + (a5 + 1500) % 83;
+       console["log"](a9, a10(a9, a3 + a5));
+       return undefined;
+     }
+   };
+   ```
+
+## 9. Deliverables & verification
+
+- `vm.js` — self-contained deobfuscator (no dependency on `debug/`):
+  `node vm.js input.js output.js`, or `require('./vm.js')('input.js') -> code string`.
+- `regular.js` — ordinary non-obfuscated program (pass-through fixture).
+- `test.js` — 25 checks: decoded strings present, no VM machinery left, output parses,
+  `regular.js` passes through byte-identical without errors, and original vs
+  deobfuscated are byte-identical under the deterministic harness (two calls; the
+  run-once guard suppresses the second). `node test.js` → ALL TESTS PASSED.
+
