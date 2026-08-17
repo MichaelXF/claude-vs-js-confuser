@@ -1,0 +1,3 @@
+SET window.console = [obj]
+SET window._k1crlxlk2w8 = undefined
+--- finished ---

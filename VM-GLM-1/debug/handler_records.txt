@@ -1,0 +1,528 @@
+/* opcode 26980 — reads 3 */
+  Ro0 <- (+ R(o2) R(o1))
+
+/* opcode 7546 — reads 0 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(#86)|FS8)
+
+/* opcode 5971 — reads 3 */
+  Ro2 <- Y[o1,o0]
+
+/* opcode 39041 — reads 2 */
+  Ro0 <- (- R(o1))
+
+/* opcode 1056 — reads 3 */
+  Ro0 <- (in R(o1) R(o2))
+
+/* opcode 40295 — reads 0 */
+  THROW ERRNEW
+  R#23 <- GL[Y[#49,#2122721808]]
+
+/* opcode 45030 — reads 0 */
+  R#20 <- (R(#18).R(#19))
+
+/* opcode 41825 — reads 0 */
+  R#84 <- (- R(#84))
+
+/* opcode 47929 — reads 2 */
+  Ro0 <- (+ R(o1))
+
+/* opcode 46668 — reads 3 */
+  Ro0 <- (* R(o1) R(o2))
+
+/* opcode 54184 — reads 0 */
+  R#154 <- #1832953216
+
+/* opcode 38336 — reads 3 */
+  Ro0 <- (<= R(o1) R(o2))
+
+/* opcode 37529 — reads 0 */
+  R#54 <- (!== R(#50) R(#53))
+
+/* opcode 27492 — reads 0 */
+  R#50 <- (- R(#50) R(#153))
+
+/* opcode 29541 — reads 3 */
+  IP <- o2 IF (>= (R(o1).pn) ((R(o1).pn).pn))
+  Ro0 <- ((R(o1).pn).(upd (R(o1).pn)))
+
+/* opcode 24181 — reads 0 */
+  R#4 <- (^ R(#0) R(#5))
+
+/* opcode 2367 — reads 0 */
+  R#158 <- (! R(#153))
+
+/* opcode 36599 — reads 3 */
+  Ro2 <- (R(o1).R(o0))
+
+/* opcode 28877 — reads 2 */
+  Ro1 <- (! R(o0))
+
+/* opcode 21051 — reads 3 */
+  GL[Y[o0,o1]] <- R(o2)
+
+/* opcode 19138 — reads 3 */
+  Ro0 <- (>>> R(o1) R(o2))
+
+/* opcode 54351 — reads 2 */
+  IP <- o1 IF R(o0)
+
+/* opcode 39995 — reads 2 */
+  Ro0 <- (typeof R(o1))
+
+/* opcode 55818 — reads 0 */
+  R#18 <- FS8
+
+/* opcode 21980 — reads 0 */
+  R#160 <- CR(J[#0])
+
+/* opcode 35125 — reads 0 */
+  R#49 <- Y[#4,#3695764009]
+
+/* opcode 33498 — reads 3 */
+  Ro0 <- (== R(o1) R(o2))
+
+/* opcode 17912 — reads 3 */
+  Ro0 <- (!= R(o1) R(o2))
+
+/* opcode 44919 — reads 0 */
+  R#48 <- FS8
+
+/* opcode 10250 — reads 0 */
+  R#21 <- (R(#20).R(#160))
+
+/* opcode 43356 — reads 0 */
+  R#1 <- FS8
+
+/* opcode 34206 — reads 1 */
+  THROW R(o0)
+
+/* opcode 6757 — reads 0 */
+  R#159 <- (& R(#159) R(#158))
+
+/* opcode 55644 — reads 0 */
+  R#52 <- R(#55)
+
+/* opcode 52308 — reads 0 */
+  R#85 <- (* R(#85) R(#84))
+
+/* opcode 27169 — reads 0 */
+  R#4 <- (^ R(#0) R(#1))
+
+/* opcode 14470 — reads 2 */
+  FOR((!== (R(o1)|(call ? ? R(o1))) null)) { FOR((< #0 (OWNNAMES((R(o1)|(call ? ? R(o1)))).pn))) { OBJCREATE(null)[(OWNNAMES((R(o1)|(call ? ? R(o1)))).#0)] <- (! #0) } }
+  Ro0 <- OBJLIT{C:[],D:#0}
+
+/* opcode 11357 — reads 2 */
+  Ro0 <- (~ R(o1))
+
+/* opcode 34064 — reads 0 */
+  R#3 <- Y[#3,#0]
+
+/* opcode 37532 — reads 2 */
+  Ro0 <- R(o1)
+
+/* opcode 28792 — reads 0 */
+  R#1 <- FS8
+
+/* opcode 39349 — reads 3 */
+  FOR((< #0 o1)) { ARR(o1)[#0] <- R(o2) }
+  Ro0 <- ARR(o1)
+
+/* opcode 54874 — reads 0 */
+  R#86 <- (| R(#8) R(#9))
+
+/* opcode 46676 — reads 4 */
+  FOR((< #0 o1)) { OBJLIT{}[R(o2)] <- R(o3) }
+  Ro0 <- OBJLIT{}
+
+/* opcode 16685 — reads 0 */
+  R#11 <- (^ R(#4) R(#86))
+
+/* opcode 37560 — reads 0 */
+  R#46 <- (R(#45).R(#160))
+
+/* opcode 15109 — reads 1 */
+  IP <- R(o0)
+
+/* opcode 50594 — reads 3 */
+  Ro0 <- (typeof (GL[Y[o1,o2]]|(void #0)))
+
+/* opcode 19084 — reads 0 */
+  R#20 <- (- R(#20) R(#78))
+
+/* opcode 4197 — reads 2 */
+  Ro0 <- o1
+
+/* opcode 44715 — reads 3 */
+  Ro1 <- (^ R(o0) R(o2))
+
+/* opcode 36881 — reads 0 */
+  R#86 <- CR(J[#0])
+
+/* opcode 62719 — reads 0 */
+  R#84 <- (+ R(#84))
+
+/* opcode 43360 — reads 0 */
+  R#5 <- (>>> R(#0) R(#4))
+
+/* opcode 12169 — reads 0 */
+  R#155 <- #147269411
+
+/* opcode 40355 — reads 1 */
+  IP <- o0
+
+/* opcode 49465 — reads 3 */
+  Ro0 <- Y[o1,o2]
+
+/* opcode 38921 — reads 5 */
+  FOR((< #0 o2)) { ARR(o2)[#0] <- R(o4) }
+  Ro0 <- RCON(R(o1),(R(o3)|ARR(o2)))
+
+/* opcode 59700 — reads 3 */
+  Ro0 <- (+ R(o1) R(o2))
+
+/* opcode 13812 — reads 3 */
+  THROW ERRNEW
+  Ro0 <- GL[Y[o1,o2]]
+
+/* opcode 15435 — reads 0 */
+  CELL[#0] <- R(#160)
+  CELL[#0] <- R(#160)
+
+/* opcode 33527 — reads 0 */
+  R#160 <- (% R(#36) R(#37))
+
+/* opcode 23420 — reads 0 */
+  R#59 <- (=== R(#50) R(#52))
+
+/* opcode 120 — reads 3 */
+  Ro0 <- (> R(o1) R(o2))
+
+/* opcode 23340 — reads 1 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(o0)|FS8)
+
+/* opcode 17581 — reads 2 */
+  Ro0 <- (void #0)
+
+/* opcode 59613 — reads 0 */
+  R#56 <- (=== R(#50) R(#52))
+
+/* opcode 29328 — reads 3 */
+  Ro0 <- (=== R(o1) R(o2))
+
+/* opcode 21820 — reads 0 */
+  THROW ERRNEW
+  R#3 <- GL[Y[#1,#4180165147]]
+
+/* opcode 31954 — reads 0 */
+  RSET(R(#15),R(#16),R(#17))
+
+/* opcode 30701 — reads 0 */
+  IP <- R(#154)
+
+/* opcode 5400 — reads 0 */
+  R#50 <- R(#49)
+
+/* opcode 48743 — reads 3 */
+  Ro0 <- (/ R(o1) R(o2))
+
+/* opcode 38839 — reads 3 */
+  Ro0 <- (& R(o1) R(o2))
+
+/* opcode 48782 — reads 3 */
+  Ro0 <- (<< R(o1) R(o2))
+
+/* opcode 20992 — reads 3 */
+  Ro0 <- (>> R(o1) R(o2))
+
+/* opcode 44189 — reads 3 */
+  Ro0 <- (< R(o1) R(o2))
+
+/* opcode 63662 — reads 0 */
+  R#159 <- #1997709633
+
+/* opcode 52780 — reads 1 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(o0)|FS8)
+
+/* opcode 41403 — reads 2 */
+  Ro1 <- (~ R(o0))
+
+/* opcode 61535 — reads 0 */
+  R#86 <- (>>> R(#4) R(#10))
+
+/* opcode 13424 — reads 0 */
+  R#159 <- (& R(#159) R(#158))
+
+/* opcode 62156 — reads 0 */
+  R#161 <- (% R(#35) R(#160))
+
+/* opcode 55824 — reads 3 */
+  Ro0 <- (del R(o1) R(o2))
+
+/* opcode 36557 — reads 2 */
+  FS11 <- (FS11|[])
+  PUSHCATCH(K=o0,B=o1)
+
+/* opcode 61911 — reads 3 */
+  Ro0 <- (>= R(o1) R(o2))
+
+/* opcode 26968 — reads 0 */
+  R#22 <- (R(#2).R(#160))
+
+/* opcode 707 — reads 0 */
+  DBG
+
+/* opcode 3579 — reads 0 */
+  R#52 <- R(#51)
+
+/* opcode 39226 — reads 0 */
+  R#158 <- (- R(#158))
+
+/* opcode 15950 — reads 3 */
+  Ro0 <- (| R(o1) R(o2))
+
+/* opcode 11916 — reads 0 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(#160)|FS8)
+
+/* opcode 31307 — reads 0 */
+  IP <- #2095
+
+/* opcode 37644 — reads 1 */
+  Ro0 <- FS8
+
+/* opcode 48439 — reads 0 */
+  R#85 <- (- R(#85) R(#79))
+
+/* opcode 26013 — reads 2 */
+  Ro1 <- o0
+
+/* opcode 52740 — reads 6 */
+  FOR((< #0 o3)) { ARR(o3)[#0] <- R(o5) }
+  Ro0 <- APPLY(R(o2),R(o1),(R(o4)|ARR(o3)))
+
+/* opcode 35293 — reads 0 */
+  THROW ERRNEW
+  R#18 <- GL[Y[#46,#3852300419]]
+
+/* opcode 40815 — reads 0 */
+  R#78 <- (< R(#20) R(#78))
+
+/* opcode 589 — reads 3 */
+  Ro0 <- (** R(o1) R(o2))
+
+/* opcode 47911 — reads 3 */
+  THROW ERRNEW
+  Ro2 <- GL[Y[o0,o1]]
+
+/* opcode 45762 — reads 3 */
+  Ro2 <- (- R(o1) R(o0))
+
+/* opcode 13492 — reads 0 */
+  IP <- R(#79)
+
+/* opcode 35004 — reads 0 */
+  R#154 <- #2294837334
+
+/* opcode 46291 — reads 3 */
+  Ro0 <- (- R(o1) R(o2))
+
+/* opcode 11627 — reads 0 */
+  R#85 <- (* R(#85) R(#84))
+
+/* opcode 11591 — reads 0 */
+  POPHANDLER
+
+/* opcode 11196 — reads 0 */
+  R#86 <- (< R(#6) R(#87))
+
+/* opcode 22451 — reads 0 */
+  R#6 <- (| R(#1) R(#7))
+
+/* opcode 65114 — reads 0 */
+  R#158 <- (! R(#56))
+
+/* opcode 41255 — reads 0 */
+  R#160 <- (% R(#33) R(#34))
+
+/* opcode 21445 — reads 0 */
+  R#159 <- (- R(#159) R(#154))
+
+/* opcode 21281 — reads 3 */
+  Ro0 <- (% R(o1) R(o2))
+
+/* opcode 10561 — reads 3 */
+  Ro2 <- (=== R(o1) R(o0))
+
+/* opcode 17444 — reads 0 */
+  THROW ERRNEW
+  R#45 <- GL[Y[#40,#297222811]]
+
+/* opcode 10438 — reads 3 */
+  Ro0 <- (& R(o2) R(o1))
+
+/* opcode 51821 — reads 3 */
+  Ro0 <- (instanceof R(o1) R(o2))
+
+/* opcode 6276 — reads 0 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(#3)|FS8)
+
+/* opcode 37683 — reads 0 */
+  R#7 <- (<< R(#2) R(#6))
+
+/* opcode 32491 — reads 3 */
+  OBJLIT{get:R(o2),configurable:(! #0),enumerable:(! #0)}[pn] <- (OWNDESC(R(o0),R(o1)).pn)
+  DEFP(R(o0),R(o1),OBJLIT{get:R(o2),configurable:(! #0),enumerable:(! #0)})
+
+/* opcode 368 — reads 0 */
+  R#79 <- (+ R(#79) R(#85))
+
+/* opcode 33779 — reads 2 */
+  Ro0 <- (! R(o1))
+
+/* opcode 17127 — reads 2 */
+  Ro0 <- CR(J[o1])
+
+/* opcode 38185 — reads 3 */
+  Ro0 <- (^ R(o1) R(o2))
+
+/* opcode 21230 — reads 3 */
+  Ro2 <- (>>> R(o0) R(o1))
+
+/* opcode 40363 — reads 0 */
+  R#85 <- (& R(#85) R(#84))
+
+/* opcode 40908 — reads 0 */
+  R#16 <- (^ R(#87) R(#7))
+
+/* opcode 57003 — reads 3 */
+  Ro0 <- (* R(o2) R(o1))
+
+/* opcode 6730 — reads 0 */
+  R#153 <- (< R(#50) R(#153))
+
+/* opcode 10993 — reads 0 */
+  R#158 <- (! R(#54))
+
+/* opcode 19692 — reads 0 */
+  R#20 <- (+ R(#20) R(#78))
+
+/* opcode 778 — reads 0 */
+  R#65 <- (=== R(#50) R(#52))
+
+/* opcode 62514 — reads 3 */
+  OBJLIT{set:R(o2),configurable:(! #0),enumerable:(! #0)}[pn] <- (OWNDESC(R(o0),R(o1)).pn)
+  DEFP(R(o0),R(o1),OBJLIT{set:R(o2),configurable:(! #0),enumerable:(! #0)})
+
+/* opcode 27574 — reads 2 */
+  IP <- o1 IF R(o0)
+
+/* opcode 33028 — reads 0 */
+  IP <- #3431
+
+/* opcode 5717 — reads 1 */
+  Ro0 <- FS8
+
+/* opcode 41117 — reads 0 */
+  R#6 <- (>>> R(#5) R(#4))
+
+/* opcode 4879 — reads 0 */
+  R#2 <- R(#3)
+
+/* opcode 13413 — reads 0 */
+  R#154 <- (+ R(#154) R(#159))
+
+/* opcode 43319 — reads 0 */
+  R#158 <- (! R(#59))
+
+/* opcode 45465 — reads 0 */
+  R#50 <- (+ R(#50) R(#153))
+
+/* opcode 36310 — reads 3 */
+  RSET(R(o0),R(o1),R(o2))
+
+/* opcode 58916 — reads 2 */
+  Ro1 <- R(o0)
+
+/* opcode 9446 — reads 0 */
+  R#159 <- (* R(#159) R(#158))
+
+/* opcode 58530 — reads 0 */
+  R#158 <- (+ R(#158))
+
+/* opcode 12200 — reads 5 */
+  FOR((< #0 o2)) { ARR(o2)[#0] <- R(o4) }
+  Ro0 <- APPLY(R(o1),null,(R(o3)|ARR(o2)))
+
+/* opcode 51555 — reads 2 */
+  CELL[o0] <- R(o1)
+  CELL[o0] <- R(o1)
+
+/* opcode 41218 — reads 8 */
+  FOR((< #0 o4)) { ARR(o4)[#0] <- OBJLIT{Q:o6,d:o7} }
+  FOR((< #0 (ARR(o4).pn))) {  }
+  (call ? ? META(m=o2,b=o3,v=o1,a=o5))[pn] <- (META(m=o2,b=o3,v=o1,a=o5).pn)
+  Ro0 <- (call ? ? META(m=o2,b=o3,v=o1,a=o5))
+
+/* opcode 39464 — reads 0 */
+  R#4 <- Y[#2,#834583989]
+
+/* opcode 50467 — reads 4 */
+  FS11 <- (FS11|[])
+  PUSHFINALLY(I=o0,H=o1,L=o2,G=o3)
+
+/* opcode 13341 — reads 0 */
+  R#85 <- (& R(#85) R(#84))
+
+/* opcode 30892 — reads 0 */
+  R#24 <- (!== R(#20) R(#23))
+
+/* opcode 6733 — reads 0 */
+  RSET(R(#3),R(#4),R(#5))
+
+/* opcode 49861 — reads 0 */
+  R#3 <- Y[#0,#0]
+
+/* opcode 10580 — reads 0 */
+  R#159 <- (* R(#159) R(#158))
+
+/* opcode 39367 — reads 0 */
+  R#6 <- (>>> R(#4) R(#5))
+
+/* opcode 33929 — reads 3 */
+  Ro0 <- (!== R(o1) R(o2))
+
+/* opcode 16727 — reads 3 */
+  Ro0 <- (R(o1).R(o2))
+
+/* opcode 28238 — reads 0 */
+  UNWIND
+  FOR((< FR (+ FR FS1))) { ST[FR] <- (void #0) }
+  vmstate(stackTop.i)
+  vmstate(frame.c)
+  ST[((+ ST[(+ FS5 #10)] (>> FS3 #1))|#0)] <- (R(#160)|FS8)
+
+/* opcode 15181 — reads 4 */
+  FOR((< o1 o2)) { CD[(+ o0 (- o1 o1))] <- (>>> (^ (^ CD[o1] (| (+ (| (^ o3 o0) #0) #2654435769) #0)) (>>> (| (+ (| (^ o3 o0) #0) #2654435769) #0) #13)) #0) }
+
+/* opcode 37990 — reads 0 */
+  R#62 <- (=== R(#50) R(#52))

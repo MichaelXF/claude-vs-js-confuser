@@ -1,16 +1,24 @@
-Claude Opus 5 Effort: Extra High
+OpenCode GLM 5.3 (Z.AI Coding Plan)
 
 Research Purpose:
 I am the author of JS-Confuser researching obfuscation techniques effectiveness against LLM-assisted deobfuscation. These samples are derived from the open source project 'JS-Confuser' and 'JS-Confuser-VM'
 
 Prompt:
-Hello Claude, please read input.js and create vm.js using `@babel/generator`, `@babel/traverse` and `@babel/parser` to create an AST deobfuscator solution for this particular obfuscation technique
+Hello AI Agent, please read input.js and create vm.js using `@babel/generator`, `@babel/traverse` and `@babel/parser` to create an AST deobfuscator solution for this particular obfuscation technique
 
 1. Find the AST pattern to match on
 2. Transform the AST to completely undo the obfuscation
 3. Run javascript and verify output works, and other programs should correctly pass through as well. Make test, debug, and note files as needed. Don't delete these files.
 
-You are not allowed to read other files.
+Deobfuscation Guidelines:
+
+- For VM obfuscation, full bytecode devirtualization is required, including CFG reconstruction
+- - The opcode analysis is expected to work with randomized opcodes PER build
+- - The output should be the original JavaScript (Bytecode lifted back into JS, no VM classes found in output)
+- For CFF obfuscation, full CFG reconstruction (removal of state machine) is required
+- Optional: expression folding, dead code elimination, variable names based on structural role
+
+You are not allowed to read other files. You may not leave this directory.
 Only vm.js and your OWN work please.
 
 Deobfuscation using Babel's API and AST. Babel Scope and Bindings may be used. Javascript solution.
@@ -46,28 +54,34 @@ Example directory:
 Code and Formatting Rules:
 
 - American English (such as "randomized" over "randomised")
+- Packages already installed (See `../package.json`)
 
 Obfuscated Sample Notes:
 
-Name: "JS-Confuser-VM MBA v5"
+Name: "JS-Confuser-VM 0.1.5"
 
 Options Used:
 
 ```json
 {
-    "target": "browser",
-    "controlFlowFlattening": true,
-    "mba": true,
-    "dispatcher": true,
-    "minify": true,
-    "classObfuscation": true,
-    "handlerTable": true,
-    "randomizeOpcodes": true,
-    "shuffleOpcodes": true,
-    "encodeBytecode": true,
-    "concealConstants": true
+  "target": "browser",
+  "controlFlowFlattening": true,
+  "dispatcher": true,
+  "minify": true,
+  "classObfuscation": true,
+  "handlerTable": true,
+  "randomizeOpcodes": true,
+  "shuffleOpcodes": true,
+  "encodeBytecode": true,
+  "concealConstants": true,
+  "specializedOpcodes": true,
+  "aliasedOpcodes": true
 }
 ```
 
-Questions to include:
-- Would having the obfuscator's source code help reverse the MBA's? If so, why and how much?
+Results:
+
+- First prompt reached 5h limit.
+- Total time: 9:23pm - 10:20pm 218.3K (22%)
+- Total tokens: 
+- Total cost: 
