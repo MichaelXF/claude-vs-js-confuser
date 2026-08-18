@@ -1,0 +1,256 @@
+[vm] dissolve fn%s: hub=%s state=r%s exit=%s links=%d [%s] 17 32 50 17834 33 49180,40510,8319,48715,28995,46326,26299,10620,50381,49921,12956,26326,19148,19768,12203,49537,16212,44769,1079,2665,16733,58195,35015,46358,4648,15966,52153,25527,39792,22608,19777,59928,52675
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 17 44769
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 44769 0 725 true goto>-1
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 44769 1 -1 false goto>32
+[vm]     -> succ=%s -1
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1334 -13979
+[vm]     -> succ=%s null
+[vm]   fn%s round%s backedge B%s: NO ENV 17 0 1327
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1921 10620
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 10620 0 330 true goto>1683
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 10620 1 1683 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 10620 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1416 52675
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 52675 0 1320 true goto>1921
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 52675 1 1921 false goto>32
+[vm]     -> succ=%s 1921
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1578 4648
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 4648 0 1004 true goto>1729
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 4648 1 1729 false ret
+[vm]     -> succ=%s 1729
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1945 26326
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26326 0 489 true goto>1898
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26326 1 1898 false goto>32
+[vm]     -> succ=%s 1898
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1845 16212
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16212 0 685 true goto>1358
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16212 1 1358 false goto>32
+[vm]     -> succ=%s 1358
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1834 49537
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49537 0 646 true goto>1641
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49537 1 1641 false goto>32
+[vm]     -> succ=%s 1641
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1440 40510
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 40510 0 99 true goto>1502
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 40510 1 1502 false goto>32
+[vm]     -> succ=%s 1502
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1988 59928
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 59928 0 1280 true goto>1416
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 59928 1 1416 false goto>32
+[vm]     -> succ=%s 1416
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1478 28995
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 28995 0 211 true goto>1660
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 28995 1 1660 false goto>32
+[vm]     -> succ=%s 1660
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1965 19768
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19768 0 568 true goto>1706
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19768 1 1706 false goto>32
+[vm]     -> succ=%s 1706
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 2030 1079
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 1079 0 765 true goto>1770
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 1079 1 1770 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 1079 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 2053 19148
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19148 0 528 true goto>1747
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19148 1 1747 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19148 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1405 35015
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 0 924 true goto>2030
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 1 2030 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1394 19777
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 0 1240 true goto>1578
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 1 1578 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1770 50381
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 0 370 true goto>2072
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 1 2072 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1358 19777
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 0 1240 true goto>1578
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 1 1578 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1641 46358
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 46358 0 964 true goto>1965
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 46358 1 1965 false goto>32
+[vm]     -> succ=%s 1965
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1875 8319
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 8319 0 136 true goto>1856
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 8319 1 1856 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 8319 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1706 52153
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 52153 0 1083 true goto>1988
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 52153 1 1988 false goto>32
+[vm]     -> succ=%s 1988
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1747 26299
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26299 0 291 true goto>2011
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26299 1 2011 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26299 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1898 15966
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 15966 0 1043 true goto>1478
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 15966 1 1478 false goto>32
+[vm]     -> succ=%s 1478
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1630 58195
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 58195 0 884 true goto>1451
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 58195 1 1451 false ret
+[vm]     -> succ=%s 1451
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1619 22608
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 22608 0 1201 true goto>1945
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 22608 1 1945 false goto>32
+[vm]     -> succ=%s 1945
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1456 49537
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49537 0 646 true goto>1641
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49537 1 1641 false goto>32
+[vm]     -> succ=%s 1641
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 2072 49180
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49180 0 65 true goto>1793
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49180 1 1793 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49180 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1683 12203
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 12203 0 607 true goto>1875
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 12203 1 1875 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 12203 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 2011 35015
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 0 924 true goto>2030
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 1 2030 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 35015 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1561 40510
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 40510 0 99 true goto>1502
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 40510 1 1502 false goto>32
+[vm]     -> succ=%s 1502
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1660 46326
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 46326 0 251 true goto>1561
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 46326 1 1561 false goto>32
+[vm]     -> succ=%s 1561
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1550 19777
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 0 1240 true goto>1578
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 1 1578 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 19777 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1539 50381
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 0 370 true goto>2072
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 1 2072 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 50381 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1856 16733
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16733 0 844 true goto>2053
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16733 1 2053 true goto>32
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16733 2 32 true cond
+[vm]     -> succ=%s 32
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1502 49921
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49921 0 409 true goto>1456
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 49921 1 1456 false goto>32
+[vm]     -> succ=%s 1456
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 1793 16212
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16212 0 685 true goto>1358
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 16212 1 1358 false goto>32
+[vm]     -> succ=%s 1358
+[vm]   fn%s round%s backedge B%s: C=%s 17 0 -1 12956
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 12956 0 449 true goto>1601
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 12956 1 1601 true cond
+[vm]     -> succ=%s 1601
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 44769 0 725 true goto>-1
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 44769 1 -1 false goto>32
+[vm] dissolve fn%s: hub=%s state=r%s exit=%s links=%d [%s] 2109 2131 20 52856 18 26218,42471,36257,38052,37745,55997,30682,34396,29409,5398,42652,53292,28942,60229,31345,3715,60421,13523
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 2109 3715
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 3715 0 2872 true goto>3124
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 3715 1 3124 true cond
+[vm]     -> succ=%s 3124
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3150 53292
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 53292 0 2690 true goto>3308
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 53292 1 3308 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 53292 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3164 34396
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 34396 0 2508 true goto>3300
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 34396 1 3300 false ret
+[vm]     -> succ=%s 3300
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 2983 60226
+[vm]     -> succ=%s null
+[vm]   fn%s round%s backedge B%s: NO ENV 2109 0 2973
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3083 55997
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 0 2417 true goto>3198
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 1 3198 false goto>2131
+[vm]     -> succ=%s 3198
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3069 55997
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 0 2417 true goto>3198
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 1 3198 false goto>2131
+[vm]     -> succ=%s 3198
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3055 31345
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 0 2827 true goto>3224
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 1 3224 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3224 60229
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 60229 0 2781 true goto>3102
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 60229 1 3102 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 60229 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3102 42652
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 42652 0 2644 true goto>3178
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 42652 1 3178 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 42652 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3357 38052
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 38052 0 2326 true goto>3374
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 38052 1 3374 false cond
+[vm]     -> succ=%s 3374
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3308 30682
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 30682 0 2463 true goto>-1
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 30682 1 -1 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 30682 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3178 36257
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 36257 0 2280 true goto>3332
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 36257 1 3332 false goto>2131
+[vm]     -> succ=%s 3332
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3198 42471
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 42471 0 2234 true goto>3250
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 42471 1 3250 false goto>2131
+[vm]     -> succ=%s 3250
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3004 26218
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26218 0 2188 true goto>3275
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26218 1 3275 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 26218 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3417 31345
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 0 2827 true goto>3224
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 1 3224 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 31345 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3403 5398
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 5398 0 2599 true goto>3306
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 5398 1 3306 false ret
+[vm]     -> succ=%s 3306
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3332 55997
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 0 2417 true goto>3198
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 55997 1 3198 false goto>2131
+[vm]     -> succ=%s 3198
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3250 37745
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 37745 0 2372 true goto>3004
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 37745 1 3004 false goto>2131
+[vm]     -> succ=%s 3004
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 3275 28942
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 28942 0 2735 true goto>3357
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 28942 1 3357 true goto>2131
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 28942 2 2131 true cond
+[vm]     -> succ=%s 2131
+[vm]   fn%s round%s backedge B%s: C=%s 2109 0 -1 38052
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 38052 0 2326 true goto>3374
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 38052 1 3374 false cond
+[vm]     -> succ=%s 3374
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 3715 0 2872 true goto>3124
+[vm]       resolve C=%s hop%d B%s pure=%s term=%s 3715 1 3124 true cond
+wrote output.js (25375 bytes)

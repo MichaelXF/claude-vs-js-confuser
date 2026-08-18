@@ -1,0 +1,9 @@
+SET window.console = [obj]
+SET window._k1crlxlk2w8 = undefined
+--- loaded ---
+GET window._k1crlxlk2w8
+ CALL window._k1crlxlk2w8()
+GET window._k1crlxlk2w8().toJSON
+ CALL window._k1crlxlk2w8().toJSON("")
+call result: undefined
+--- finished ---

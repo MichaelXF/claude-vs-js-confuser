@@ -84,7 +84,7 @@ Results:
 - First prompt failed bytecode devirtualization. (Output included VM classes)
 - Second prompt failed behavior correctness between input.js and output.js (The program has a "run-once" flag which was not included)
 - Third prompt introduced silent error into the lifter by making all functions callable once (As opposed to fixing the real CFG error)
-- Fourth prompt introduced hardcoded template for the string encoding function which is forbidden and would obviously fail for all other programs (Minor flaws: 1. all variable names should be random or based on structural role - never "documentObject" or "characterMask", 2. introduced let/const which the VM doesn't support)
+- Fourth prompt introduced hardcoded template for the string encoding function which is forbidden and would obviously fail for all other programs
 
 - Total time: 1 hour 51 minutes
 - Total tokens: 451,629 used

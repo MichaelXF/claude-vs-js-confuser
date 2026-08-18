@@ -81,7 +81,5 @@ Options Used:
 
 Results:
 
-- First prompt reached 5h limit.
-- Total time: 9:23pm - 10:20pm 218.3K (22%)
-- Total tokens: 
-- Total cost: 
+- Total time: 3 hours, 57 minutes
+- Total tokens: 824.9K

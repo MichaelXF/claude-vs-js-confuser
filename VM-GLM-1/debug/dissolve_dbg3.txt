@@ -1,0 +1,41 @@
+[vm] dissolve fn%s: hub=%s state=r%s exit=%s links=%d [%s] 17 32 50 17834 33 49180,40510,8319,48715,28995,46326,26299,10620,50381,49921,12956,26326,19148,19768,12203,49537,16212,44769,1079,2665,16733,58195,35015,46358,4648,15966,52153,25527,39792,22608,19777,59928,52675
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 17 44769 B-1
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1334 -13979 dead
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1921 10620 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1416 52675 B1921
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1578 4648 B1729
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1945 26326 B1898
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1845 16212 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1834 49537 B1641
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1440 40510 B1502
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1988 59928 B1416
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1478 28995 B1660
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1965 19768 B1706
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 2030 1079 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 2053 19148 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1405 35015 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1394 19777 B1729
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1770 50381 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1358 19777 B1729
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1641 46358 B1965
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1875 8319 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1706 52153 B1988
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1747 26299 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1898 15966 B1478
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1630 58195 B1451
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1619 22608 B1945
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1456 49537 B1641
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 2072 49180 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1683 12203 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 2011 35015 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1561 40510 B1502
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1660 46326 B1561
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1550 19777 B1729
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1539 50381 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1856 16733 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1502 49921 B1456
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 1793 16212 B1358
+[vm] fn%s round%s backedge B%s C=%s -> %s 17 0 -1 12956 unknown
+[vm] dissolve fn%s: hub=%s state=r%s exit=%s links=%d [%s] 2109 2131 20 52856 18 26218,42471,36257,38052,37745,55997,30682,34396,29409,5398,42652,53292,28942,60229,31345,3715,60421,13523
+[vm] fn%s round%s backedge B%s C=%s -> %s 2109 0 2109 3715 unknown
+wrote output.js (51178 bytes)

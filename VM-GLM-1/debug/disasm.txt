@@ -10,7 +10,7 @@
    15  R3 = CONST[3]  // undefined
    16  RET R3
 
-===== FUNCTION entry=17 params=0 regs=162 rest=false instrs=286 =====
+===== FUNCTION entry=17 params=0 regs=162 rest=false instrs=295 =====
    17  R156 = FUNC(entry=3446, params=2, regs=8, rest=0) []
    24  R48 = this
    25  R49 = CONST[4]^3695764009  // 44769
@@ -27,7 +27,7 @@
    42  R159 = R159 MUL R158
    43  R154 = R154 ADD R159
    44  R155 = 147269411
-   45  JMP 2095   // -> 2095(jump) 2095(jump)
+   45  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump) 2095(jump) 2095(jump) 2095(jump) 2095(jump) 2095(jump) 2095(jump)
    46  R55 = CONST[7]^3013407644  // 49180
    50  R52 = R55
    51  R56 = R50 SEQ R52
@@ -39,7 +39,10 @@
    59  R159 = R159 MUL R158
    60  R154 = R154 ADD R159
    61  R155 = 3146137194
-   64  JMP 2095   // -> 2095(jump) 2095(jump)
+   64  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump) 2095(jump)
+   65  R154 = 770961480
+   68  R155 = 2066809558
+   71  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump)
    72  R57 = CONST[8]^3898760648  // 8670
    76  R58 = R52 SUB R57
    80  R52 = R58
@@ -52,7 +55,10 @@
    93  R159 = R159 MUL R158
    94  R154 = R154 ADD R159
    95  R155 = 2334401651
-   98  JMP 2095   // -> 2095(jump) 2095(jump)
+   98  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump) 2095(jump)
+   99  R154 = 1488550849
+  102  R155 = 1608905241
+  105  JMP 2095   // -> 2095(jump) 2095(jump)
   106  R60 = CONST[9]^3506895638  // 32191
   110  R61 = R52 SUB R60
   114  R52 = R61
@@ -66,7 +72,7 @@
   130  R159 = R159 BAND R158
   131  R154 = R154 ADD R159
   132  R155 = 1250014047
-  135  JMP 2095   // -> 2095(jump) 2095(jump)
+  135  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump)
   143  R63 = CONST[10]^526896204  // 40396
   147  R64 = R52 ADD R63
   151  R52 = R64
@@ -79,7 +85,7 @@
   166  R159 = R159 MUL R158
   167  R154 = R154 ADD R159
   168  R155 = 3047755223
-  171  JMP 2095   // -> 2095(jump) 2095(jump)
+  171  JMP 2095   // -> 2095(jump)
   179  R66 = CONST[11]^2763455702  // 19720
   183  R67 = R52 SUB R66
   187  R52 = R67
@@ -92,7 +98,7 @@
   205  R159 = R159 MUL R158
   206  R154 = R154 ADD R159
   207  R155 = 3534179982
-  210  JMP 2095   // -> 2095(jump) 2095(jump)
+  210  JMP 2095   // -> 2095(jump)
   218  R69 = CONST[12]^2330705506  // 17331
   222  R70 = R52 ADD R69
   226  R52 = R70
@@ -106,7 +112,7 @@
   245  R159 = R159 BAND R158
   246  R154 = R154 ADD R159
   247  R155 = 182932654
-  250  JMP 2095   // -> 2095(jump) 2095(jump)
+  250  JMP 2095   // -> 2095(jump)
   258  R72 = CONST[13]^2893099780  // 20027
   262  R73 = R52 SUB R72
   266  R52 = R73
@@ -120,7 +126,7 @@
   285  R159 = R159 BAND R158
   286  R154 = R154 ADD R159
   287  R155 = 3074818880
-  290  JMP 2095   // -> 2095(jump) 2095(jump)
+  290  JMP 2095   // -> 2095(jump)
   298  R75 = CONST[14]^3687730682  // 15679
   302  R76 = R52 SUB R75
   306  R52 = R76
@@ -133,7 +139,7 @@
   324  R159 = R159 MUL R158
   325  R154 = R154 ADD R159
   326  R155 = 4200686885
-  329  JMP 2095   // -> 2095(jump) 2095(jump)
+  329  JMP 2095   // -> 2095(jump)
   337  R78 = CONST[15]^1969847302  // 39761
   341  R79 = R52 ADD R78
   345  R52 = R79
@@ -147,7 +153,7 @@
   364  R159 = R159 BAND R158
   365  R154 = R154 ADD R159
   366  R155 = 2025683651
-  369  JMP 2095   // -> 2095(jump) 2095(jump)
+  369  JMP 2095   // -> 2095(jump)
   377  R81 = CONST[16]^2147241891  // 460
   381  R82 = R52 SUB R81
   385  R52 = R82
@@ -160,7 +166,7 @@
   403  R159 = R159 MUL R158
   404  R154 = R154 ADD R159
   405  R155 = 3795484749
-  408  JMP 2095   // -> 2095(jump) 2095(jump)
+  408  JMP 2095   // -> 2095(jump)
   416  R84 = CONST[17]^3336786841  // 36965
   420  R85 = R52 SUB R84
   424  R52 = R85
@@ -174,10 +180,7 @@
   443  R159 = R159 BAND R158
   444  R154 = R154 ADD R159
   445  R155 = 3198269554
-  448  JMP 2095   // -> 2095(jump) 2095(jump)
-  449  R154 = 734311470
-  452  R155 = 617048752
-  455  JMP 2095   // -> 2095(jump)
+  448  JMP 2095   // -> 2095(jump)
   456  R87 = CONST[18]^1981106078  // 13370
   460  R88 = R52 ADD R87
   464  R52 = R88
@@ -282,23 +285,29 @@
  1350  R50 = R50 SUB R153
  1351  R154 = 1567033104
  1354  R155 = 3447435426
- 1357  JMP 2095   // -> 2095(jump)
- 1601  R160 = cell0
- 1602  R158 = NOT R160
- 1605  R158 = TONUM R158
- 1606  R154 = 2674751517
- 1609  R159 = 1107215243
- 1612  R159 = R159 SUB R154
- 1613  R159 = R159 MUL R158
- 1614  R154 = R154 ADD R159
- 1615  R155 = 579804265
- 1618  JMP 2095   // -> 2095(jump)
+ 1357  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump)
+ 1502  R20 = R18[R19]
+ 1503  R160 = CONST[45]^3827250160  // "appendChild"
+ 1507  R21 = R20[R160]
+ 1508  R153 = 9411
+ 1511  R50 = R50 ADD R153
+ 1512  R154 = 3880780682
+ 1515  R155 = 1533326611
+ 1518  JMP 2095   // -> 2095(jump) 2095(jump)
+ 1793  R160 = R43 ADD R44
+ 1797  R161 = R160 ADD R8
+ 1801  R9 = R161
+ 1804  R153 = 32968
+ 1807  R50 = R50 SUB R153
+ 1808  R154 = 2432440606
+ 1811  R155 = 2173750944
+ 1814  JMP 2095   // -> 2095(jump) 2095(jump) 2095(jump)
  2095  R154 = R156(R154, R155)  // indirect
  2101  R157 = 0
  2104  R154 = R154[R157]
- 2108  JMPR R154   // -> 46(dispatch) 72(dispatch) 106(dispatch) 143(dispatch) 179(dispatch) 218(dispatch) 258(dispatch) 298(dispatch) 337(dispatch) 377(dispatch) 416(dispatch) 456(dispatch) 496(dispatch) 535(dispatch) 575(dispatch) 614(dispatch) 653(dispatch) 692(dispatch) 725(dispatch) 1334(dispatch) 32(dispatch) 46(dispatch) 72(dispatch) 106(dispatch) 143(dispatch) 179(dispatch) 218(dispatch) 258(dispatch) 298(dispatch) 337(dispatch) 377(dispatch) 416(dispatch) 449(dispatch) 1601(dispatch)
+ 2108  JMPR R154   // -> 46(dispatch) 72(dispatch) 106(dispatch) 143(dispatch) 179(dispatch) 218(dispatch) 258(dispatch) 298(dispatch) 337(dispatch) 377(dispatch) 416(dispatch) 456(dispatch) 496(dispatch) 535(dispatch) 575(dispatch) 614(dispatch) 653(dispatch) 692(dispatch) 725(dispatch) 1334(dispatch) 32(dispatch) 46(dispatch) 72(dispatch) 65(dispatch) 1793(dispatch) 32(dispatch) 1334(dispatch) 46(dispatch) 72(dispatch) 65(dispatch) 1793(dispatch) 32(dispatch) 106(dispatch) 99(dispatch) 1502(dispatch) 32(dispatch) 1334(dispatch) 46(dispatch) 72(dispatch) 65(dispatch) 1793(dispatch) 32(dispatch) 32(dispatch) 32(dispatch) 106(dispatch) 99(dispatch) 1502(dispatch) 32(dispatch)
 
-===== FUNCTION entry=2109 params=2 regs=88 rest=false instrs=272 =====
+===== FUNCTION entry=2109 params=2 regs=88 rest=false instrs=297 =====
  2109  R82 = FUNC(entry=3574, params=3, regs=10, rest=0) []
  2116  R18 = this
  2117  R19 = CONST[66]^2173571532  // 3715
@@ -317,7 +326,7 @@
  2149  R79 = R79 ADD R85
  2150  R80 = 45688
  2153  R81 = 39754
- 2156  JMP 3431   // -> 3431(jump)
+ 2156  JMP 3431   // -> 3431(jump) 3431(jump) 3431(jump) 3431(jump)
  2157  R25 = CONST[68]^715171685  // 26218
  2161  R22 = R25
  2164  R26 = R20 SEQ R22
@@ -330,7 +339,11 @@
  2180  R79 = R79 ADD R85
  2181  R80 = 37366
  2184  R81 = 38611
- 2187  JMP 3431   // -> 3431(jump)
+ 2187  JMP 3431   // -> 3431(jump) 3431(jump)
+ 2188  R79 = 3994869860
+ 2191  R80 = 25651
+ 2194  R81 = 43667
+ 2197  JMP 3431   // -> 3431(jump)
  2198  R27 = CONST[69]^142604408  // 16253
  2202  R28 = R22 ADD R27
  2206  R22 = R28
@@ -345,7 +358,7 @@
  2226  R79 = R79 ADD R85
  2227  R80 = 11106
  2230  R81 = 6333
- 2233  JMP 3431   // -> 3431(jump)
+ 2233  JMP 3431   // -> 3431(jump) 3431(jump)
  2244  R30 = CONST[70]^1105990343  // 6214
  2248  R31 = R22 SUB R30
  2252  R22 = R31
@@ -567,10 +580,31 @@
  3143  R80 = 50360
  3146  R81 = 29981
  3149  JMP 3431   // -> 3431(jump)
+ 3150  R78 = 49577
+ 3153  R20 = R20 ADD R78
+ 3154  R79 = 2127747508
+ 3157  R80 = 42155
+ 3160  R81 = 7104
+ 3163  JMP 3431   // -> 3431(jump)
+ 3164  R78 = 30681
+ 3167  R20 = R20 ADD R78
+ 3168  R79 = 3546345393
+ 3171  R80 = 36526
+ 3174  R81 = 50994
+ 3177  JMP 3431   // -> 3431(jump)
+ 3275  R86 = R6
+ 3278  R86 = CONST[91]^3606399303  // 1
+ 3282  R17 = R6 ADD R86
+ 3286  R78 = 2724
+ 3289  R20 = R20 ADD R78
+ 3290  R79 = 254513835
+ 3293  R80 = 60340
+ 3296  R81 = 35687
+ 3299  JMP 3431   // -> 3431(jump)
  3431  R79 = R82(R79, R80, R81)  // indirect
  3438  R83 = 0
  3441  R79 = R79[R83]
- 3445  JMPR R79   // -> 2157(dispatch) 2198(dispatch) 2244(dispatch) 2290(dispatch) 2336(dispatch) 2382(dispatch) 2427(dispatch) 2473(dispatch) 2518(dispatch) 2563(dispatch) 2609(dispatch) 2654(dispatch) 2700(dispatch) 2745(dispatch) 2791(dispatch) 2837(dispatch) 2872(dispatch) 3124(dispatch)
+ 3445  JMPR R79   // -> 2157(dispatch) 2198(dispatch) 2244(dispatch) 2290(dispatch) 2336(dispatch) 2382(dispatch) 2427(dispatch) 2473(dispatch) 2518(dispatch) 2563(dispatch) 2609(dispatch) 2654(dispatch) 2700(dispatch) 2745(dispatch) 2791(dispatch) 2837(dispatch) 2872(dispatch) 3124(dispatch) 3150(dispatch) 3164(dispatch) 2131(dispatch) 2157(dispatch) 2198(dispatch) 2188(dispatch) 3275(dispatch) 2131(dispatch) 2131(dispatch)
 
 ===== FUNCTION entry=3446 params=2 regs=8 rest=false instrs=36 =====
  3446  R3 = this

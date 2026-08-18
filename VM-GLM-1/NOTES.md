@@ -91,3 +91,85 @@ offsets / constants baked into handler code — specializedOpcodes) + aliases
   propagation; CFF state register (R154 here) resolved by folding XOR/add
   chains of immediates; computed jumps `IP=R(state)` give CFG edges; structured
   output rebuilt (if/else/while) from CFG; closures → nested function decls.
+
+## Lifter pipeline (final architecture, vm.js)
+
+1. **Extract + classify** — VM classes found structurally (WeakMap fn cache,
+   `n[g[++ip]]()` dispatch, number-named methods); 161 handlers → archetypes.
+2. **Analyze** — path-sensitive abstract execution per function
+   (`exploreFunction`): env `{v: reg→const, b: reg→boolPair}`, branchless CFF
+   selects (`__sel {condReg, tv, fv}` algebra through NOT/TONUM/MUL/ADD/CALL/
+   GETPROP), dual-eval of pure leaf fns (the imul hash mixers), DECODE
+   self-decryption replayed in-place. Records per-block dispatch edges with
+   `{cond, sense}` so the real CFG falls out of the two dispatchers.
+3. **prepareFn** (per lifted fn): dispatch-edge dedup → cond/goto/multi block
+   terms, dispatcher-chain machinery backward slice, leaders/blocks,
+   **CFF case-dispatch dissolution** (below), reachability prune.
+4. **buildFunction**: transitive DSE (`LIFT_DSE_SAFE = LIFT_PURE −
+   {GETPROP, LDG}`; live = reads of non-safe ops + terminators), block-local
+   constant folding (regs whose every read has a same-block const def fold to
+   literals — kills the `vK=const; state=state±vK` salt), single-use `pending`
+   expression folding, dominator/pdom structurer with labeled break/continue
+   (`breakOk` only for single-exit loops) + tail-cloning, switch-machine
+   fallback if structuring throws.
+
+## CFF case-dispatch dissolution (the interesting part)
+
+The payload's own controlFlowFlattening lowers real control flow to a
+`while(true) switch(state)` machine INSIDE the bytecode: a hub block
+(`state SNE EXIT` cond, ≥3 goto-preds), a comparison ladder (running-const
+ladder var `SEQ state` per link → 1-ip trampoline → case body), case bodies
+ending `state = state ± K; JMP hub`.
+
+- Const-env propagation from entry + every injected case head; shared bodies
+  reached with two states get cloned (`-1-split*1000` keys) so each copy
+  rewires to its own successor.
+- **Back edges rewire by resolved state**: a body's exit state C is a const,
+  so its true successor is `link(C).target`. resolveTarget follows only
+  STATE-PRESERVING pure trampolines; a pure goto block that CHANGES the state
+  register is a "salt body" (may carry real pure defs — e.g. the concealed
+  string + seed constants!) and is returned as the successor, its own back
+  edge rewired separately by the scan. `dead` = no link / same-state cycle
+  (original loops forever in pure dispatch → wire to ladder fallback);
+  `unknown` = can't fold → keep the ladder (bail).
+- After rewires, the hub/ladder/trampolines/fallback form a cycle disconnected
+  from entry → reachability-pruned; dead terminals (e.g. equalSide exitConst
+  block recomputing state to a linkless const) point at the fallback loop.
+
+Bugs found here (all fixed): resolveTarget originally followed salt bodies
+STRAIGHT THROUGH to the hub (no-op rewires → live case bodies lost → output
+looped forever on a real call); dead-edge handling killed ALL link match-edges
+even when only some terminals were dead.
+
+## Closure cells are LIVE BOXES
+
+`MKFUNC captures {newCell, src}` — a new cell is a live box over the DEFINING
+frame's register (not a snapshot): later parent writes are visible to the
+child (verified: fn17 writes R9 = timestamp string after creating fn2109; the
+decoder reads it as its `already initialized` flag). Lifter therefore names
+the parent reg `c<src>` (declared in the PARENT) and the child's CGET/CSET
+emit the same identifier (NOT declared in the child). `readsOf(MKFUNC)`
+includes newCell srcs so DSE keeps the parent's writes alive.
+
+## Verification harnesses (debug/)
+
+- `05_verify_output.js [--call]` — Proxy-trace diff. NOTE: its apply trap
+  never invokes the real fn (only logs) — verifies LOAD behavior only.
+- `06_real_call.js <file>` — REAL execution with DOM shims: div/style.width/
+  appendChild + `console.log ts|rand|h1|h2|h3 <decoded-unicode>` + return
+  value + per-call timing. This is the ground-truth harness (caught the
+  infinite-loop and empty-decoder bugs the proxy tracer could not see).
+- `07_probe_log.js <file>` — JSON-precise console.log arg dump.
+- `test.js` — README spec: decoded strings present, no VM tokens, output
+  parses + payload runs, regular.js passes through unchanged (ALL PASS).
+- `VM_DEBUG=1` dbg lines, `VM_BLOCKS=1` CFG dumps, `VM_NODISSOLVE=1` skips
+  dissolution (pre-dissolve CFG diffs).
+
+## Result
+
+- `node vm.js input.js output.js` → 4,722 bytes VM-free, CFF-free JS
+  (from 41,901 bytes obfuscated). Zero switch-machine fallbacks; all five
+  functions structured. Payload: create div, `style.width = "calc(100px +
+  20px * 2)"`, appendChild, `console.log(ts + "|" + rand + ...,
+  decode(str, seed))`, decoder = rolling-XOR fromCharCode loop
+  (concealConstants runtime decoder lifted as a plain loop).
