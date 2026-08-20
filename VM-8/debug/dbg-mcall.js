@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path');
+const {loadRuntime}=require('../lib-extract.js');
+const {prepare, probe}=require('../lib-probe.js');
+const {regTracer,THIS_MARK}=require('../lib-classify.js');
+const M=prepare(loadRuntime(fs.readFileSync(path.join(__dirname,'..','input.js'),'utf8')));
+const log=[]; const n=96; const regs=new Array(n);
+for(let i=0;i<n;i++) regs[i]=regTracer(i,log);
+const rec=probe(M,{pc:396,B:-1175385224,nregs:n,regs,thisVal:THIS_MARK});
+console.log('operands',rec.operands);
+console.log('events:'); for(const e of log) console.log('  ',e.t, e.id||e.key, 'key='+String(e.key), e.args? 'args='+JSON.stringify(e.args.map(a=>a&&a.__id||String(a))):'');

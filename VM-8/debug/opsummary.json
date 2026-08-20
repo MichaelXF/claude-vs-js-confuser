@@ -1,0 +1,1475 @@
+[
+ {
+  "op": 58457,
+  "n": 1,
+  "operands": [
+   392
+  ],
+  "readRegs": [],
+  "writeRegs": [],
+  "hdrReads": [],
+  "hdrWrites": [
+   3
+  ],
+  "threw": null,
+  "pc": 73,
+  "count": 56
+ },
+ {
+  "op": 1493,
+  "n": 3,
+  "operands": [
+   3,
+   0,
+   0
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   3
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 2,
+  "count": 43
+ },
+ {
+  "op": 5202,
+  "n": 2,
+  "operands": [
+   41,
+   331
+  ],
+  "readRegs": [
+   41
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 56,
+  "count": 31
+ },
+ {
+  "op": 31959,
+  "n": 2,
+  "operands": [
+   2,
+   3
+  ],
+  "readRegs": [
+   3
+  ],
+  "writeRegs": [
+   2
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 6,
+  "count": 20
+ },
+ {
+  "op": 40393,
+  "n": 3,
+  "operands": [
+   62,
+   31,
+   32
+  ],
+  "readRegs": [
+   31,
+   32
+  ],
+  "writeRegs": [
+   62
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 362,
+  "count": 16
+ },
+ {
+  "op": 26866,
+  "n": 4,
+  "operands": [
+   38,
+   38,
+   905482874,
+   36
+  ],
+  "readRegs": [
+   38,
+   36
+  ],
+  "writeRegs": [
+   38
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 355,
+  "count": 15
+ },
+ {
+  "op": 34449,
+  "n": 3,
+  "operands": [
+   17,
+   62,
+   63
+  ],
+  "readRegs": [
+   62,
+   63
+  ],
+  "writeRegs": [
+   17
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 343,
+  "count": 12
+ },
+ {
+  "op": 57674,
+  "n": 3,
+  "operands": [
+   3,
+   1,
+   781238470
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   3
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 9,
+  "count": 8
+ },
+ {
+  "op": 31664,
+  "n": 5,
+  "operands": [
+   43,
+   38,
+   40,
+   37,
+   2622622708
+  ],
+  "readRegs": [
+   38,
+   40,
+   37
+  ],
+  "writeRegs": [
+   43
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 80,
+  "count": 8
+ },
+ {
+  "op": 6317,
+  "n": 4,
+  "operands": [
+   63,
+   19,
+   62,
+   0
+  ],
+  "readRegs": [
+   19,
+   62
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": "a.apply is not a function",
+  "pc": 396,
+  "count": 8
+ },
+ {
+  "op": 36359,
+  "n": 4,
+  "operands": [
+   40,
+   40,
+   2395032704,
+   61
+  ],
+  "readRegs": [
+   40,
+   61
+  ],
+  "writeRegs": [
+   40
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 153,
+  "count": 7
+ },
+ {
+  "op": 51549,
+  "n": 4,
+  "operands": [
+   13,
+   13,
+   4204639844,
+   32
+  ],
+  "readRegs": [
+   13,
+   32
+  ],
+  "writeRegs": [
+   13
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1028,
+  "count": 7
+ },
+ {
+  "op": 3336,
+  "n": 1,
+  "operands": [
+   3
+  ],
+  "readRegs": [
+   3
+  ],
+  "writeRegs": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   97,
+   98,
+   99
+  ],
+  "hdrReads": [
+   7,
+   11,
+   0,
+   10
+  ],
+  "hdrWrites": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   -16
+  ],
+  "threw": null,
+  "pc": 35,
+  "count": 6
+ },
+ {
+  "op": 4115,
+  "n": 5,
+  "operands": [
+   31,
+   13,
+   15,
+   32,
+   3658374954
+  ],
+  "readRegs": [
+   13,
+   15,
+   32
+  ],
+  "writeRegs": [
+   17
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 841,
+  "count": 6
+ },
+ {
+  "op": 41098,
+  "n": 1,
+  "operands": [
+   1
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   1
+  ],
+  "hdrReads": [
+   7,
+   12
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 0,
+  "count": 5
+ },
+ {
+  "op": 24746,
+  "n": 4,
+  "operands": [
+   40,
+   40,
+   368974448,
+   61
+  ],
+  "readRegs": [
+   40,
+   61
+  ],
+  "writeRegs": [
+   40
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 75,
+  "count": 5
+ },
+ {
+  "op": 36844,
+  "n": 5,
+  "operands": [
+   57,
+   38,
+   40,
+   37,
+   598569247
+  ],
+  "readRegs": [
+   38,
+   40,
+   37
+  ],
+  "writeRegs": [
+   50
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 190,
+  "count": 5
+ },
+ {
+  "op": 22932,
+  "n": 2,
+  "operands": [
+   59,
+   62
+  ],
+  "readRegs": [
+   62
+  ],
+  "writeRegs": [
+   59
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 767,
+  "count": 4
+ },
+ {
+  "op": 51861,
+  "n": 4,
+  "operands": [
+   15,
+   15,
+   41943040,
+   31
+  ],
+  "readRegs": [
+   15,
+   31
+  ],
+  "writeRegs": [
+   15
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 867,
+  "count": 4
+ },
+ {
+  "op": 47454,
+  "n": 4,
+  "operands": [
+   42,
+   38,
+   40,
+   37
+  ],
+  "readRegs": [
+   38,
+   40,
+   37
+  ],
+  "writeRegs": [
+   42
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 65,
+  "count": 3
+ },
+ {
+  "op": 26275,
+  "n": 3,
+  "operands": [
+   63,
+   26,
+   62
+  ],
+  "readRegs": [
+   26,
+   62
+  ],
+  "writeRegs": [
+   63
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 459,
+  "count": 3
+ },
+ {
+  "op": 35538,
+  "n": 4,
+  "operands": [
+   15,
+   15,
+   92274688,
+   31
+  ],
+  "readRegs": [
+   15,
+   31
+  ],
+  "writeRegs": [
+   15
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 852,
+  "count": 3
+ },
+ {
+  "op": 25501,
+  "n": 5,
+  "operands": [
+   21,
+   13,
+   15,
+   32,
+   2736807650
+  ],
+  "readRegs": [
+   13,
+   15,
+   32
+  ],
+  "writeRegs": [
+   19
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 872,
+  "count": 3
+ },
+ {
+  "op": 31612,
+  "n": 4,
+  "operands": [
+   15,
+   15,
+   121634816,
+   31
+  ],
+  "readRegs": [
+   15,
+   31
+  ],
+  "writeRegs": [
+   15
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 883,
+  "count": 3
+ },
+ {
+  "op": 48773,
+  "n": 9,
+  "operands": [
+   5,
+   37,
+   0,
+   80,
+   1,
+   0,
+   670422697,
+   1,
+   2
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   5
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 17,
+  "count": 2
+ },
+ {
+  "op": 32507,
+  "n": 3,
+  "operands": [
+   3,
+   4,
+   5
+  ],
+  "readRegs": [
+   3,
+   4,
+   5
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": "Reflect.set called on non-object",
+  "pc": 27,
+  "count": 2
+ },
+ {
+  "op": 1609,
+  "n": 2,
+  "operands": [
+   39,
+   0
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   39
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 44,
+  "count": 2
+ },
+ {
+  "op": 2343,
+  "n": 4,
+  "operands": [
+   40,
+   40,
+   1667756528,
+   61
+  ],
+  "readRegs": [
+   40,
+   61
+  ],
+  "writeRegs": [
+   40
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 91,
+  "count": 2
+ },
+ {
+  "op": 40676,
+  "n": 4,
+  "operands": [
+   40,
+   40,
+   2406598704,
+   61
+  ],
+  "readRegs": [
+   40,
+   61
+  ],
+  "writeRegs": [
+   40
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 106,
+  "count": 2
+ },
+ {
+  "op": 4156,
+  "n": 5,
+  "operands": [
+   35,
+   10,
+   2,
+   9,
+   62
+  ],
+  "readRegs": [
+   10,
+   9,
+   62
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": "d.apply is not a function",
+  "pc": 567,
+  "count": 2
+ },
+ {
+  "op": 26281,
+  "n": 3,
+  "operands": [
+   23,
+   62,
+   63
+  ],
+  "readRegs": [
+   62,
+   63
+  ],
+  "writeRegs": [
+   23
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 647,
+  "count": 2
+ },
+ {
+  "op": 5569,
+  "n": 2,
+  "operands": [
+   62,
+   0
+  ],
+  "readRegs": [],
+  "writeRegs": [
+   62
+  ],
+  "hdrReads": [
+   7,
+   5
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 764,
+  "count": 2
+ },
+ {
+  "op": 5473,
+  "n": 4,
+  "operands": [
+   18,
+   13,
+   15,
+   32
+  ],
+  "readRegs": [
+   13,
+   15,
+   32
+  ],
+  "writeRegs": [
+   18
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 857,
+  "count": 2
+ },
+ {
+  "op": 46944,
+  "n": 3,
+  "operands": [
+   30,
+   29,
+   31
+  ],
+  "readRegs": [
+   29,
+   31
+  ],
+  "writeRegs": [
+   30
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1046,
+  "count": 2
+ },
+ {
+  "op": 22474,
+  "n": 6,
+  "operands": [
+   13,
+   13,
+   30,
+   254045788,
+   1495725916,
+   32
+  ],
+  "readRegs": [
+   13,
+   30,
+   32
+  ],
+  "writeRegs": [
+   13
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1050,
+  "count": 2
+ },
+ {
+  "op": 11808,
+  "n": 4,
+  "operands": [
+   38,
+   1509521695,
+   0,
+   61
+  ],
+  "readRegs": [
+   61
+  ],
+  "writeRegs": [
+   38
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 39,
+  "count": 1
+ },
+ {
+  "op": 57395,
+  "n": 5,
+  "operands": [
+   41,
+   38,
+   2192443247,
+   0,
+   61
+  ],
+  "readRegs": [
+   38,
+   61
+  ],
+  "writeRegs": [
+   41
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 50,
+  "count": 1
+ },
+ {
+  "op": 43949,
+  "n": 5,
+  "operands": [
+   40,
+   38,
+   38,
+   262311919,
+   61
+  ],
+  "readRegs": [
+   38,
+   61
+  ],
+  "writeRegs": [
+   40
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 59,
+  "count": 1
+ },
+ {
+  "op": 156,
+  "n": 5,
+  "operands": [
+   47,
+   38,
+   40,
+   37,
+   4140175284
+  ],
+  "readRegs": [
+   38,
+   40,
+   37
+  ],
+  "writeRegs": [
+   46
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 126,
+  "count": 1
+ },
+ {
+  "op": 14010,
+  "n": 3,
+  "operands": [
+   63,
+   4,
+   62
+  ],
+  "readRegs": [
+   4,
+   62
+  ],
+  "writeRegs": [
+   63
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 436,
+  "count": 1
+ },
+ {
+  "op": 61767,
+  "n": 4,
+  "operands": [
+   59,
+   38,
+   38,
+   61
+  ],
+  "readRegs": [
+   38,
+   61
+  ],
+  "writeRegs": [
+   59
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 590,
+  "count": 1
+ },
+ {
+  "op": 40530,
+  "n": 2,
+  "operands": [
+   59,
+   605
+  ],
+  "readRegs": [
+   59
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [
+   3
+  ],
+  "threw": null,
+  "pc": 595,
+  "count": 1
+ },
+ {
+  "op": 48107,
+  "n": 2,
+  "operands": [
+   0,
+   62
+  ],
+  "readRegs": [
+   62
+  ],
+  "writeRegs": [],
+  "hdrReads": [
+   7,
+   5
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 693,
+  "count": 1
+ },
+ {
+  "op": 49515,
+  "n": 3,
+  "operands": [
+   60,
+   59,
+   61
+  ],
+  "readRegs": [
+   59,
+   61
+  ],
+  "writeRegs": [
+   60
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 770,
+  "count": 1
+ },
+ {
+  "op": 23871,
+  "n": 6,
+  "operands": [
+   38,
+   38,
+   60,
+   2890601466,
+   2889863162,
+   36
+  ],
+  "readRegs": [
+   38,
+   60,
+   36
+  ],
+  "writeRegs": [
+   38
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 774,
+  "count": 1
+ },
+ {
+  "op": 1550,
+  "n": 4,
+  "operands": [
+   13,
+   3611024198,
+   0,
+   31
+  ],
+  "readRegs": [
+   31
+  ],
+  "writeRegs": [
+   13
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 815,
+  "count": 1
+ },
+ {
+  "op": 46239,
+  "n": 5,
+  "operands": [
+   16,
+   13,
+   1905239030,
+   0,
+   31
+  ],
+  "readRegs": [
+   13,
+   31
+  ],
+  "writeRegs": [
+   16
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 826,
+  "count": 1
+ },
+ {
+  "op": 43544,
+  "n": 5,
+  "operands": [
+   15,
+   13,
+   13,
+   3493583686,
+   31
+  ],
+  "readRegs": [
+   13,
+   31
+  ],
+  "writeRegs": [
+   15
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 835,
+  "count": 1
+ },
+ {
+  "op": 60304,
+  "n": 5,
+  "operands": [
+   28,
+   13,
+   15,
+   32,
+   16744613
+  ],
+  "readRegs": [
+   13,
+   15,
+   32
+  ],
+  "writeRegs": [
+   20
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 888,
+  "count": 1
+ },
+ {
+  "op": 14075,
+  "n": 4,
+  "operands": [
+   15,
+   15,
+   48234496,
+   31
+  ],
+  "readRegs": [
+   15,
+   31
+  ],
+  "writeRegs": [
+   15
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 915,
+  "count": 1
+ },
+ {
+  "op": 18175,
+  "n": 3,
+  "operands": [
+   33,
+   4,
+   8
+  ],
+  "readRegs": [
+   4,
+   8
+  ],
+  "writeRegs": [
+   33
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1061,
+  "count": 1
+ },
+ {
+  "op": 9620,
+  "n": 4,
+  "operands": [
+   34,
+   4,
+   33,
+   1454277781
+  ],
+  "readRegs": [
+   4,
+   33
+  ],
+  "writeRegs": [
+   34
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1065,
+  "count": 1
+ },
+ {
+  "op": 24159,
+  "n": 3,
+  "operands": [
+   35,
+   34,
+   33
+  ],
+  "readRegs": [
+   34,
+   33
+  ],
+  "writeRegs": [
+   35
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1074,
+  "count": 1
+ },
+ {
+  "op": 38533,
+  "n": 4,
+  "operands": [
+   11,
+   33,
+   7,
+   1402572582
+  ],
+  "readRegs": [
+   33,
+   7
+  ],
+  "writeRegs": [
+   11
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1114,
+  "count": 1
+ },
+ {
+  "op": 50777,
+  "n": 4,
+  "operands": [
+   33,
+   34,
+   33,
+   2745118800
+  ],
+  "readRegs": [
+   34,
+   33
+  ],
+  "writeRegs": [
+   35
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1138,
+  "count": 1
+ },
+ {
+  "op": 54222,
+  "n": 4,
+  "operands": [
+   40,
+   6,
+   33,
+   1623743519
+  ],
+  "readRegs": [
+   6,
+   33
+  ],
+  "writeRegs": [
+   34
+  ],
+  "hdrReads": [
+   7,
+   6
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1194,
+  "count": 1
+ },
+ {
+  "op": 30406,
+  "n": 4,
+  "operands": [
+   33,
+   6,
+   32,
+   269390838
+  ],
+  "readRegs": [
+   6,
+   32
+  ],
+  "writeRegs": [
+   33
+  ],
+  "hdrReads": [
+   7
+  ],
+  "hdrWrites": [],
+  "threw": null,
+  "pc": 1243,
+  "count": 1
+ }
+]
